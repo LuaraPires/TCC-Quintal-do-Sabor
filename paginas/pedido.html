@@ -1,53 +1,590 @@
 <!doctype html>
-<html lang="pt-BR">
-  <head>
+<html lang="pt-br">
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link rel="icon" type="image/png" href="../static/image
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
+   <meta name="description" content="Página oficial do Sabor do Quintal, um restaurante de estilo rústico que oferece pratos caseiros e saborosos.
+    Conheça nosso cardápio, confira nossos pratos, faça sua reserva e encontre nossa localização.">
+    <meta name="keywords" content="Sabor do Quintal, restaurante, login">
+    <meta name="author" content="Luara Pires">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <title>Sabor do Quintal</title>
 
-  <body>
-    <form class="row row-cols-lg-auto g-3 align-items-center">
-  <div class="col-12">
-    <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
-    <div class="input-group">
-      <div class="input-group-text">@</div>
-      <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
-    </div>
-  </div>
+    <style>
 
-  <div class="col-12">
-    <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-    <select class="form-select" id="inlineFormSelectPref">
-      <option selected>Choose...</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-  </div>
+        * {
+            box-sizing: border-box;
+        }
 
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-      <label class="form-check-label" for="inlineFormCheck">
-        Remember me
-      </label>
-    </div>
-  </div>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #d5d1ce;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #2d241e;
+        }
 
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
-</form>
+        /* HEADER */
+
+        header {
+            height: 78px;
+            background-color: #f5e9cd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            left: 18px;
+            top: 7px;
+            width: 65px;
+            height: 64px;
+            object-fit: contain;
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 29px;
+            color: #17120f;
+        }
+
+        /* MAIN */
+
+        main {
+            flex: 1;
+            padding: 55px 20px 70px;
+            position: relative;
+        }
+
+        .subtitulo {
+            text-align: center;
+            margin-bottom: 22px;
+            color: #4b392d;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* CARD */
+
+        .pedido {
+            width: 80%;
+            max-width: 850px;
+            min-height: 350px;
+            margin: auto;
+            background-color: #dfbd8c;
+            border-radius: 25px;
+            padding: 40px 60px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* LINHAS */
+
+        .linha {
+            display: grid;
+            grid-template-columns: 120px 180px 1fr;
+            align-items: center;
+            column-gap: 35px;
+            margin-bottom: 35px;
+        }
+
+        .linha:last-child {
+            margin-bottom: 0;
+        }
+
+        /* IMAGENS */
+
+        .imagem-item {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 14px;
+            border: 3px solid #f5e9cd;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+        }
+
+        /* SELECT */
+
+        select {
+            width: 180px;
+            height: 38px;
+            padding: 4px 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: #d96c4c;
+            color: #000;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            outline: none;
+            cursor: pointer;
+        }
+
+        select:hover {
+            background-color: #cf6242;
+        }
+
+        /* DESCRIÇÃO */
+
+        .descricao {
+            width: 100%;
+            max-width: 280px;
+            min-height: 55px;
+            margin: 0;
+            padding: 10px 14px;
+            background-color: #d96c4c;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            line-height: 14px;
+            color: #000;
+        }
+
+        /* TOTAL */
+
+        .linha-total {
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        .total-label {
+            width: 180px;
+            height: 38px;
+            background-color: #d96c4c;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .valor-total {
+            width: 140px;
+            height: 45px;
+            background-color: #d96c4c;
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* BOTÃO */
+
+        .botao-continuar {
+            position: absolute;
+            right: 30px;
+            bottom: 25px;
+            width: 140px;
+            height: 35px;
+            border: none;
+            border-radius: 8px;
+            background-color: #d96c4c;
+            color: #000;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .botao-continuar:hover {
+            background-color: #c75b3d;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+
+        footer {
+            height: 32px;
+            flex-shrink: 0;
+            background-color: #f5e9cd;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            color: #000;
+            font-size: 8px;
+            position: relative;
+        }
+
+        .footer-esquerda,
+        .footer-centro,
+        .footer-direita {
+            display: flex;
+            align-items: center;
+        }
+
+        footer i {
+            font-size: 13px;
+            margin-right: 4px;
+        }
+
+        .footer-centro {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .footer-direita {
+            gap: 6px;
+        }
+
+        /* DESKTOP */
+
+        @media (min-width: 900px) {
+
+            main {
+                padding-top: 55px;
+            }
+
+            .pedido {
+                width: 850px;
+            }
+
+        }
+
+    </style>
+
+</head>
 
 
+<body>
+    <header>
+
+        <img src="../favicon.png"class="logo" alt="Logo Sabor do Quintal">
+
+        <h1>Sabor do Quintal</h1>
+
+    </header>
 
 
+    <!-- MAIN -->
+    <main>
+
+        <div class="subtitulo">
+            Escolha seu prato e sua bebida
+        </div>
+
+        <div class="pedido">
+
+            <!-- PRATO -->
+            <div class="linha">
+                <!-- FOTO FIXA DO PRATO -->
+                <img src="../imagem/prato.png"class="imagem-item"alt="Prato">
+
+                <select id="prato"
+                    onchange="mudarPrato()">
+
+                    <option value="">
+                        Prato
+                    </option>
+
+                    <option value="24.90">
+                        Feijoada
+                    </option>
+
+                    <option value="30">
+                        Bife acebolado
+                    </option>
+
+                    <option value="32">
+                        Frango ensopado
+                    </option>
+
+                    <option value="35">
+                        Costela assada
+                    </option>
+
+                    <option value="35">
+                        Nhoque
+                    </option>
+
+                    <option value="35">
+                        Ancho
+                    </option>
+
+                    <option value="35">
+                        Cordeiro
+                    </option>
+
+                    <option value="35">
+                        Risoto
+                    </option>
+
+                    <option value="35">
+                        Filé
+                    </option>
+
+                    <option value="35">
+                        Lasanha
+                    </option>
+
+                    <option value="35">
+                        Lombo
+                    </option>
+
+                    <option value="35">
+                        Frango Recheado
+                    </option>
+
+                </select>
+
+                <p id="descricaoPrato"
+                    class="descricao">
+
+                    Prato tradicional com feijoada
+                    saborosa, arroz soltinho,
+                    torresmo crocante R$ 24,90
+
+                </p>
+
+            </div>
 
 
+            <!-- BEBIDA -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+            <div class="linha">
+
+                <!-- FOTO FIXA DA BEBIDA -->
+
+                <img src="../imagem/coca cola.jpg"class="imagem-item"alt="Bebida">
+
+                <select id="bebida"
+                    onchange="mudarBebida()">
+
+                    <option value="">
+                        Bebida
+                    </option>
+
+                    <option value="7.90">
+                        Coca-Cola
+                    </option>
+
+                    <option value="5">
+                        Suco natural
+                    </option>
+
+                    <option value="4">
+                        Água
+                    </option>
+
+                </select>
+
+                <p id="descricaoBebida"
+                    class="descricao">
+
+                    Refrescante, servida com gelo
+                    e um toque de limão para
+                    realçar o sabor R$ 7,90
+
+                </p>
+
+            </div>
+
+
+            <!-- TOTAL -->
+
+            <div class="linha linha-total">
+
+                <div></div>
+
+                <div class="total-label">
+                    Total
+                </div>
+
+                <div id="total"
+                    class="valor-total">
+
+                    R$ 0,00
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTÃO -->
+
+        <button class="botao-continuar"
+            onclick="continuar()">
+
+            Continuar
+
+        </button>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-esquerda">
+
+            <i class="bi bi-geo-alt"></i>
+
+            <i class="bi bi-telephone"></i>
+
+            (11) 32758484
+
+        </div>
+
+
+        <div class="footer-centro">
+
+            <i class="bi bi-c-circle"></i>
+
+            Direitos autorais
+
+        </div>
+
+
+        <div class="footer-direita">
+
+            sabordoquintal@gmail.com
+
+            <i class="bi bi-gear"></i>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        let precoPrato = 0;
+        let precoBebida = 0;
+
+
+        function mudarPrato() {
+
+            let prato =
+                document.getElementById("prato").value;
+
+            let descricao =
+                document.getElementById("descricaoPrato");
+
+            precoPrato = Number(prato);
+
+
+            if (prato == "24.90") {
+
+                descricao.innerHTML =
+                    "Prato tradicional com feijoada saborosa, arroz soltinho, torresmo crocante R$ 24,90";
+
+            }
+
+            else if (prato == "30") {
+
+                descricao.innerHTML =
+                    "Arroz, feijão, bife acebolado e batata frita R$ 30,00";
+
+            }
+
+            else if (prato == "32") {
+
+                descricao.innerHTML =
+                    "Frango ensopado com legumes, arroz e salada R$ 32,00";
+
+            }
+
+            else if (prato == "35") {
+
+                descricao.innerHTML =
+                    "Costela assada com mandioca, arroz e farofa R$ 35,00";
+
+            }
+
+            else {
+
+                descricao.innerHTML =
+                    "Escolha um prato.";
+
+            }
+
+            calcularTotal();
+
+        }
+
+
+        function mudarBebida() {
+
+            let bebida =
+                document.getElementById("bebida").value;
+
+            let descricao =
+                document.getElementById("descricaoBebida");
+
+            precoBebida = Number(bebida);
+
+
+            if (bebida == "7.90") {
+
+                descricao.innerHTML =
+                    "Refrescante, servida com gelo e um toque de limão para realçar o sabor R$ 7,90";
+
+            }
+
+            else if (bebida == "5") {
+
+                descricao.innerHTML =
+                    "Suco natural da casa R$ 5,00";
+
+            }
+
+            else if (bebida == "4") {
+
+                descricao.innerHTML =
+                    "Água mineral R$ 4,00";
+
+            }
+
+            else {
+
+                descricao.innerHTML =
+                    "Escolha uma bebida.";
+
+            }
+
+            calcularTotal();
+
+        }
+
+
+        function calcularTotal() {
+
+            let total =
+                precoPrato + precoBebida;
+
+            document.getElementById("total").innerHTML =
+                "R$ " +
+                total.toFixed(2).replace(".", ",");
+
+        }
+
+
+        function continuar() {
+
+            alert("Pedido pronto!");
+
+        }
+
+    </script>
+
+</body>
+
 </html>

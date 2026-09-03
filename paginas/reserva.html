@@ -1,891 +1,724 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Sabor do Quintal</title>
+    <meta name="description" content="O código desenvolve uma página de reservas para o restaurante Sabor do Quintal, utilizando HTML, CSS e Bootstrap.
+    O cabeçalho apresenta o logo, nome do restaurante e botão de acesso à página inicial.
+    A página permite escolher entre ambiente interno ou externo, mostrando imagens e descrições dos espaços disponíveis.
+    Na área de reserva, o cliente pode selecionar o horário, a mesa disponível e informar seu nome, finalizando a reserva pelo botão “Finalizar”.
+    O rodapé apresenta telefone, direitos autorais, e-mail e ícone de configurações, enquanto o CSS garante a adaptação para celulares e tablets.">
+    <meta name="keywords" content="Sabor do Quintal, restaurante, login">
+    <meta name="author" content="Luara Pires">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <title>Sabor do Quintal - Reserva</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/base.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
     <style>
-   
-        .titulo-cardapio {
-            text-align: center;
-            font-family: Georgia, serif;
-            font-size: 30px;
-            font-weight: bold;
-            margin-bottom: 30px;
+           /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* ================= TABS ================= */
-
-        .tabs-cardapio {
-            border-bottom: 2px solid #cfc7b8;
-            margin-bottom: 35px;
-            justify-content: center;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .tabs-cardapio .nav-link {
-            border: none;
-            border-radius: 5px 5px 0 0;
-            color: #3f3328 !important;
-            font-weight: bold;
-            padding: 10px 18px;
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+
+            background-color: #d8d4d1;
+
+            color: #171717;
+
+            font-family: "Montserrat", sans-serif;
         }
-
-        .tabs-cardapio .nav-link:hover {
-            background-color: #e8ddc9;
-        }
-
-        .tabs-cardapio .nav-link.active {
-            background-color: #c96d4b;
-            color: white !important;
-        }
-
-        /* ================= TÍTULO DO DIA ================= */
-
-        .titulo-dia {
-            text-align: center;
-            font-family: Georgia, serif;
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-
-        /* ================= PRATOS ================= */
-
-        .prato {
-            margin-bottom: 25px;
-        }
-
-        .imagem-prato {
+        /*HEADER*/
+        header {
             width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
+            height: 85px;
 
-        .nome-prato {
-            font-size: 18px;
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #f8e9cd;
+
+            border-bottom: 1px solid #e3d5bc;
+
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        /* LOGO */
+        .logo {
+            position: absolute;
+            left: 40px;
+            top: 8px;
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+        /* TÍTULO */
+        .titulo {
+            margin: 0;
+            font-family: "DM Serif Display", serif;
+            font-size: 32px;
             font-weight: bold;
-            margin-top: 12px;
+            font-style: italic;
+            letter-spacing: 1px;
+            color: #111;
+        }
+        /* HOME */
+        .home {
+            position: absolute;
+            right: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            text-decoration: none;
+            color: #111;
+            font-size: 10px;
+            font-weight: 700;
+            transition: 0.2s;
         }
 
-        .descricao {
-            font-size: 14px;
-            line-height: 1.4;
-            margin-bottom: 8px;
+        .home i {
+            font-size: 25px;
         }
 
-        .preco {
-            font-size: 14px;
-            font-weight: bold;
+        .home:hover {
+            transform: translateY(-2px);
+            color: #df6a4b;
+        }
+        
+           /* CONTEÚDO PRINCIPAL */
+        main {
+            width: 100%;
+            max-width: 1250px;
+            margin: 0 auto;
+            flex: 1;
+            padding: 28px 35px 35px;
         }
 
-        .btn-pedir {
-            background-color: #c96d4b;
+           /* SELECT SUPERIOR */
+
+        .select-area {
+            margin-bottom: 20px;
+        }
+
+        .select-custom {
+            width: 153px;
+            height: 32px;
+            padding: 0 12px;
             border: none;
-            color: white;
-            font-size: 12px;
-            padding: 6px 20px;
-            border-radius: 3px;
+            border-radius: 8px;
+            background-color: #df6a4b;
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            transition: 0.2s;
         }
 
-        .btn-pedir:hover {
-            background-color: #D96A4A;
-            color: white;
+        .select-custom:hover {
+            background-color: #d45d3e;
         }
 
-        /* ================= FOOTER ================= */
+        /* AMBIENTES*/
+        .ambientes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+        }
+
+        .ambiente {
+            width: 100%;
+        }
+
+        /* IMAGENS */
+        .foto {
+            width: 100%;
+            height: 255px;
+            display: block;
+            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+            transition: 0.3s;
+        }
+
+        .foto:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+        }
+
+
+        /* DESCRIÇÕES*/
+        .descricao {
+            min-height: 152px;
+            margin: 20px 15px 0;
+            padding: 18px 16px;
+            display: flex;
+            align-items: flex-start;
+            background-color: #e1bc87;
+            border-radius: 27px;
+            font-family: Georgia, serif;
+            font-size: 13px;
+            line-height: 1.35;
+            color: #151515;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ÁREA DE RESERVA */
+        .reserva {
+            margin-top: 65px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.6fr;
+            gap: 45px;
+            align-items: end;
+        }
+
+        /* TÍTULOS DA RESERVA */
+        .titulo-reserva {
+            width: 100%;
+            height: 36px;
+            margin-bottom: 27px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #df6a4b;
+            border-radius: 2px 2px 0 0;
+            font-size: 11px;
+            font-weight: 800;
+            color: #000;
+            box-shadow: 2px 3px 0 #777;
+        }
+
+
+        /* CAMPOS*/
+        .campo {
+            width: 100%;
+            height: 30px;
+            padding: 0 14px;
+            border: none;
+            border-radius: 8px;
+            background-color: #df6a4b;
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+            transition: 0.2s;
+        }
+
+        .campo:hover {
+            background-color: #d45d3e;
+        }
+
+
+        /* FORMULÁRIO*/
+        .formulario {
+            width: 100%;
+            height: 94px;
+            padding: 11px 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #e1bc87;
+            border-radius: 27px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* INPUT NOME */
+        .nome {
+            width: 100%;
+            height: 30px;
+            padding: 0 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #fff;
+            color: #111;
+            font-family: Georgia, serif;
+            font-size: 10px;
+            font-weight: bold;
+            font-style: italic;
+            outline: none;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .nome::placeholder {
+            color: #111;
+            opacity: 1;
+        }
+
+        .nome:focus {
+            box-shadow: 0 0 0 2px #df6a4b;
+        }
+
+
+        /* BOTÃO FINALIZAR */
+
+        .finalizar {
+            width: 153px;
+            height: 30px;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 8px;
+            background-color: #df6a4b;
+            color: #000;
+            text-decoration: none;
+            font-family: "DM Serif Display", serif;
+            font-size: 14px;
+            font-style: italic;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .finalizar:hover {
+            background-color: #c85639;
+            color: #000;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+        }
+
+        /* FOOTER*/
 
         footer {
-            background-color: #ebe7dc;
-            border-top: 1px solid #cfc7b8;
-            text-align: center;
-            padding: 20px;
-            font-size: 13px;
+            width: 100%;
+            min-height: 38px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            padding: 5px 12px;
+            background-color: #f8e9cd;
+            border-top: 1px solid #e3d5bc;
+            font-size: 8px;
+            flex-shrink: 0;
         }
 
-        footer p {
-            margin: 4px;
+        /* FOOTER ESQUERDA */
+        .footer-esquerda {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 7px;
         }
 
-        footer a {
-            color: #8b4d34;
-            text-decoration: none;
+        .footer-esquerda i {
+            font-size: 16px;
         }
 
-        /* ================= RESPONSIVIDADE ================= */
+        /* FOOTER CENTRO */
+        .footer-centro {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Georgia, serif;
+            font-size: 11px;
+        }
 
-        @media (max-width: 768px) {
+
+        /* FOOTER DIREITA */
+        .footer-direita {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+
+        .config {
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .config:hover {
+            transform: rotate(30deg);
+        }
+
+
+        /*  TABLET */
+        @media (max-width: 900px) {
+
+            .ambientes {
+                grid-template-columns: 1fr;
+            }
+
+            .reserva {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .formulario {
+                grid-column: 1 / -1;
+            }
+
+        }
+
+
+        /* CELULAR*/
+
+        @media (max-width: 600px) {
+
+            header {
+                height: 75px;
+            }
+
+            .logo {
+                left: 15px;
+                width: 55px;
+                height: 55px;
+                top: 10px;
+            }
+
+            .titulo {
+                font-size: 23px;
+            }
+
+            .home {
+                right: 15px;
+                font-size: 8px;
+            }
+
+            .home i {
+                font-size: 21px;
+            }
+
 
             main {
-                padding: 25px 15px;
+                padding: 20px 15px 30px;
             }
 
-            .titulo-cardapio {
-                font-size: 25px;
+
+            .ambientes {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
 
-            .tabs-cardapio {
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                justify-content: flex-start;
-                padding-bottom: 5px;
+
+            .foto {
+                height: 220px;
+                border-radius: 25px;
             }
 
-            .tabs-cardapio .nav-item {
-                flex: 0 0 auto;
-            }
 
-            .tabs-cardapio .nav-link {
+            .descricao {
+                min-height: auto;
+                margin: 12px 5px 0;
+                padding: 15px;
                 font-size: 12px;
-                padding: 8px 12px;
             }
 
-            .titulo-dia {
-                font-size: 24px;
+
+            .reserva {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 40px;
             }
 
-            .imagem-prato {
-                height: 180px;
+
+            .formulario {
+                grid-column: auto;
+                height: 94px;
             }
+
+
+            /* FOOTER MOBILE */
+
+            footer {
+                min-height: 80px;
+                grid-template-columns: 1fr;
+                gap: 7px;
+                padding: 10px;
+            }
+
+            .footer-esquerda,
+            .footer-centro,
+            .footer-direita {
+                justify-content: center;
+            }
+
+            .footer-centro {
+                order: 2;
+            }
+
+            .footer-direita {
+                order: 3;
+            }
+
         }
+
     </style>
+
 </head>
 
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-
+        <!-- HEADER -->
     <header>
 
-        <nav class="navbar navbar-expand-lg">
-
-            <div class="container">
-
-                <a class="navbar-brand d-flex align-items-center" href="#">
-
-                    <img src="../imagem/logo.png"
-                        class="rounded-circle logo me-2"
-                        alt="Logo Sabor do Quintal" width="90" hei>
-
-                    Sabor do Quintal
-
-                </a>
-
-                <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menu">
-
-                    <span class="navbar-toggler-icon"></span>
-
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-end" id="menu">
-
-                    <ul class="navbar-nav">
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Início
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Localização
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </nav>
-
-    </header>
+        <img
+            src="../imagem/logo.png"
+            alt="Logo Sabor do Quintal"
+            class="logo"
+        >
 
 
-    <!-- ================= CONTEÚDO ================= -->
-
-    <main>
-
-        <h1 class="titulo-cardapio">
-            Cardápio da Semana
+        <h1 class="titulo">
+            Sabor do Quintal
         </h1>
 
 
-        <!-- ================= TABS ================= -->
+        <a href="pagina_principal.html" class="home">
 
-        <ul class="nav nav-tabs tabs-cardapio"
-            id="cardapioTabs"
-            role="tablist">
+            <i class="bi bi-house-door"></i>
 
-            <li class="nav-item" role="presentation">
+            <span>Home</span>
 
-                <button class="nav-link active"
-                    id="segunda-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#segunda"
-                    type="button"
-                    role="tab">
+        </a>
 
-                    Segunda
+    </header>
 
-                </button>
+    
+         CONTEÚDO
 
-            </li>
+    <main>
 
 
-            <li class="nav-item" role="presentation">
+        <!-- SELECT -->
+        <div class="select-area">
 
-                <button class="nav-link"
-                    id="terca-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#terca"
-                    type="button"
-                    role="tab">
+            <select class="select-custom">
 
-                    Terça
+                <option>Select</option>
 
-                </button>
+                <option>
+                    Ambiente interno
+                </option>
 
-            </li>
+                <option>
+                    Área externa
+                </option>
 
-
-            <li class="nav-item" role="presentation">
-
-                <button class="nav-link"
-                    id="quarta-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#quarta"
-                    type="button"
-                    role="tab">
-
-                    Quarta
-
-                </button>
-
-            </li>
-
-
-            <li class="nav-item" role="presentation">
-
-                <button class="nav-link"
-                    id="quinta-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#quinta"
-                    type="button"
-                    role="tab">
-
-                    Quinta
-
-                </button>
-
-            </li>
-
-
-            <li class="nav-item" role="presentation">
-
-                <button class="nav-link"
-                    id="sexta-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#sexta"
-                    type="button"
-                    role="tab">
-
-                    Sexta
-
-                </button>
-
-            </li>
-
-
-            <li class="nav-item" role="presentation">
-
-                <button class="nav-link"
-                    id="sabado-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#sabado"
-                    type="button"
-                    role="tab">
-
-                    Sábado
-
-                </button>
-
-            </li>
-
-
-            <li class="nav-item" role="presentation">
-
-                <button class="nav-link"
-                    id="domingo-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#domingo"
-                    type="button"
-                    role="tab">
-
-                    Domingo
-
-                </button>
-
-            </li>
-
-        </ul>
-
-
-        <!-- ================= CONTEÚDO DOS TABS ================= -->
-
-        <div class="tab-content" id="cardapioTabsContent">
-
-
-            <!-- ================= SEGUNDA ================= -->
-
-            <div class="tab-pane fade show active"
-                id="segunda"
-                role="tabpanel"
-                aria-labelledby="segunda-tab">
-
-                <h2 class="titulo-dia">
-                    Segunda-feira
-                </h2>
-
-                <div class="row g-4">
-
-                    <div class="col-md-6">
-
-                        <div class="prato">
-
-                            <img src="imagem/feijoada.png"
-                                class="imagem-prato"
-                                alt="Feijoada Artesanal">
-
-                            <h3 class="nome-prato">
-                                Feijoada Artesanal
-                            </h3>
-
-                            <p class="descricao">
-                                Feijão preto encorpado com carnes selecionadas,
-                                acompanhado de arroz, couve refogada,
-                                farofa e laranja.
-                            </p>
-
-                            <p class="preco">
-                                R$ 68,90
-                            </p>
-
-                            <button class="btn btn-pedir">
-                                Pedir agora
-                            </button>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-md-6">
-
-                        <div class="prato">
-
-                            <img src="imagem/Frango.png"
-                                class="imagem-prato"
-                                alt="Frango do Chef">
-
-                            <h3 class="nome-prato">
-                                Frango do Chef
-                            </h3>
-
-                            <p class="descricao">
-                                Galeto assado na brasa, finalizado com molho
-                                de ervas. Acompanha batatas rústicas,
-                                farofa artesanal e salada fresca.
-                            </p>
-
-                            <p class="preco">
-                                R$ 59,90
-                            </p>
-
-                            <button class="btn btn-pedir">
-                                Pedir agora
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- ================= TERÇA ================= -->
-
-            <div class="tab-pane fade"
-                id="terca"
-                role="tabpanel"
-                aria-labelledby="terca-tab">
-
-                <h2 class="titulo-dia">
-                    Terça-feira
-                </h2>
-
-                <div class="row g-4">
-
-                    <div class="col-md-6">
-
-                        <div class="prato">
-
-                            <img src="imagem/file.png"
-                                class="imagem-prato"
-                                alt="Filé ao Molho">
-
-                            <h3 class="nome-prato">
-                                Filé ao Molho
-                            </h3>
-
-                            <p class="descricao">
-                                Filé mignon macio e suculento, envolvido
-                                em molho madeira com champignons.
-                                Acompanha purê cremoso e massa.
-                            </p>
-
-                            <p class="preco">
-                                R$ 74,90
-                            </p>
-
-                            <button class="btn btn-pedir">
-                                Pedir agora
-                            </button>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-md-6">
-
-                        <div class="prato">
-
-                            <img src="imagem/cordeiro.png"
-                                class="imagem-prato"
-                                alt="Cordeiro ao Vinho Tinto">
-
-                            <h3 class="nome-prato">
-                                Cordeiro ao Vinho Tinto
-                            </h3>
-
-                            <p class="descricao">
-                                Cordeiro braseado, servido sobre mousseline
-                                de mandioca e finalizado com crispy de couve.
-                            </p>
-
-                            <p class="preco">
-                                R$ 118,00
-                            </p>
-
-                            <button class="btn btn-pedir">
-                                Pedir agora
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- ================= QUARTA ================= -->
-
-            <div class="tab-pane fade"
-                id="quarta"
-                role="tabpanel"
-                aria-labelledby="quarta-tab">
-
-                <h2 class="titulo-dia">
-                    Quarta-feira
-                </h2>
-
-                <div class="row g-4">
-
-                    <div class="col-md-6">
-
-                        <div class="prato">
-
-                            <img src="imagem/frangorecheado.png"
-                                class="imagem-prato"
-                                alt="Frango Recheado">
-
-                            <h3 class="nome-prato">
-                                Frango Recheado
-                            </h3>
-
-                            <p class="descricao">
-                                Peito de frango recheado com queijo artesanal
-                                e ervas finas. Acompanha polenta cremosa
-                                de milho verde e tomates confitados.
-                            </p>
-
-                            <p class="preco">
-                                R$ 82,00
-                            </p>
-
-                            <button class="btn btn-pedir">
-                                Pedir agora
-                            </button>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-md-6">
-
-                        <div class="prato">
-
-                            <img src="imagem/lombo.png"
-                                class="imagem-prato"
-                                alt="Lombo de Ervas e Limão">
-
-                            <h3 class="nome-prato">
-                                Lombo de Ervas e Limão
-                            </h3>
-
-                            <p class="descricao">
-                                Lombo grelhado em crosta de ervas e raspas
-                                de limão. Acompanha risoto cremoso de limão
-                                com aspargos.
-                            </p>
-
-                            <p class="preco">
-                                R$ 98,00
-                            </p>
-
-                            <button class="btn btn-pedir">
-                                Pedir agora
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- ================= QUINTA ================= -->
-
-            <div class="tab-pane fade"
-                id="quinta"
-                role="tabpanel"
-                aria-labelledby="quinta-tab">
-
-                <h2 class="titulo-dia">
-                    Quinta-feira
-                </h2>
-
-                <div class="row g-4">
-
-                    <div class="col-md-6">
-
-                        <div class="prato">
-
-                            <img src="imagem/ancho.png"
-                                class="imagem-prato"
-                                alt="Ancho ao Molho">
-
-                            <h3 class="nome-prato">
-                                Ancho ao Molho
-                            </h3>
-
-                            <p class="descricao">
-                                Angus feito com queijos e farofa de
-                                pão de queijo.
-                            </p>
-
-                            <p class="preco">
-                                R$ 134,20
-                            </p>
-
-                            <button class="btn btn-pedir">
-                                Pedir agora
-                            </button>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-md-6">
-
-                        <div class="prato">
-
-                            <img src="imagem/nhoque.png"
-                                class="imagem-prato"
-                                alt="Nhoque de Costela">
-
-                            <h3 class="nome-prato">
-                                Nhoque de Costela
-                            </h3>
-
-                            <p class="descricao">
-                                Nhoque artesanal de batata baroa dourado.
-                                Servido com costela bovina braseada
-                                e lascas de queijo.
-                            </p>
-
-                            <p class="preco">
-                                R$ 89,00
-                            </p>
-
-                            <button class="btn btn-pedir">
-                                Pedir agora
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- ================= SEXTA ================= -->
-
-            <div class="tab-pane fade"
-                id="sexta"
-                role="tabpanel"
-                aria-labelledby="sexta-tab">
-
-                <h2 class="titulo-dia">
-                    Sexta-feira
-                </h2>
-
-                <div class="row g-4">
-
-                    <div class="col-md-6">
-
-                        <div class="prato">
-
-                            <img src="imagem/lasanha.png"
-                                class="imagem-prato"
-                                alt="Lasanha à Bolonhesa">
-
-                            <h3 class="nome-prato">
-                                Lasanha à Bolonhesa
-                            </h3>
-
-                            <p class="descricao">
-                                Massa artesanal recheada com molho de carne
-                                especial, coberta com queijo derretido
-                                e manjericão.
-                            </p>
-
-                            <p class="preco">
-                                R$ 75,00
-                            </p>
-
-                            <button class="btn btn-pedir">
-                                Pedir agora
-                            </button>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-md-6">
-
-                        <div class="prato">
-
-                            <img src="imagem/fileminhon.png"
-                                class="imagem-prato"
-                                alt="Filé Mignon ao Molho">
-
-                            <h3 class="nome-prato">
-                                Filé Mignon ao Molho
-                            </h3>
-
-                            <p class="descricao">
-                                Filé bovino ao molho de vinho tinto,
-                                servido com batatas, cogumelos e aspargos.
-                            </p>
-
-                            <p class="preco">
-                                R$ 112,00
-                            </p>
-
-                            <button class="btn btn-pedir">
-                                Pedir agora
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- ================= SÁBADO ================= -->
-
-            <div class="tab-pane fade"
-                id="sabado"
-                role="tabpanel"
-                aria-labelledby="sabado-tab">
-
-                <h2 class="titulo-dia">
-                    Sábado
-                </h2>
-
-                <div class="row g-4">
-
-                    <div class="col-md-6">
-
-                        <div class="prato">
-
-                            <img src="imagem/risoto.png"
-                                class="imagem-prato"
-                                alt="Risoto de Costela">
-
-                            <h3 class="nome-prato">
-                                Risoto de Costela
-                            </h3>
-
-                            <p class="descricao">
-                                Risoto cremoso com costela desfiada,
-                                finalizado com ervas frescas
-                                e toque crocante.
-                            </p>
-
-                            <p class="preco">
-                                R$ 80,00
-                            </p>
-
-                            <button class="btn btn-pedir">
-                                Pedir agora
-                            </button>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-md-6">
-
-                        <div class="prato">
-
-                            <img src="imagem/cordeiro.png"
-                                class="imagem-prato"
-                                alt="Cordeiro">
-
-                            <h3 class="nome-prato">
-                                Cordeiro
-                            </h3>
-
-                            <p class="descricao">
-                                Cordeiro servido com arroz,
-                                feijão e legumes.
-                            </p>
-
-                            <p class="preco">
-                                R$ 75,00
-                            </p>
-
-                            <button class="btn btn-pedir">
-                                Pedir agora
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- ================= DOMINGO ================= -->
-
-            <div class="tab-pane fade"
-                id="domingo"
-                role="tabpanel"
-                aria-labelledby="domingo-tab">
-
-                <h2 class="titulo-dia">
-                    Domingo
-                </h2>
-
-                <div class="row g-4">
-
-                    <div class="col-md-6">
-
-                        <div class="prato">
-
-                            <img src="imagem/costelabovina.png"
-                                class="imagem-prato"
-                                alt="Costela Bovina com Batatas Rústicas">
-
-                            <h3 class="nome-prato">
-                                Costela Bovina com Batatas Rústicas
-                            </h3>
-
-                            <p class="preco">
-                                R$ 79,90
-                            </p>
-
-                            <button class="btn btn-pedir">
-                                Pedir agora
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
+            </select>
 
         </div>
+
+        <!-- AMBIENTES -->
+       
+        <section class="ambientes">
+
+
+            <!-- AMBIENTE INTERNO -->
+
+            <article class="ambiente">
+
+                <img
+                    src=""
+                    alt="Ambiente interno do restaurante"
+                    class="foto"
+                >
+
+                <div class="descricao">
+                    <p>Ambientes aconchegantes e bem planejados para todos os
+                    momentos: desde mesas intimistas para duas pessoas, ideais
+                    para encontros tranquilos, até opções mais amplas para grupos
+                    e reuniões em família. Também contamos com mesas
+                    confortáveis para quatro pessoas e espaços com sofá, que
+                    oferecem ainda mais comodidade e uma experiência acolhedora
+                    para aproveitar cada detalhe da sua visita.
+                    </p>    
+                </div>
+
+            </article>
+
+
+
+            <!-- AMBIENTE EXTERNO -->
+
+            <article class="ambiente">
+
+                <img
+                    src=""
+                    alt="Área externa do restaurante"
+                    class="foto"
+                >
+
+
+                <div class="descricao">
+
+                   <p> Em um cenário ao ar livre com vista para o rio, o ambiente
+                    combina natureza, charme e aconchego para proporcionar uma
+                    experiência única. Com opções que vão de mesas para duas
+                    pessoas até espaços amplos para grupos e encontros em família,
+                    além de áreas com sofá que oferecem ainda mais conforto, tudo
+                    é envolvido por uma iluminação delicada que torna cada
+                    momento ainda mais especial e inesquecível.</p>
+
+                </div>
+
+            </article>
+
+        </section>
+
+       
+            <!-- RESERVA -->
+        
+        <section class="reserva">
+
+            <!-- HORÁRIO -->
+
+            <div>
+
+                <div class="titulo-reserva">
+                    HORÁRIO DISPONÍVEIS
+                </div>
+
+
+                <select class="campo">
+
+                    <option>
+                        Horário
+                    </option>
+
+                    <option>11:00</option>
+                    <option>12:00</option>
+                    <option>13:00</option>
+                    <option>14:00</option>
+                    <option>15:00</option>
+
+                </select>
+
+            </div>
+
+            <!-- MESAS -->
+
+            <div>
+
+                <div class="titulo-reserva">
+                    MESAS DISPONÍVEIS
+                </div>
+
+
+                <select class="campo">
+
+                    <option>
+                        Select
+                    </option>
+
+                    <option>Mesa 01</option>
+                    <option>Mesa 02</option>
+                    <option>Mesa 03</option>
+                    <option>Mesa 04</option>
+                    <option>Mesa 05</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- NOME + FINALIZAR -->
+
+            <div class="formulario">
+
+                <input
+                    type="text"
+                    class="nome"
+                    placeholder="Nome do cliente"
+                >
+
+
+                <a
+                    href="pagina_principal.html"
+                    class="finalizar"
+                >
+                    Finalizar
+                </a>
+
+            </div>
+
+
+        </section>
 
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!--  FOOTER-->
 
     <footer>
 
-        <p>
-            📞 (11) 93275-8484
-        </p>
+        <!-- ESQUERDA -->
 
-        <p>
-            © 2026 Sabor do Quintal - Todos os direitos reservados
-        </p>
+        <div class="footer-esquerda">
 
-        <a href="mailto:sabordoquintal@email.com">
-            ✉ sabordoquintal@email.com
-        </a>
+            <i class="bi bi-geo-alt"></i>
+
+            <i class="bi bi-telephone"></i>
+
+            <span>
+                (11) 9 3275-8484
+            </span>
+
+        </div>
+
+
+        <!-- CENTRO -->
+
+        <div class="footer-centro">
+
+            © Direitos autorais
+
+        </div>
+
+        <!-- DIREITA -->
+
+        <div class="footer-direita">
+
+            <span>
+                sabordoquintal@gmail.com
+            </span>
+
+            <i class="bi bi-gear config"></i>
+
+        </div>
 
     </footer>
 
+    <!-- Bootstrap JS -->
 
-    <!-- JavaScript Bootstrap -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
 

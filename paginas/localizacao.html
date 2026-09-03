@@ -1,670 +1,478 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+   <meta name="description" content="Página oficial do Sabor do Quintal, um restaurante de estilo rústico que oferece pratos caseiros e saborosos.
+    Conheça nosso cardápio, confira nossos pratos, faça sua reserva e encontre nossa localização.">
+    <meta name="keywords" content="Sabor do Quintal, restaurante, login">
+    <meta name="author" content="Luara Pires">
+    <link rel="icon" type="image/png" href="../favicon.png">
     <title>Sabor do Quintal</title>
 
-    <link rel="icon" type="image/png"
-        href="../TCC- Quintal do Sabor/imagem/favicon.png">
+    <title>Sabor do Quintal - Localização</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-
-        /* =========================
-           CONFIGURAÇÕES GERAIS
-        ========================= */
-
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            margin: 0;
-            background-color: #d7d3d0;
-            color: #000;
-            font-family: Georgia, "Times New Roman", serif;
+            background-color: #d8d5d2;
+            font-family: "Baloo 2", cursive;
+            color: #111;
         }
 
-        /* =========================
-           CABEÇALHO
-        ========================= */
+        /* ================= HEADER ================= */
 
         header {
-            height: 80px;
-            background-color: #f6ead0;
+            height: 95px;
+            background-color: #f8e8c9;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 5px 18px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+            padding: 8px 25px 8px 18px;
+            border-bottom: 2px solid #ddd;
         }
 
         .logo {
-            width: 66px;
-            height: 66px;
-            object-fit: contain;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .titulo {
-            margin: 0;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 28px;
-            font-weight: 900;
+            font-size: 36px;
+            font-weight: 800;
             font-style: italic;
-            text-align: center;
+            margin-left: 100px;
         }
 
         .home {
-            width: 55px;
-            text-align: center;
-            color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-decoration: none;
+            color: #000;
             font-family: Arial, sans-serif;
-            font-size: 9px;
+            font-size: 10px;
         }
 
         .home i {
-            display: block;
-            font-size: 27px;
-            line-height: 27px;
+            font-size: 28px;
+            margin-bottom: 0;
         }
 
-        /* =========================
-           CONTEÚDO
-        ========================= */
+        /* ================= CONTEÚDO ================= */
 
         main {
-            min-height: calc(100vh - 112px);
-            padding: 12px 40px 15px;
+            min-height: calc(100vh - 130px);
+            padding: 18px 30px 10px;
         }
 
-        /* =========================
-           SELECT SUPERIOR
-        ========================= */
-
-        .select-topo {
-            width: 142px;
-            height: 28px;
-            border: none;
-            border-radius: 7px;
-            background-color: #dc6f4e;
-            color: #000;
-            font-family: Arial, sans-serif;
-            font-size: 11px;
-            font-weight: bold;
-            padding-left: 48px;
-            cursor: pointer;
-            box-shadow: none;
-        }
-
-        .select-topo:focus {
-            background-color: #dc6f4e;
-            box-shadow: none;
-            border: none;
-        }
-
-        .select-container {
-            margin-bottom: 19px;
-        }
-
-        /* =========================
-           AMBIENTES
-        ========================= */
-
-        .ambientes {
+        .container-principal {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 55px;
-            max-width: 740px;
-            margin: 0 auto;
+            gap: 38px;
+            max-width: 930px;
+            margin: auto;
         }
 
-        .ambiente {
-            min-width: 0;
+        /* ================= FORMULÁRIO ================= */
+
+        .formulario {
+            background-color: #dfbd8b;
+            padding: 8px 30px 18px;
+            border-radius: 25px;
+            min-height: 225px;
+            position: relative;
+            box-shadow: 13px 8px 0 #dd6849;
         }
 
-        .imagem-ambiente {
-            width: 100%;
-            height: 229px;
-            object-fit: cover;
+        .campo {
+            margin-bottom: 7px;
+        }
+
+        .campo label {
             display: block;
-            border-radius: 15px;
-        }
-
-        /* =========================
-           TEXTOS
-        ========================= */
-
-        .textos {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 47px;
-            max-width: 735px;
-            margin: 25px auto 0;
-        }
-
-        .texto {
-            background-color: #dfbd8b;
-            border-radius: 23px;
-            padding: 13px 14px;
-            min-height: 143px;
-
-            font-size: 12px;
-            line-height: 1.18;
-            text-align: left;
-        }
-
-        /* =========================
-           ÁREA DE RESERVA
-        ========================= */
-
-        .reservas {
-            max-width: 725px;
-            margin: 64px auto 0;
-
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 45px;
-            align-items: end;
-        }
-
-        .coluna-reserva {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .titulo-reserva {
-            width: 174px;
-            height: 34px;
-
-            background-color: #dc6f4e;
-            border: none;
-            border-radius: 0;
-
-            color: #000;
-            font-family: Arial, sans-serif;
-            font-size: 10px;
-            font-weight: bold;
-
-            box-shadow: 2px 3px 1px rgba(80, 80, 80, 0.55);
-        }
-
-        .controles {
-            display: flex;
-            gap: 85px;
-            align-items: center;
-        }
-
-        .controle {
-            width: 142px;
-            height: 28px;
-            border: none;
-            border-radius: 7px;
-
-            background-color: #dc6f4e;
-            color: #000;
-
-            font-family: Arial, sans-serif;
-            font-size: 10px;
-            font-weight: bold;
-        }
-
-        .controle:focus {
-            background-color: #dc6f4e;
-            box-shadow: none;
-        }
-
-        .horario {
-            padding-left: 10px;
-            text-align: left;
-        }
-
-        .horario i {
-            margin-right: 35px;
             font-size: 13px;
+            font-weight: 800;
+            font-style: italic;
+            margin-left: 8px;
+            margin-bottom: 2px;
         }
 
-        .mesas {
-            padding-left: 46px;
-        }
-
-        /* =========================
-           FINALIZAÇÃO
-        ========================= */
-
-        .finalizacao {
-            background-color: #dfbd8b;
-            width: 315px;
-            min-height: 87px;
-            border-radius: 24px;
-            padding: 10px 8px;
-            margin-left: auto;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .nome {
+        .campo input {
             width: 100%;
-            height: 27px;
-
+            height: 32px;
             border: none;
             outline: none;
             border-radius: 9px;
-
-            background-color: #fff;
-            padding: 0 9px;
-
-            font-family: Georgia, serif;
-            font-size: 9px;
-            font-style: italic;
-            font-weight: bold;
-        }
-
-        .nome::placeholder {
-            color: #000;
-            opacity: 1;
-        }
-
-        .finalizar {
-            width: 142px;
-            height: 28px;
-
-            margin-left: auto;
-            margin-top: 8px;
-
-            border: none;
-            border-radius: 7px;
-
-            background-color: #dc6f4e;
-            color: #000;
-
-            font-family: Georgia, serif;
+            padding: 0 17px;
+            font-family: "Baloo 2", cursive;
             font-size: 12px;
-            font-style: italic;
-            font-weight: bold;
+            font-weight: 700;
+            background-color: #fff;
         }
 
-        .finalizar:hover {
-            background-color: #ce6343;
+        .campo input:focus {
+            box-shadow: 0 0 0 2px #dd6849;
         }
 
-        /* =========================
-           RODAPÉ
-        ========================= */
-
-        footer {
-            height: 32px;
-            background-color: #f6ead0;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 9px;
-
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 8px;
-        }
-
-        .footer-esquerda,
-        .footer-direita {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
-
-        .footer-esquerda i {
+        .btn-continuar {
+            margin-top: 16px;
+            width: 170px;
+            height: 34px;
+            border: none;
+            border-radius: 8px;
+            background-color: #dd6849;
+            color: #000;
+            font-family: "Baloo 2", cursive;
             font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.2s;
         }
 
-        .telefone {
-            font-size: 8px;
+        .btn-continuar:hover {
+            background-color: #c9573a;
+            transform: scale(1.03);
         }
 
-        .copyright {
-            font-size: 11px;
+        /* ================= MAPA ================= */
+
+        .mapa {
+            width: 100%;
+            height: 195px;
+            border-radius: 17px;
+            overflow: hidden;
+            background-color: #fff;
         }
 
-        .email {
-            font-size: 8px;
+        .mapa img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .config {
+        /* ================= TEXTO ================= */
+
+        .descricao {
+            background-color: #dfbd8b;
+            border-radius: 22px;
+            padding: 25px 14px;
+            min-height: 125px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.25;
+        }
+
+        /* ================= CONTATO ================= */
+
+        .contato {
+            width: 350px;
+            min-height: 124px;
+            background-color: #dfbd8b;
+            border-radius: 20px;
+            margin: 48px 0 0 12px;
+            padding: 20px 18px;
+            font-size: 17px;
+            line-height: 1.15;
+        }
+
+        .contato .telefone {
+            text-align: center;
+            margin-top: 20px;
             font-size: 18px;
         }
 
-        /* =========================
-           RESPONSIVIDADE
-        ========================= */
+        /* ================= FOTO ================= */
+
+        .foto-restaurante {
+            width: 320px;
+            height: 215px;
+            margin: 8px auto 0;
+            border-radius: 35px;
+            overflow: hidden;
+        }
+
+        .foto-restaurante img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            height: 32px;
+            background-color: #f8e8c9;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+        }
+
+        .telefone-footer i {
+            font-size: 16px;
+            vertical-align: middle;
+        }
+
+        .direitos {
+            font-family: "Courier New", monospace;
+            font-size: 13px;
+        }
+
+        .email {
+            font-weight: bold;
+        }
+
+        /* ================= RESPONSIVO ================= */
 
         @media (max-width: 768px) {
 
             header {
-                height: 75px;
-                padding: 5px 12px;
+                height: 80px;
+                padding: 5px 15px;
             }
 
             .logo {
-                width: 58px;
-                height: 58px;
+                width: 65px;
+                height: 65px;
             }
 
             .titulo {
-                font-size: 22px;
+                font-size: 25px;
+                margin-left: 0;
             }
 
             main {
-                padding: 12px 20px 20px;
+                padding: 20px 15px;
             }
 
-            .ambientes {
+            .container-principal {
                 grid-template-columns: 1fr;
                 gap: 25px;
-                max-width: 400px;
             }
 
-            .textos {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                max-width: 400px;
-            }
-
-            .reservas {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                max-width: 400px;
-                margin-top: 40px;
-            }
-
-            .controles {
-                justify-content: space-between;
-                gap: 10px;
-            }
-
-            .finalizacao {
+            .contato {
                 width: 100%;
+                margin: 20px 0 0;
+            }
+
+            .foto-restaurante {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .descricao {
+                margin-top: 15px;
             }
 
             footer {
-                height: auto;
-                min-height: 45px;
-                flex-wrap: wrap;
-                gap: 5px;
-                padding: 5px;
+                font-size: 8px;
             }
 
-            .copyright {
-                order: 3;
-                width: 100%;
-                text-align: center;
+            .direitos {
+                font-size: 10px;
             }
         }
-
-        @media (max-width: 420px) {
-
-            .titulo {
-                font-size: 19px;
-            }
-
-            .home {
-                width: 40px;
-            }
-
-            .imagem-ambiente {
-                height: auto;
-            }
-
-            .controles {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .controle {
-                width: 142px;
-            }
-        }
-
     </style>
 </head>
 
 <body>
 
-    <!-- =========================
-         CABEÇALHO
-    ========================== -->
+    <!-- ================= HEADER ================= -->
 
     <header>
 
-        <img src="../TCC- Quintal do Sabor/imagem/logo.png"
-             class="logo"
-             alt="Logo Sabor do Quintal">
+        <img src="../imagem/logo.png" alt="Logo Sabor do Quintal" class="logo">
 
         <h1 class="titulo">
-            Sabor do quintal
+            Sabor do Quintal
         </h1>
 
-        <a href="#" class="home">
+        <a href="pagina_principal.html" class="home">
             <i class="bi bi-house-door"></i>
-            Home
+            <span>Home</span>
         </a>
 
     </header>
 
 
-    <!-- =========================
-         CONTEÚDO PRINCIPAL
-    ========================== -->
+    <!-- ================= MAIN ================= -->
 
     <main>
 
-        <!-- SELECT SUPERIOR -->
+        <div class="container-principal">
 
-        <div class="select-container">
+            <!-- COLUNA ESQUERDA -->
 
-            <select class="form-select select-topo">
-                <option selected>Select</option>
-                <option value="1">Ambiente interno</option>
-                <option value="2">Ambiente externo</option>
-            </select>
+            <section>
 
-        </div>
+                <div class="formulario">
 
+                    <div class="campo">
+                        <label for="estado">Estado:</label>
+                        <input type="text" id="estado" value="São Paulo" placeholder="Digite o estado">
+                    </div>
 
-        <!-- =========================
-             IMAGENS DOS AMBIENTES
-        ========================== -->
+                    <div class="campo">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" value="Vila do Campo" placeholder="Digite a cidade">
+                    </div>
 
-        <section class="ambientes">
+                    <div class="campo">
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" value="Monte Alegre" placeholder="Digite o bairro">
+                    </div>
 
-            <div class="ambiente">
+                    <!-- BOTÃO GOOGLE MAPS -->
 
-                <img src="../TCC- Quintal do Sabor/imagem/mesa1.png"
-                     class="imagem-ambiente"
-                     alt="Mesas do ambiente interno">
+                    <button type="button" class="btn-continuar" onclick="abrirGoogleMaps()">
 
-            </div>
-
-
-            <div class="ambiente">
-
-                <img src="../TCC- Quintal do Sabor/imagem/mesa2.png"
-                     class="imagem-ambiente"
-                     alt="Mesas do ambiente externo">
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             DESCRIÇÕES
-        ========================== -->
-
-        <section class="textos">
-
-            <div class="texto">
-
-                Ambientes aconchegantes e bem planejados para todos os
-                momentos: desde mesas intimistas para duas pessoas, ideais
-                para encontros tranquilos, até opções mais amplas para grupos
-                e reuniões em família. Também contamos com mesas confortáveis
-                para quatro pessoas e espaços com sofá, que oferecem ainda
-                mais comodidade e uma experiência acolhedora para aproveitar
-                cada detalhe da sua visita.
-
-            </div>
-
-
-            <div class="texto">
-
-                Em um cenário ao ar livre com vista para o rio, o ambiente
-                combina natureza, charme e aconchego para proporcionar uma
-                experiência única. Com opções que vão de mesas para duas
-                pessoas até espaços amplos para grupos e encontros em família,
-                além de áreas com sofá que oferecem ainda mais conforto, tudo
-                é envolvido por uma iluminação delicada que torna cada momento
-                ainda mais especial e inesquecível.
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             ÁREA DE RESERVAS
-        ========================== -->
-
-        <section class="reservas">
-
-
-            <!-- HORÁRIOS -->
-
-            <div class="coluna-reserva">
-
-                <button type="button" class="titulo-reserva">
-                    HORÁRIO DISPONÍVEIS
-                </button>
-
-                <div class="controles">
-
-                    <button type="button"
-                            class="controle horario">
-
-                        <i class="bi bi-alarm-fill"></i>
-                        Horário
+                        Continuar
 
                     </button>
 
                 </div>
 
-            </div>
 
+                <!-- CONTATO -->
 
-            <!-- MESAS -->
+                <div class="contato">
 
-            <div class="coluna-reserva">
+                    <p>
+                        Caso tenha alguma dúvida entre em contato
+                        conosco
+                    </p>
 
-                <button type="button" class="titulo-reserva">
-                    MESAS DISPONÍVEIS
-                </button>
-
-                <div class="controles">
-
-                    <select class="controle mesas">
-                        <option selected>Select</option>
-                        <option value="mesa2">Mesa para 2</option>
-                        <option value="mesa4">Mesa para 4</option>
-                        <option value="grupo">Mesa de Grupo</option>
-                        <option value="sofa">Mesa com Sofá</option>
-                    </select>
+                    <p class="telefone">
+                        (11) 9 32758484
+                    </p>
 
                 </div>
 
-            </div>
+            </section>
 
 
-            <!-- =========================
-                 FINALIZAÇÃO
-            ========================== -->
+            <!-- COLUNA DIREITA -->
 
-            <div class="finalizacao">
+            <section>
 
-                <input type="text"
-                       class="nome"
-                       placeholder="Nome do cliente">
+                <!-- MAPA -->
 
-                <button type="button" class="finalizar">
-                    Finalizar
-                </button>
+                <div class="mapa">
 
-            </div>
+                    <img src="../imagem/mapa_restaurante.png" alt="Mapa do restaurante Sabor do Quintal">
 
-        </section>
+                </div>
+
+
+                <!-- DESCRIÇÃO -->
+
+                <div class="descricao">
+
+                    <p>
+                        O "Sabor do Quintal – Restaurante Rural" é o
+                        ponto focal, marcado por um pino vermelho com
+                        ícone de talheres e uma caixa de informações
+                        que exibe sua avaliação
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO RESTAURANTE -->
+
+                <div class="foto-restaurante">
+
+                    <img src="imagem/entrada_restaurante.png" alt="Entrada do restaurante Sabor do Quintal">
+
+                </div>
+
+            </section>
+
+        </div>
 
     </main>
 
 
-    <!-- =========================
-         RODAPÉ
-    ========================== -->
+    <!-- ================= FOOTER ================= -->
 
     <footer>
 
-        <!-- ESQUERDA -->
-
-        <div class="footer-esquerda">
-
-            <i class="bi bi-geo-alt"></i>
+        <div class="telefone-footer">
 
             <i class="bi bi-telephone"></i>
-
-            <span class="telefone">
-                (119) 32758484
-            </span>
+            (11) 9 32758484
 
         </div>
 
+        <div class="direitos">
 
-        <!-- CENTRO -->
-
-        <div class="copyright">
-
-            © Direitos autorais
+            ©Direitos autorais
 
         </div>
 
+        <div class="email">
 
-        <!-- DIREITA -->
-
-        <div class="footer-direita">
-
-            <span class="email">
-                sabordoquintal@gmail.com
-            </span>
-
-            <i class="bi bi-gear config"></i>
+            sabordoquintal@gmail.com
 
         </div>
 
     </footer>
 
 
-    <!-- Bootstrap JS -->
+    <!-- ================= JAVASCRIPT ================= -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    <script>
+
+        function abrirGoogleMaps() {
+
+            // Pega os valores digitados
+            const estado = document.getElementById("estado").value;
+            const cidade = document.getElementById("cidade").value;
+            const bairro = document.getElementById("bairro").value;
+
+            // Monta o endereço
+            const endereco =
+                "Sabor do Quintal Restaurante Rural, " +
+                bairro + ", " +
+                cidade + ", " +
+                estado;
+
+            // Cria o link do Google Maps
+            const url =
+                "https://www.google.com/maps/search/?api=1&query=" +
+                encodeURIComponent(endereco);
+
+            // Abre o Google Maps em uma nova aba
+            window.open(url, "_blank");
+
+        }
+
     </script>
 
 </body>

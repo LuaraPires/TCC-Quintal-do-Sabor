@@ -2,130 +2,400 @@
 <html lang="pt-br">
 
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="descripition" content="...">
-    <meta name="keywords" content="sites, web">
+    <meta name="description"
+        content="Este código cria uma página de login responsiva para o restaurante Sabor do Quintal, utilizando HTML, CSS e Bootstrap. 
+        A página possui cabeçalho com logo, formulário para nome, e-mail, telefone e senha, opção de recuperação de senha, 
+        botão de entrada e rodapé com informações de contato. O design utiliza cores personalizadas e se adapta a computadores, tablets e celulares.">
+    <meta name="keywords" content="Sabor do Quintal, restaurante, login">
     <meta name="author" content="Luara Pires">
-
     <link rel="icon" type="image/png" href="../favicon.png">
+    <title>Sabor do Quintal - Login</title>
 
-    <title>Sabor do Quintal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/base.css"  rel="stylesheet">
-    <link href="../css/login.css" rel="stylesheet">
+
+
+    <!-- CSS -->
+
+    <style>
+
+        
+        /*PALETA DE CORES - SABOR DO QUINTAL */
+        :root {
+            --cinza-fundo: #D5D1CD;
+            --bege: #F4E7CF;
+            --terracota: #D96A4A;
+            --coral: #F98462;
+            --bege-sombra: #D8B78B;
+            --branco: #FFFDFD;
+            --preto: #000000;
+        }
+
+        /* CONFIGURAÇÃO GERAL */
+
+        html,
+        body {
+
+            margin: 0;
+            background-color: var(--cinza-fundo);
+            color: var(--preto);
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /*HEADER */
+
+        header {
+            background-color: var(--bege);
+            height: 90px;
+            border-bottom: 2px solid #299EF8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* LOGO */
+        header img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            position: relative;
+            border: 2px solid var(--terracota);
+        }
+
+
+        /* MAIN*/
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding-top: 35px;
+            padding-bottom: 35px;
+        }
+
+        /* TEXTO DE BOAS-VINDAS*/
+        .login-text {
+            padding: 20px;
+        }
+
+        .login-text h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: 900;
+            font-size: 38px;
+            line-height: 1.25;
+            color: var(--preto);
+        }
+
+        .login-text h1 span {
+            display: block;
+        }
+
+        .login-text p {
+            font-size: 17px;
+            line-height: 1.5;
+            max-width: 480px;
+            margin-top: 20px;
+        }
+
+        /*CARD DE LOGIN */
+        .login-container {
+            background-color: var(--terracota);
+            border-radius: 12px;
+            padding: 25px;
+            width: 100%;
+            max-width: 390px;
+            margin: auto;
+            box-shadow:
+                10px 12px 0 var(--bege-sombra);
+        }
+
+        /* TÍTULO */
+        .login-title {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        /*LABEL */
+        .form-label {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+
+        /* INPUTS*/
+        .form-control {
+            height: 42px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--branco);
+            color: var(--preto);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .form-control:focus {
+            background-color: var(--branco);
+            border: 2px solid var(--coral);
+            box-shadow:
+                0 0 0 0.15rem rgba(249, 132, 98, 0.35);
+        }
+
+        .form-control::placeholder {
+            color: #777;
+            opacity: 0.7;
+        }
+
+
+        /* ESQUECEU A SENHA */
+        .esqueceu-senha {
+            color: #59382E;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .esqueceu-senha:hover {
+            color: var(--preto);
+            text-decoration: underline;
+        }
+
+        /*  BOTÃO ENTRAR */
+        .btn-entrar {
+            background-color: rgb(248, 118, 79);
+            color: black;
+            height: 54px;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: 900;
+            font-size: 20px;
+
+        }
+
+        .btn-entrar:hover {
+            background-color: #F47755;
+            color: var(--preto);
+            transform: translateY(-2px);
+        }
+
+        .btn-entrar:active {
+            transform: translateY(1px);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--bege);
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 35px;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 11px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: var(--preto);
+            text-decoration: none;
+            font-size: 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /*TABLETS */
+        @media (max-width: 768px) {
+            main {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            .login-text {
+
+                text-align: center;
+            }
+
+            .login-text h1 {
+                font-size: 34px;
+            }
+
+            .login-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .login-container {
+                max-width: 400px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 5px;
+                padding: 12px;
+                text-align: center;
+            }
+        }
+
+
+        /* CELULARES */
+        @media (max-width: 576px) {
+            header {
+                height: 65px;
+            }
+
+            header img {
+                width: 65px;
+                height: 65px;
+            }
+
+            main {
+                padding: 35px 15px;
+            }
+
+            .login-text h1 {
+                font-size: 30px;
+            }
+
+            .login-text p {
+                font-size: 15px;
+            }
+
+            .login-container {
+                padding: 22px;
+                box-shadow:
+                    7px 8px 0 var(--bege-sombra);
+            }
+
+            .btn-entrar {
+                height: 50px;
+            }
+        }
+    </style>
 
 </head>
 
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+
+    <!-- =====================HEADER==================== -->
 
     <header>
 
-        <div class="logo">
-
-            <img src="../imagem/logo.png" class="rounded-circle" alt="Logo Sabor do Quintal" width="90" >
-
+        <div class="container text-center">
+            <img src="../imagem/logo.png" class="rounded-circle" alt="Logo Sabor do Quintal">
         </div>
 
     </header>
 
+    <!-- =================MAIN======================== -->
+    <main class="container">
+        <div class="row justify-content-center align-items-center g-5">
 
-    <!-- ================= MAIN ================= -->
-
-    <main>
-
-        <div class="login-area">
-
-            <!-- TEXTO -->
-
-            <div class="login-text">
-
+            <div class="col-12 col-md-6 login-text">
                 <h1>
                     Bem-vindo ao
-                    <span>Sabor do Quintal!</span>
+                    <span>
+                        Sabor do Quintal!
+                    </span>
                 </h1>
-
                 <p>
                     Acesse sua conta para continuar e aproveitar
                     todos os recursos do nosso restaurante.
                 </p>
-
             </div>
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="login-container">
+                    <form action="pagina_principal.html">
+                        <!-- TÍTULO -->
+                        <h2 class="login-title text-center">
+                            Entrar
+                        </h2>
+                        <!-- NOME -->
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">
+                                Nome:
+                            </label>
+                            <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite seu nome"
+                                autocomplete="name" required>
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">
+                                E-mail:
+                            </label>
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="Digite seu e-mail" autocomplete="email" required>
+
+                        </div>
 
 
-            <!-- FORMULÁRIO -->
 
-            <div class="login-container">
-
-                <form>
-
-                    <h2 class="login-title">
-                        Entrar
-                    </h2>
-
-
-                    <!-- NOME -->
-
-                    <label for="nome" class="form-label">
-                        Nome:
-                    </label>
-
-                    <input type="text" id="nome" class="form-control" placeholder="Digite seu nome">
+                        <!-- TELEFONE -->
+                        <div class="mb-3">
+                            <label for="telefone" class="form-label">
+                                Telefone:
+                            </label>
+                            <input type="tel" id="telefone" name="telefone" class="form-control"
+                                placeholder="(00) 00000-0000" autocomplete="tel" required>
+                        </div>
 
 
-                    <!-- EMAIL -->
-
-                    <label for="email" class="form-label">
-                        E-mail:
-                    </label>
-
-                    <input type="email" id="email" class="form-control" placeholder="Digite seu e-mail">
-
-
-                    <!-- TELEFONE -->
-
-                    <label for="telefone" class="form-label">
-                        Telefone:
-                    </label>
-
-                    <input type="tel" id="telefone" class="form-control" placeholder="(00) 00000-0000">
+                        <!-- SENHA -->
+                        <div class="mb-2">
+                            <label for="senha" class="form-label">
+                                Senha:
+                            </label>
+                            <input type="password" id="senha" name="senha" class="form-control"
+                                placeholder="Digite sua senha" autocomplete="current-password" required>
+                        </div>
 
 
-                    <!-- SENHA -->
 
-                    <label for="senha" class="form-label">
-                        Senha:
-                    </label>
-
-                    <input type="password" id="senha" class="form-control" placeholder="Digite sua senha">
-
-
-                    <!-- ESQUECEU A SENHA -->
-
-                    <a href="#" class="esqueceu-senha">
-                        Esqueceu a senha?
-                    </a>
+                        <!-- ESQUECEU A SENHA -->
+                        <div class="text-end mb-4">
+                            <a href="#" class="esqueceu-senha">
+                                Esqueceu a senha?
+                            </a>
+                        </div>
 
 
-                    <!-- BOTÃO -->
 
-                    <button type="submit" class="btn-entrar">
-                        <a href="pagina_principal.html">Entrar</a>
-                    </button>
-
-                </form>
-
+                        <!-- BOTÃO -->
+                        <button type="submit" class="btn btn-entrar w-100">
+                            <a href="pagina_principal.html">
+                                Entrar
+                            </a>
+                        </button>
+                    </form>
+                </div>
             </div>
-
         </div>
-
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
 
     <footer>
 
@@ -133,18 +403,32 @@
             📞 (11) 93275-8484
         </p>
 
+
         <p>
-            © 2026 Sabor do Quintal - Todos os direitos reservados
+
+            © 2026 Sabor do Quintal -
+            Todos os direitos reservados
+
         </p>
 
+
         <a href="mailto:sabordoquintal@email.com">
+
             ✉ sabordoquintal@email.com
+
         </a>
 
     </footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- =====================================================
+         BOOTSTRAP JS
+         ===================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
 
 </body>
 
