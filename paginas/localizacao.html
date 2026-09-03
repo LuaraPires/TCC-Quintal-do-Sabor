@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Sabor do Quintal</title>
+
+    <link rel="icon" type="image/png"
+        href="../TCC- Quintal do Sabor/imagem/favicon.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #d7d3d0;
+            color: #000;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
+        header {
+            height: 80px;
+            background-color: #f6ead0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 18px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo {
+            width: 66px;
+            height: 66px;
+            object-fit: contain;
+        }
+
+        .titulo {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 28px;
+            font-weight: 900;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .home {
+            width: 55px;
+            text-align: center;
+            color: #000;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+        }
+
+        .home i {
+            display: block;
+            font-size: 27px;
+            line-height: 27px;
+        }
+
+        /* =========================
+           CONTEÚDO
+        ========================= */
+
+        main {
+            min-height: calc(100vh - 112px);
+            padding: 12px 40px 15px;
+        }
+
+        /* =========================
+           SELECT SUPERIOR
+        ========================= */
+
+        .select-topo {
+            width: 142px;
+            height: 28px;
+            border: none;
+            border-radius: 7px;
+            background-color: #dc6f4e;
+            color: #000;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            padding-left: 48px;
+            cursor: pointer;
+            box-shadow: none;
+        }
+
+        .select-topo:focus {
+            background-color: #dc6f4e;
+            box-shadow: none;
+            border: none;
+        }
+
+        .select-container {
+            margin-bottom: 19px;
+        }
+
+        /* =========================
+           AMBIENTES
+        ========================= */
+
+        .ambientes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            max-width: 740px;
+            margin: 0 auto;
+        }
+
+        .ambiente {
+            min-width: 0;
+        }
+
+        .imagem-ambiente {
+            width: 100%;
+            height: 229px;
+            object-fit: cover;
+            display: block;
+            border-radius: 15px;
+        }
+
+        /* =========================
+           TEXTOS
+        ========================= */
+
+        .textos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 47px;
+            max-width: 735px;
+            margin: 25px auto 0;
+        }
+
+        .texto {
+            background-color: #dfbd8b;
+            border-radius: 23px;
+            padding: 13px 14px;
+            min-height: 143px;
+
+            font-size: 12px;
+            line-height: 1.18;
+            text-align: left;
+        }
+
+        /* =========================
+           ÁREA DE RESERVA
+        ========================= */
+
+        .reservas {
+            max-width: 725px;
+            margin: 64px auto 0;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: end;
+        }
+
+        .coluna-reserva {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .titulo-reserva {
+            width: 174px;
+            height: 34px;
+
+            background-color: #dc6f4e;
+            border: none;
+            border-radius: 0;
+
+            color: #000;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: bold;
+
+            box-shadow: 2px 3px 1px rgba(80, 80, 80, 0.55);
+        }
+
+        .controles {
+            display: flex;
+            gap: 85px;
+            align-items: center;
+        }
+
+        .controle {
+            width: 142px;
+            height: 28px;
+            border: none;
+            border-radius: 7px;
+
+            background-color: #dc6f4e;
+            color: #000;
+
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .controle:focus {
+            background-color: #dc6f4e;
+            box-shadow: none;
+        }
+
+        .horario {
+            padding-left: 10px;
+            text-align: left;
+        }
+
+        .horario i {
+            margin-right: 35px;
+            font-size: 13px;
+        }
+
+        .mesas {
+            padding-left: 46px;
+        }
+
+        /* =========================
+           FINALIZAÇÃO
+        ========================= */
+
+        .finalizacao {
+            background-color: #dfbd8b;
+            width: 315px;
+            min-height: 87px;
+            border-radius: 24px;
+            padding: 10px 8px;
+            margin-left: auto;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .nome {
+            width: 100%;
+            height: 27px;
+
+            border: none;
+            outline: none;
+            border-radius: 9px;
+
+            background-color: #fff;
+            padding: 0 9px;
+
+            font-family: Georgia, serif;
+            font-size: 9px;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .nome::placeholder {
+            color: #000;
+            opacity: 1;
+        }
+
+        .finalizar {
+            width: 142px;
+            height: 28px;
+
+            margin-left: auto;
+            margin-top: 8px;
+
+            border: none;
+            border-radius: 7px;
+
+            background-color: #dc6f4e;
+            color: #000;
+
+            font-family: Georgia, serif;
+            font-size: 12px;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .finalizar:hover {
+            background-color: #ce6343;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            height: 32px;
+            background-color: #f6ead0;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 9px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 8px;
+        }
+
+        .footer-esquerda,
+        .footer-direita {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .footer-esquerda i {
+            font-size: 16px;
+        }
+
+        .telefone {
+            font-size: 8px;
+        }
+
+        .copyright {
+            font-size: 11px;
+        }
+
+        .email {
+            font-size: 8px;
+        }
+
+        .config {
+            font-size: 18px;
+        }
+
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            header {
+                height: 75px;
+                padding: 5px 12px;
+            }
+
+            .logo {
+                width: 58px;
+                height: 58px;
+            }
+
+            .titulo {
+                font-size: 22px;
+            }
+
+            main {
+                padding: 12px 20px 20px;
+            }
+
+            .ambientes {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                max-width: 400px;
+            }
+
+            .textos {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                max-width: 400px;
+            }
+
+            .reservas {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                max-width: 400px;
+                margin-top: 40px;
+            }
+
+            .controles {
+                justify-content: space-between;
+                gap: 10px;
+            }
+
+            .finalizacao {
+                width: 100%;
+            }
+
+            footer {
+                height: auto;
+                min-height: 45px;
+                flex-wrap: wrap;
+                gap: 5px;
+                padding: 5px;
+            }
+
+            .copyright {
+                order: 3;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            .titulo {
+                font-size: 19px;
+            }
+
+            .home {
+                width: 40px;
+            }
+
+            .imagem-ambiente {
+                height: auto;
+            }
+
+            .controles {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .controle {
+                width: 142px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header>
+
+        <img src="../TCC- Quintal do Sabor/imagem/logo.png"
+             class="logo"
+             alt="Logo Sabor do Quintal">
+
+        <h1 class="titulo">
+            Sabor do quintal
+        </h1>
+
+        <a href="#" class="home">
+            <i class="bi bi-house-door"></i>
+            Home
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main>
+
+        <!-- SELECT SUPERIOR -->
+
+        <div class="select-container">
+
+            <select class="form-select select-topo">
+                <option selected>Select</option>
+                <option value="1">Ambiente interno</option>
+                <option value="2">Ambiente externo</option>
+            </select>
+
+        </div>
+
+
+        <!-- =========================
+             IMAGENS DOS AMBIENTES
+        ========================== -->
+
+        <section class="ambientes">
+
+            <div class="ambiente">
+
+                <img src="../TCC- Quintal do Sabor/imagem/mesa1.png"
+                     class="imagem-ambiente"
+                     alt="Mesas do ambiente interno">
+
+            </div>
+
+
+            <div class="ambiente">
+
+                <img src="../TCC- Quintal do Sabor/imagem/mesa2.png"
+                     class="imagem-ambiente"
+                     alt="Mesas do ambiente externo">
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DESCRIÇÕES
+        ========================== -->
+
+        <section class="textos">
+
+            <div class="texto">
+
+                Ambientes aconchegantes e bem planejados para todos os
+                momentos: desde mesas intimistas para duas pessoas, ideais
+                para encontros tranquilos, até opções mais amplas para grupos
+                e reuniões em família. Também contamos com mesas confortáveis
+                para quatro pessoas e espaços com sofá, que oferecem ainda
+                mais comodidade e uma experiência acolhedora para aproveitar
+                cada detalhe da sua visita.
+
+            </div>
+
+
+            <div class="texto">
+
+                Em um cenário ao ar livre com vista para o rio, o ambiente
+                combina natureza, charme e aconchego para proporcionar uma
+                experiência única. Com opções que vão de mesas para duas
+                pessoas até espaços amplos para grupos e encontros em família,
+                além de áreas com sofá que oferecem ainda mais conforto, tudo
+                é envolvido por uma iluminação delicada que torna cada momento
+                ainda mais especial e inesquecível.
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ÁREA DE RESERVAS
+        ========================== -->
+
+        <section class="reservas">
+
+
+            <!-- HORÁRIOS -->
+
+            <div class="coluna-reserva">
+
+                <button type="button" class="titulo-reserva">
+                    HORÁRIO DISPONÍVEIS
+                </button>
+
+                <div class="controles">
+
+                    <button type="button"
+                            class="controle horario">
+
+                        <i class="bi bi-alarm-fill"></i>
+                        Horário
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MESAS -->
+
+            <div class="coluna-reserva">
+
+                <button type="button" class="titulo-reserva">
+                    MESAS DISPONÍVEIS
+                </button>
+
+                <div class="controles">
+
+                    <select class="controle mesas">
+                        <option selected>Select</option>
+                        <option value="mesa2">Mesa para 2</option>
+                        <option value="mesa4">Mesa para 4</option>
+                        <option value="grupo">Mesa de Grupo</option>
+                        <option value="sofa">Mesa com Sofá</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 FINALIZAÇÃO
+            ========================== -->
+
+            <div class="finalizacao">
+
+                <input type="text"
+                       class="nome"
+                       placeholder="Nome do cliente">
+
+                <button type="button" class="finalizar">
+                    Finalizar
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+        <!-- ESQUERDA -->
+
+        <div class="footer-esquerda">
+
+            <i class="bi bi-geo-alt"></i>
+
+            <i class="bi bi-telephone"></i>
+
+            <span class="telefone">
+                (119) 32758484
+            </span>
+
+        </div>
+
+
+        <!-- CENTRO -->
+
+        <div class="copyright">
+
+            © Direitos autorais
+
+        </div>
+
+
+        <!-- DIREITA -->
+
+        <div class="footer-direita">
+
+            <span class="email">
+                sabordoquintal@gmail.com
+            </span>
+
+            <i class="bi bi-gear config"></i>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+</html>
