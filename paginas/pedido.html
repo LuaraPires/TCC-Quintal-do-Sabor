@@ -2,14 +2,20 @@
 <html lang="pt-br">
 
 <head>
+
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="Página oficial do Sabor do Quintal, um restaurante de estilo rústico que oferece pratos caseiros e saborosos.
-    Conheça nosso cardápio, confira nossos pratos, faça sua reserva e encontre nossa localização.">
-    <meta name="keywords" content="Sabor do Quintal, restaurante, login">
+
+    <meta name="description"
+        content="Página oficial do Sabor do Quintal, um restaurante de estilo rústico que oferece pratos caseiros e saborosos.">
+
+    <meta name="keywords"
+        content="Sabor do Quintal, restaurante, cardápio, comida caseira">
+
     <meta name="author" content="Luara Pires">
-    <link rel="icon" type="image/png" href="../faviconn.png">
-    <title>Sabor do Quintal</title>
+
+    <title>Sabor do Quintal - Pedido</title>
 
     <style>
 
@@ -22,108 +28,154 @@
             font-family: Arial, sans-serif;
             background-color: #d5d1ce;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
             color: #2d241e;
         }
 
-        /* HEADER */
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
-            height: 78px;
+            height: 90px;
             background-color: #f5e9cd;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             position: relative;
         }
 
         .logo {
             position: absolute;
-            left: 18px;
-            top: 7px;
-            width: 65px;
-            height: 64px;
+            left: 30px;
+            top: 10px;
+
+            width: 70px;
+            height: 70px;
+
             object-fit: contain;
         }
 
         header h1 {
             margin: 0;
+
             font-family: Georgia, serif;
             font-style: italic;
             font-weight: bold;
-            font-size: 29px;
+
+            font-size: 34px;
+
             color: #17120f;
         }
 
-        /* MAIN */
+        /* =========================
+           MAIN
+        ========================= */
 
         main {
-            flex: 1;
-            padding: 55px 20px 70px;
+            min-height: calc(100vh - 122px);
+            padding: 45px 30px 80px;
             position: relative;
         }
 
         .subtitulo {
             text-align: center;
-            margin-bottom: 22px;
+
+            margin-bottom: 25px;
+
             color: #4b392d;
-            font-size: 16px;
+
+            font-size: 18px;
             font-weight: bold;
         }
 
-        /* CARD */
+        /* =========================
+           CARD DO PEDIDO
+        ========================= */
 
         .pedido {
-            width: 80%;
-            max-width: 850px;
-            min-height: 350px;
+            width: 100%;
+            max-width: 1150px;
+
+            min-height: 390px;
+
             margin: auto;
+
             background-color: #dfbd8c;
+
             border-radius: 25px;
-            padding: 40px 60px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+            padding: 50px 70px;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
-        /* LINHAS */
+        /* =========================
+           LINHAS
+        ========================= */
 
         .linha {
             display: grid;
-            grid-template-columns: 120px 180px 1fr;
+
+            grid-template-columns: 130px 280px 1fr;
+
             align-items: center;
-            column-gap: 35px;
-            margin-bottom: 35px;
+
+            column-gap: 50px;
+
+            margin-bottom: 40px;
         }
 
         .linha:last-child {
             margin-bottom: 0;
         }
 
-        /* IMAGENS */
+        /* =========================
+           IMAGENS
+        ========================= */
 
         .imagem-item {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
+
             object-fit: cover;
-            border-radius: 14px;
+
+            border-radius: 15px;
+
             border: 3px solid #f5e9cd;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+
+            box-shadow:
+                0 4px 10px rgba(0, 0, 0, 0.18);
         }
 
-        /* SELECT */
+        /* =========================
+           SELECT
+        ========================= */
 
         select {
-            width: 180px;
-            height: 38px;
-            padding: 4px 12px;
+            width: 250px;
+            height: 44px;
+
+            padding: 5px 15px;
+
             border: none;
-            border-radius: 8px;
+
+            border-radius: 9px;
+
             background-color: #d96c4c;
+
             color: #000;
-            font-size: 12px;
+
+            font-size: 14px;
+
             font-weight: bold;
+
             text-align: center;
+
             outline: none;
+
             cursor: pointer;
         }
 
@@ -131,125 +183,583 @@
             background-color: #cf6242;
         }
 
-        /* DESCRIÇÃO */
+        /* =========================
+           QUANTIDADE
+        ========================= */
+
+        .quantidade {
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            margin-top: 12px;
+        }
+
+        .quantidade label {
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .quantidade button {
+            width: 32px;
+            height: 32px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background-color: #d96c4c;
+
+            color: #000;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .quantidade button:hover {
+            background-color: #c75b3d;
+        }
+
+        .quantidade input {
+            width: 50px;
+            height: 32px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background-color: #f5e9cd;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           DESCRIÇÃO
+        ========================= */
 
         .descricao {
             width: 100%;
-            max-width: 280px;
-            min-height: 55px;
+            max-width: 480px;
+
+            min-height: 75px;
+
             margin: 0;
-            padding: 10px 14px;
+
+            padding: 15px 18px;
+
             background-color: #d96c4c;
-            border-radius: 12px;
-            font-size: 11px;
+
+            border-radius: 13px;
+
+            font-size: 13px;
+
             font-weight: bold;
-            line-height: 14px;
+
+            line-height: 18px;
+
             color: #000;
         }
 
-        /* TOTAL */
+        /* =========================
+           TOTAL
+        ========================= */
 
         .linha-total {
-            margin-top: 5px;
+            margin-top: 10px;
             margin-bottom: 0;
         }
 
         .total-label {
-            width: 180px;
-            height: 38px;
+            width: 250px;
+            height: 45px;
+
             background-color: #d96c4c;
-            border-radius: 8px;
+
+            border-radius: 9px;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+
+            font-size: 14px;
+
             font-weight: bold;
         }
 
         .valor-total {
-            width: 140px;
-            height: 45px;
+            width: 180px;
+            height: 50px;
+
             background-color: #d96c4c;
+
             border-radius: 13px;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+
+            font-size: 15px;
+
             font-weight: bold;
         }
 
-        /* BOTÃO */
+        /* =========================
+           BOTÕES
+        ========================= */
 
-        .botao-continuar {
-            position: absolute;
-            right: 30px;
-            bottom: 25px;
-            width: 140px;
-            height: 35px;
+        .botoes {
+            display: flex;
+
+            justify-content: flex-end;
+
+            align-items: center;
+
+            gap: 18px;
+
+            max-width: 1150px;
+
+            margin: 25px auto 0;
+
+            padding-right: 10px;
+        }
+
+        .botoes a {
+            text-decoration: none;
+        }
+
+        .botoes button {
+            width: 155px;
+            height: 42px;
+
             border: none;
-            border-radius: 8px;
+
+            border-radius: 9px;
+
             background-color: #d96c4c;
+
             color: #000;
+
             font-family: Georgia, serif;
+
             font-style: italic;
+
             font-weight: bold;
-            font-size: 14px;
+
+            font-size: 15px;
+
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+            box-shadow:
+                0 4px 8px rgba(0, 0, 0, 0.15);
+
+            transition: 0.2s;
         }
 
-        .botao-continuar:hover {
+        .botoes button:hover {
             background-color: #c75b3d;
+
             transform: translateY(-2px);
         }
 
-        /* FOOTER */
+        /* =========================
+           TELA FINAL
+        ========================= */
+
+        #telaFinal {
+            display: none;
+            text-align: center;
+        }
+
+        .card-final {
+            width: 100%;
+            max-width: 800px;
+
+            margin: 20px auto;
+
+            background-color: #dfbd8c;
+
+            border-radius: 25px;
+
+            padding: 45px 60px;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-final h2 {
+            font-family: Georgia, serif;
+
+            font-style: italic;
+
+            font-size: 32px;
+
+            margin-bottom: 20px;
+        }
+
+        .card-final p {
+            font-size: 17px;
+
+            font-weight: bold;
+
+            line-height: 1.6;
+        }
+
+        .resumo {
+            background-color: #d96c4c;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            margin: 25px 0;
+
+            text-align: left;
+        }
+
+        .resumo p {
+            margin: 10px 0;
+
+            font-size: 15px;
+        }
+
+        .botao-voltar {
+            width: 170px;
+            height: 44px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background-color: #d96c4c;
+
+            color: #000;
+
+            font-family: Georgia, serif;
+
+            font-style: italic;
+
+            font-weight: bold;
+
+            font-size: 15px;
+
+            cursor: pointer;
+
+            margin: 5px;
+        }
+
+        .botao-voltar:hover {
+            background-color: #c75b3d;
+        }
+
+        /* =========================
+           NOTA
+        ========================= */
+
+        #telaNota {
+            display: none;
+            text-align: center;
+        }
+
+        .nota {
+            width: 100%;
+            max-width: 900px;
+
+            margin: 10px auto 40px;
+
+            background-color: white;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .nota-header {
+            background-color: #f5e9cd;
+
+            padding: 30px;
+        }
+
+        .nota-header img {
+            width: 75px;
+            height: 75px;
+
+            object-fit: contain;
+        }
+
+        .nota-header h2 {
+            margin: 8px 0 0;
+
+            font-family: Georgia, serif;
+
+            font-style: italic;
+
+            font-size: 32px;
+        }
+
+        .nota-header p {
+            margin-bottom: 0;
+        }
+
+        .nota-conteudo {
+            padding: 35px 50px;
+
+            text-align: left;
+        }
+
+        .dados-pedido {
+            display: flex;
+
+            justify-content: space-between;
+
+            border-bottom: 1px solid #ddd;
+
+            padding-bottom: 15px;
+
+            margin-bottom: 25px;
+
+            font-size: 15px;
+        }
+
+        .produto-nota {
+            background-color: #dfbd8c;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            margin-bottom: 18px;
+        }
+
+        .produto-nota h3 {
+            margin: 0 0 12px;
+
+            font-family: Georgia, serif;
+
+            font-size: 21px;
+        }
+
+        .produto-nota p {
+            margin: 7px 0;
+
+            font-size: 15px;
+        }
+
+        .subtotal {
+            text-align: right;
+
+            font-weight: bold;
+
+            font-size: 17px !important;
+        }
+
+        .total-nota {
+            background-color: #d96c4c;
+
+            color: #000;
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            margin-top: 22px;
+        }
+
+        .botoes-nota {
+            padding: 0 30px 30px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 18px;
+        }
+
+        .botoes-nota button {
+            width: 180px;
+            height: 44px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background-color: #d96c4c;
+
+            font-family: Georgia, serif;
+
+            font-style: italic;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            cursor: pointer;
+        }
+
+        .botoes-nota button:hover {
+            background-color: #c75b3d;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             height: 32px;
-            flex-shrink: 0;
+
             background-color: #f5e9cd;
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
-            padding: 0 10px;
+
+            padding: 0 20px;
+
             color: #000;
-            font-size: 8px;
-            position: relative;
+
+            font-size: 9px;
+
+            position: fixed;
+
+            bottom: 0;
+
+            left: 0;
+
+            right: 0;
+
+            z-index: 10;
         }
 
         .footer-esquerda,
         .footer-centro,
         .footer-direita {
             display: flex;
-            align-items: center;
-        }
 
-        footer i {
-            font-size: 13px;
-            margin-right: 4px;
+            align-items: center;
         }
 
         .footer-centro {
             position: absolute;
+
             left: 50%;
+
             transform: translateX(-50%);
         }
 
-        .footer-direita {
-            gap: 6px;
-        }
+        /* =========================
+           DESKTOP
+        ========================= */
 
-        /* DESKTOP */
-
-        @media (min-width: 900px) {
-
-            main {
-                padding-top: 55px;
-            }
+        @media (min-width: 1200px) {
 
             .pedido {
-                width: 850px;
+                max-width: 1200px;
+            }
+
+            .linha {
+                grid-template-columns: 130px 300px 1fr;
+
+                column-gap: 60px;
+            }
+
+            .descricao {
+                max-width: 550px;
+            }
+
+            .botoes {
+                max-width: 1200px;
+            }
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .pedido {
+                width: 95%;
+                padding: 35px 30px;
+            }
+
+            .linha {
+                grid-template-columns: 100px 220px 1fr;
+                column-gap: 25px;
+            }
+
+            select {
+                width: 210px;
+            }
+
+            .descricao {
+                max-width: 300px;
+            }
+
+        }
+
+        /* =========================
+           IMPRESSÃO
+        ========================= */
+
+        @media print {
+
+            body {
+                background-color: white;
+                padding: 0;
+            }
+
+            header,
+            footer,
+            #telaPedido,
+            #telaFinal,
+            .botoes-nota {
+                display: none !important;
+            }
+
+            #telaNota {
+                display: block !important;
+            }
+
+            .nota {
+                width: 100%;
+                max-width: 100%;
+
+                margin: 0;
+
+                box-shadow: none;
+
+                border-radius: 0;
+            }
+
+            .nota-header {
+                padding: 15px;
+            }
+
+            .nota-conteudo {
+                padding: 20px;
             }
 
         }
@@ -260,91 +770,138 @@
 
 
 <body>
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
     <header>
 
-        <img src="../favicon.png"class="logo" alt="Logo Sabor do Quintal">
+        <img src="../favicon.png"
+            class="logo"
+            alt="Logo Sabor do Quintal">
 
-        <h1>Sabor do Quintal</h1>
+        <h1>
+            Sabor do Quintal
+        </h1>
 
     </header>
 
 
-    <!-- MAIN -->
-    <main>
+    <!-- =========================
+         TELA DO PEDIDO
+    ========================= -->
+
+    <main id="telaPedido">
 
         <div class="subtitulo">
-            Escolha seu prato e sua bebida
+            Escolha seu prato, bebida e quantidade
         </div>
+
 
         <div class="pedido">
 
             <!-- PRATO -->
+
             <div class="linha">
-                <img src="../imagem/Prato.jpg"class="imagem-item"alt="Prato">
 
-                <select id="prato"
-                    onchange="mudarPrato()">
+                <img src="../imagem/Prato.jpg"
+                    class="imagem-item"
+                    alt="Prato">
 
-                    <option value="">
-                        Prato
-                    </option>
 
-                    <option value="24.90">
-                        Feijoada
-                    </option>
+                <div>
 
-                    <option value="30">
-                        Bife acebolado
-                    </option>
+                    <select id="prato"
+                        onchange="mudarPrato()">
 
-                    <option value="32">
-                        Frango ensopado
-                    </option>
+                        <option value="">
+                            Prato
+                        </option>
 
-                    <option value="35">
-                        Costela assada
-                    </option>
+                        <option value="24.90">
+                            Feijoada
+                        </option>
 
-                    <option value="35">
-                        Nhoque
-                    </option>
+                        <option value="30">
+                            Bife acebolado
+                        </option>
 
-                    <option value="35">
-                        Ancho
-                    </option>
+                        <option value="32">
+                            Frango ensopado
+                        </option>
 
-                    <option value="35">
-                        Cordeiro
-                    </option>
+                        <option value="35">
+                            Costela assada
+                        </option>
 
-                    <option value="35">
-                        Risoto
-                    </option>
+                        <option value="35">
+                            Nhoque
+                        </option>
 
-                    <option value="35">
-                        Filé
-                    </option>
+                        <option value="35">
+                            Ancho
+                        </option>
 
-                    <option value="35">
-                        Lasanha
-                    </option>
+                        <option value="35">
+                            Cordeiro
+                        </option>
 
-                    <option value="35">
-                        Lombo
-                    </option>
+                        <option value="35">
+                            Risoto
+                        </option>
 
-                    <option value="35">
-                        Frango Recheado
-                    </option>
+                        <option value="35">
+                            Filé
+                        </option>
 
-                </select>
+                        <option value="35">
+                            Lasanha
+                        </option>
+
+                        <option value="35">
+                            Lombo
+                        </option>
+
+                        <option value="35">
+                            Frango Recheado
+                        </option>
+
+                    </select>
+
+
+                    <div class="quantidade">
+
+                        <label>
+                            Quantidade:
+                        </label>
+
+                        <button type="button"
+                            onclick="alterarQuantidade('qtdPrato', -1)">
+                            −
+                        </button>
+
+                        <input type="number"
+                            id="qtdPrato"
+                            value="1"
+                            min="1"
+                            max="20"
+                            onchange="calcularTotal()">
+
+                        <button type="button"
+                            onclick="alterarQuantidade('qtdPrato', 1)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
 
                 <p id="descricaoPrato"
                     class="descricao">
 
-                    Prato tradicional com feijoada
-                    saborosa, arroz soltinho,
-                    torresmo crocante R$ 24,90
+                    Escolha um prato.
 
                 </p>
 
@@ -355,37 +912,67 @@
 
             <div class="linha">
 
-                <!-- FOTO FIXA DA BEBIDA -->
+                <img src="../imagem/coca cola.jpg"
+                    class="imagem-item"
+                    alt="Bebida">
 
-                <img src="../imagem/coca cola.jpg"class="imagem-item"alt="Bebida">
 
-                <select id="bebida"
-                    onchange="mudarBebida()">
+                <div>
 
-                    <option value="">
-                        Bebida
-                    </option>
+                    <select id="bebida"
+                        onchange="mudarBebida()">
 
-                    <option value="7.90">
-                        Coca-Cola
-                    </option>
+                        <option value="">
+                            Bebida
+                        </option>
 
-                    <option value="5">
-                        Suco natural
-                    </option>
+                        <option value="7.90">
+                            Coca-Cola
+                        </option>
 
-                    <option value="4">
-                        Água
-                    </option>
+                        <option value="5">
+                            Suco natural
+                        </option>
 
-                </select>
+                        <option value="4">
+                            Água
+                        </option>
+
+                    </select>
+
+
+                    <div class="quantidade">
+
+                        <label>
+                            Quantidade:
+                        </label>
+
+                        <button type="button"
+                            onclick="alterarQuantidade('qtdBebida', -1)">
+                            −
+                        </button>
+
+                        <input type="number"
+                            id="qtdBebida"
+                            value="1"
+                            min="1"
+                            max="20"
+                            onchange="calcularTotal()">
+
+                        <button type="button"
+                            onclick="alterarQuantidade('qtdBebida', 1)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
 
                 <p id="descricaoBebida"
                     class="descricao">
 
-                    Refrescante, servida com gelo
-                    e um toque de limão para
-                    realçar o sabor R$ 7,90
+                    Escolha uma bebida.
 
                 </p>
 
@@ -414,60 +1001,310 @@
         </div>
 
 
-        <!-- BOTÃO -->
+        <!-- BOTÕES -->
 
-        <button class="botao-continuar"
-            onclick="continuar()">
+        <div class="botoes">
 
-            Continuar
+            <a href="cardapio.html">
 
-        </button>
+                <button type="button">
+                    VOLTAR
+                </button>
+
+            </a>
+
+
+            <button type="button"
+                onclick="continuar()">
+
+                CONTINUAR
+
+            </button>
+
+        </div>
 
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         TELA FINAL
+    ========================= -->
+
+    <main id="telaFinal">
+
+        <div class="card-final">
+
+            <h2>
+                Pedido confirmado!
+            </h2>
+
+            <p>
+                Confira os dados do seu pedido:
+            </p>
+
+
+            <div class="resumo">
+
+                <p>
+                    <strong>Prato:</strong>
+                    <span id="resumoPrato">Nenhum</span>
+                </p>
+
+                <p>
+                    <strong>Quantidade de pratos:</strong>
+                    <span id="resumoQtdPrato">0</span>
+                </p>
+
+                <p>
+                    <strong>Bebida:</strong>
+                    <span id="resumoBebida">Nenhuma</span>
+                </p>
+
+                <p>
+                    <strong>Quantidade de bebidas:</strong>
+                    <span id="resumoQtdBebida">0</span>
+                </p>
+
+                <p>
+                    <strong>Total:</strong>
+                    <span id="resumoTotal">R$ 0,00</span>
+                </p>
+
+            </div>
+
+
+            <p>
+                Obrigado por escolher o
+                Sabor do Quintal!
+            </p>
+
+
+            <button type="button"
+                class="botao-voltar"
+                onclick="voltarPedido()">
+
+                Voltar
+
+            </button>
+
+
+            <button type="button"
+                class="botao-voltar"
+                onclick="mostrarNota()">
+
+                Nota fiscal
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         TELA DA NOTA
+    ========================= -->
+
+    <main id="telaNota">
+
+        <div class="nota">
+
+            <div class="nota-header">
+
+                <img src="../favicon.png"
+                    alt="Logo">
+
+                <h2>
+                    Sabor do Quintal
+                </h2>
+
+                <p>
+                    Comprovante do pedido
+                </p>
+
+            </div>
+
+
+            <div class="nota-conteudo">
+
+                <div class="dados-pedido">
+
+                    <div>
+
+                        <p>
+                            <strong>Pedido:</strong>
+
+                            <span id="numeroPedido">
+                                #000125
+                            </span>
+                        </p>
+
+                        <p>
+                            <strong>Cliente:</strong>
+                            Cliente
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p>
+                            <strong>Data:</strong>
+
+                            <span id="dataPedido"></span>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRATO -->
+
+                <div class="produto-nota">
+
+                    <h3 id="notaPrato">
+                        Prato
+                    </h3>
+
+                    <p>
+                        Quantidade:
+                        <strong id="notaQtdPrato">
+                            0
+                        </strong>
+                    </p>
+
+                    <p>
+                        Valor unitário:
+                        <strong id="notaPrecoPrato">
+                            R$ 0,00
+                        </strong>
+                    </p>
+
+                    <p class="subtotal">
+
+                        Subtotal:
+                        <span id="notaSubtotalPrato">
+                            R$ 0,00
+                        </span>
+
+                    </p>
+
+                </div>
+
+
+                <!-- BEBIDA -->
+
+                <div class="produto-nota">
+
+                    <h3 id="notaBebida">
+                        Bebida
+                    </h3>
+
+                    <p>
+                        Quantidade:
+                        <strong id="notaQtdBebida">
+                            0
+                        </strong>
+                    </p>
+
+                    <p>
+                        Valor unitário:
+                        <strong id="notaPrecoBebida">
+                            R$ 0,00
+                        </strong>
+                    </p>
+
+                    <p class="subtotal">
+
+                        Subtotal:
+                        <span id="notaSubtotalBebida">
+                            R$ 0,00
+                        </span>
+
+                    </p>
+
+                </div>
+
+
+                <!-- TOTAL -->
+
+                <div class="total-nota">
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <span id="notaTotal">
+                        R$ 0,00
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTÕES -->
+
+            <div class="botoes-nota">
+
+                <button type="button"
+                    onclick="voltarFinal()">
+
+                    ← VOLTAR
+
+                </button>
+
+
+                <button type="button"
+                    onclick="imprimirNota()">
+
+                    🖨️ IMPRIMIR NOTA
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
         <div class="footer-esquerda">
-
-            <i class="bi bi-geo-alt"></i>
-
-            <i class="bi bi-telephone"></i>
-
-            (11) 32758484
-
+            📍 (11) 32758484
         </div>
-
 
         <div class="footer-centro">
-
-            <i class="bi bi-c-circle"></i>
-
-            Direitos autorais
-
+            © Direitos autorais
         </div>
 
-
         <div class="footer-direita">
-
             sabordoquintal@gmail.com
-
-            <i class="bi bi-gear"></i>
-
         </div>
 
     </footer>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script>
 
         let precoPrato = 0;
         let precoBebida = 0;
 
+
+        /* =========================
+           MUDAR PRATO
+        ========================= */
 
         function mudarPrato() {
 
@@ -483,28 +1320,28 @@
             if (prato == "24.90") {
 
                 descricao.innerHTML =
-                    "Prato tradicional com feijoada saborosa, arroz soltinho, torresmo crocante R$ 24,90";
+                    "Prato tradicional com feijoada saborosa, arroz soltinho e torresmo crocante - R$ 24,90";
 
             }
 
             else if (prato == "30") {
 
                 descricao.innerHTML =
-                    "Arroz, feijão, bife acebolado e batata frita R$ 30,00";
+                    "Arroz, feijão, bife acebolado e batata frita - R$ 30,00";
 
             }
 
             else if (prato == "32") {
 
                 descricao.innerHTML =
-                    "Frango ensopado com legumes, arroz e salada R$ 32,00";
+                    "Frango ensopado com legumes, arroz e salada - R$ 32,00";
 
             }
 
             else if (prato == "35") {
 
                 descricao.innerHTML =
-                    "Costela assada com mandioca, arroz e farofa R$ 35,00";
+                    "Prato especial da casa acompanhado de arroz e complementos - R$ 35,00";
 
             }
 
@@ -520,6 +1357,10 @@
         }
 
 
+        /* =========================
+           MUDAR BEBIDA
+        ========================= */
+
         function mudarBebida() {
 
             let bebida =
@@ -534,21 +1375,21 @@
             if (bebida == "7.90") {
 
                 descricao.innerHTML =
-                    "Refrescante, servida com gelo e um toque de limão para realçar o sabor R$ 7,90";
+                    "Coca-Cola refrescante - R$ 7,90";
 
             }
 
             else if (bebida == "5") {
 
                 descricao.innerHTML =
-                    "Suco natural da casa R$ 5,00";
+                    "Suco natural da casa - R$ 5,00";
 
             }
 
             else if (bebida == "4") {
 
                 descricao.innerHTML =
-                    "Água mineral R$ 4,00";
+                    "Água mineral - R$ 4,00";
 
             }
 
@@ -564,21 +1405,435 @@
         }
 
 
-        function calcularTotal() {
+        /* =========================
+           ALTERAR QUANTIDADE
+        ========================= */
 
-            let total =
-                precoPrato + precoBebida;
+        function alterarQuantidade(id, valor) {
 
-            document.getElementById("total").innerHTML =
-                "R$ " +
-                total.toFixed(2).replace(".", ",");
+            let campo =
+                document.getElementById(id);
+
+            let quantidade =
+                Number(campo.value);
+
+            quantidade += valor;
+
+
+            if (quantidade < 1) {
+                quantidade = 1;
+            }
+
+            if (quantidade > 20) {
+                quantidade = 20;
+            }
+
+
+            campo.value = quantidade;
+
+            calcularTotal();
 
         }
 
 
+        /* =========================
+           CALCULAR TOTAL
+        ========================= */
+
+        function calcularTotal() {
+
+            let quantidadePrato =
+                Number(
+                    document.getElementById("qtdPrato").value
+                );
+
+            let quantidadeBebida =
+                Number(
+                    document.getElementById("qtdBebida").value
+                );
+
+
+            let totalPratos =
+                precoPrato * quantidadePrato;
+
+            let totalBebidas =
+                precoBebida * quantidadeBebida;
+
+            let total =
+                totalPratos + totalBebidas;
+
+
+            document.getElementById("total").innerHTML =
+                total.toLocaleString(
+                    "pt-BR",
+                    {
+                        style: "currency",
+                        currency: "BRL"
+                    }
+                );
+
+        }
+
+
+        /* =========================
+           CONTINUAR
+        ========================= */
+
         function continuar() {
 
-            alert("Pedido pronto!");
+            const pratoSelect =
+                document.getElementById("prato");
+
+            const bebidaSelect =
+                document.getElementById("bebida");
+
+
+            if (pratoSelect.value === "") {
+
+                alert(
+                    "Escolha um prato antes de continuar."
+                );
+
+                return;
+            }
+
+
+            if (bebidaSelect.value === "") {
+
+                alert(
+                    "Escolha uma bebida antes de continuar."
+                );
+
+                return;
+            }
+
+
+            const pratoSelecionado =
+                pratoSelect.options[
+                    pratoSelect.selectedIndex
+                ];
+
+            const bebidaSelecionada =
+                bebidaSelect.options[
+                    bebidaSelect.selectedIndex
+                ];
+
+
+            const nomePrato =
+                pratoSelecionado.text.trim();
+
+            const precoPratoSelecionado =
+                Number(pratoSelecionado.value);
+
+
+            const nomeBebida =
+                bebidaSelecionada.text.trim();
+
+            const precoBebidaSelecionada =
+                Number(bebidaSelecionada.value);
+
+
+            const quantidadePrato =
+                Number(
+                    document.getElementById("qtdPrato").value
+                );
+
+            const quantidadeBebida =
+                Number(
+                    document.getElementById("qtdBebida").value
+                );
+
+
+            const subtotalPrato =
+                precoPratoSelecionado *
+                quantidadePrato;
+
+            const subtotalBebida =
+                precoBebidaSelecionada *
+                quantidadeBebida;
+
+            const total =
+                subtotalPrato +
+                subtotalBebida;
+
+
+            /* =========================
+               SALVAR PEDIDO
+            ========================= */
+
+            const pedido = {
+
+                prato: nomePrato,
+
+                precoPrato:
+                    precoPratoSelecionado,
+
+                quantidadePrato:
+                    quantidadePrato,
+
+                subtotalPrato:
+                    subtotalPrato,
+
+
+                bebida: nomeBebida,
+
+                precoBebida:
+                    precoBebidaSelecionada,
+
+                quantidadeBebida:
+                    quantidadeBebida,
+
+                subtotalBebida:
+                    subtotalBebida,
+
+
+                total:
+                    total
+
+            };
+
+
+            localStorage.setItem(
+                "pedidoSaborQuintal",
+                JSON.stringify(pedido)
+            );
+
+
+            /* =========================
+               MOSTRAR RESUMO
+            ========================= */
+
+            document.getElementById(
+                "resumoPrato"
+            ).textContent =
+                nomePrato;
+
+
+            document.getElementById(
+                "resumoQtdPrato"
+            ).textContent =
+                quantidadePrato;
+
+
+            document.getElementById(
+                "resumoBebida"
+            ).textContent =
+                nomeBebida;
+
+
+            document.getElementById(
+                "resumoQtdBebida"
+            ).textContent =
+                quantidadeBebida;
+
+
+            document.getElementById(
+                "resumoTotal"
+            ).textContent =
+                formatarDinheiro(total);
+
+
+            document.getElementById(
+                "telaPedido"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "telaFinal"
+            ).style.display =
+                "block";
+
+        }
+
+
+        /* =========================
+           VOLTAR PARA PEDIDO
+        ========================= */
+
+        function voltarPedido() {
+
+            document.getElementById(
+                "telaFinal"
+            ).style.display =
+                "none";
+
+            document.getElementById(
+                "telaPedido"
+            ).style.display =
+                "block";
+
+        }
+
+
+        /* =========================
+           MOSTRAR NOTA
+        ========================= */
+
+        function mostrarNota() {
+
+            const dados =
+                localStorage.getItem(
+                    "pedidoSaborQuintal"
+                );
+
+
+            if (!dados) {
+
+                alert(
+                    "Nenhum pedido encontrado."
+                );
+
+                return;
+            }
+
+
+            const pedido =
+                JSON.parse(dados);
+
+
+            /* DATA */
+
+            const data =
+                new Date();
+
+
+            document.getElementById(
+                "dataPedido"
+            ).textContent =
+                data.toLocaleDateString("pt-BR");
+
+
+            /* PRATO */
+
+            document.getElementById(
+                "notaPrato"
+            ).textContent =
+                pedido.prato;
+
+
+            document.getElementById(
+                "notaQtdPrato"
+            ).textContent =
+                pedido.quantidadePrato;
+
+
+            document.getElementById(
+                "notaPrecoPrato"
+            ).textContent =
+                formatarDinheiro(
+                    pedido.precoPrato
+                );
+
+
+            document.getElementById(
+                "notaSubtotalPrato"
+            ).textContent =
+                formatarDinheiro(
+                    pedido.subtotalPrato
+                );
+
+
+            /* BEBIDA */
+
+            document.getElementById(
+                "notaBebida"
+            ).textContent =
+                pedido.bebida;
+
+
+            document.getElementById(
+                "notaQtdBebida"
+            ).textContent =
+                pedido.quantidadeBebida;
+
+
+            document.getElementById(
+                "notaPrecoBebida"
+            ).textContent =
+                formatarDinheiro(
+                    pedido.precoBebida
+                );
+
+
+            document.getElementById(
+                "notaSubtotalBebida"
+            ).textContent =
+                formatarDinheiro(
+                    pedido.subtotalBebida
+                );
+
+
+            /* TOTAL */
+
+            document.getElementById(
+                "notaTotal"
+            ).textContent =
+                formatarDinheiro(
+                    pedido.total
+                );
+
+
+            /* MOSTRA NOTA */
+
+            document.getElementById(
+                "telaFinal"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "telaNota"
+            ).style.display =
+                "block";
+
+        }
+
+
+        /* =========================
+           FORMATAR DINHEIRO
+        ========================= */
+
+        function formatarDinheiro(valor) {
+
+            return Number(valor).toLocaleString(
+                "pt-BR",
+                {
+                    style: "currency",
+                    currency: "BRL"
+                }
+            );
+
+        }
+
+
+        /* =========================
+           VOLTAR DA NOTA
+        ========================= */
+
+        function voltarFinal() {
+
+            document.getElementById(
+                "telaNota"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "telaFinal"
+            ).style.display =
+                "block";
+
+        }
+
+
+        /* =========================
+           IMPRIMIR
+        ========================= */
+
+        function imprimirNota() {
+
+            window.print();
 
         }
 
