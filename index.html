@@ -1,487 +1,147 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" href="../static/img/logo75 - Copia.png">
+    <title>Sabor do Quintal</title>
 
-    <title>Página de Login - Sabor do Quintal</title>
-
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html,
         body {
-            width: 100%;
-            min-height: 100%;
+            font-family: 'Roboto Slab', serif;
+            background-color: #f3ead8;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #C2BDB9;
-        }
-
-        /* ================= HEADER ================= */
-
-        header {
-            height: 120px;
-            width: 100%;
-
-            background-color: #F3EAD8;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-bottom: 1px solid #ddd;
-        }
-
-        header img {
-            width: 90px;
-            height: 90px;
-            object-fit: contain;
-        }
-
-
-        /* ================= MAIN ================= */
-
-        main {
-            min-height: calc(100vh - 200px);
-
-            background-color: #C2BDB9;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 60px;
-        }
-
-
-        /* ================= ÁREA DO LOGIN ================= */
-
-        .login-area {
-            width: 100%;
-            max-width: 1050px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 100px;
-        }
-
-
-        /* ================= TEXTO LATERAL ================= */
-
-        .login-text {
-            width: 45%;
-        }
-
-        .login-text h1 {
-            font-size: 48px;
-            font-weight: bold;
-
-            color: #685F56;
-
-            margin-bottom: 20px;
-        }
-
-        .login-text h1 span {
-            color: #D56745;
-        }
-
-        .login-text p {
-            font-size: 19px;
-            line-height: 1.6;
-
-            color: #685F56;
-
-            max-width: 450px;
-        }
-
-
-        /* ================= FORMULÁRIO ================= */
-
-        .login-container {
-            width: 480px;
-            min-height: 470px;
-
-            background-color: #DFC08F;
-
-            border-radius: 30px 30px 30px 30px;
-
-            padding: 40px 45px;
-
+        /* Área principal */
+        .inicio {
+            min-height: 100vh;
             position: relative;
 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            background-image: url("Entrada.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            align-items: center;
         }
 
-
-        /* Detalhe laranja */
-
-        .login-container::before {
+        /* Camada transparente sobre a imagem */
+        .inicio::before {
             content: "";
-
             position: absolute;
-
-            width: 100%;
-            height: 100%;
-
-            background-color: #D56745;
-
-            border-radius: 30px 30px 30px 30px;
-
-            top: -10px;
-            left: -10px;
-
-            z-index: 0;
+            inset: 0;
+            background: rgba(45, 35, 20, 0.30);
         }
 
-
-        .login-container form {
+        /* Conteúdo */
+        .conteudo {
             position: relative;
-            z-index: 1;
-        }
-
-
-        /* ================= TÍTULO ================= */
-
-        .login-title {
-            font-size: 28px;
-            font-weight: bold;
-
-            color: #685F56;
-
-            margin-bottom: 25px;
-        }
-
-
-        /* ================= CAMPOS ================= */
-
-        .form-label {
-            font-size: 14px;
-            font-weight: bold;
-
-            color: #4d463f;
-
-            margin-bottom: 6px;
-        }
-
-        .form-control {
-            height: 45px;
-
-            border: none;
-            border-radius: 10px;
-
-            background-color: #F4F3F3;
-
-            margin-bottom: 15px;
-
-            font-size: 16px;
-
-            padding: 10px 15px;
-        }
-
-        .form-control:focus {
-            box-shadow: 0 0 0 0.2rem rgba(213, 103, 69, 0.4);
-        }
-
-
-        /* ================= ESQUECEU A SENHA ================= */
-
-        .esqueceu-senha {
-            display: block;
-
-            text-align: right;
-
-            color: #685F56;
-
-            font-size: 14px;
-            font-weight: bold;
-
-            text-decoration: none;
-
-            margin-top: -5px;
-            margin-bottom: 20px;
-        }
-
-        .esqueceu-senha:hover {
-            color: #ffffff;
-        }
-
-
-        /* ================= BOTÃO ================= */
-
-        .btn-entrar {
+            z-index: 2;
             width: 100%;
-            height: 50px;
+        }
 
-            background-color: #fa825d;
-            color: #FFFFFF;
+        /* Texto */
+        .texto {
+            max-width: 650px;
+            color: #111;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.35;
 
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Botão */
+        .btn-cadastro {
+            background-color: #f27b55;
             border: none;
-            border-radius: 10px;
+            color: #111;
 
-            font-size: 18px;
-            font-weight: bold;
+            font-weight: 700;
+            font-size: 13px;
+
+            padding: 10px 28px;
+            border-radius: 12px;
 
             transition: 0.3s;
-
-            cursor: pointer;
         }
 
-        .btn-entrar:hover {
-            background-color: #ec9178;
-
-            transform: translateY(-2px);
+        .btn-cadastro:hover {
+            background-color: #d9633e;
+            color: #fff;
+            transform: scale(1.05);
         }
 
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            min-height: 80px;
-
-            width: 100%;
-
-            background-color: #F3EAD8;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 20px 60px;
-
-            font-size: 14px;
-
-            color: #333333;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        footer a {
-            color: #333333;
-
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #D56745;
-        }
-
-
-        /* ================= TABLET ================= */
-
-        @media (max-width: 992px) {
-
-            main {
-                padding: 40px 30px;
-            }
-
-            .login-area {
-                gap: 40px;
-            }
-
-            .login-text h1 {
-                font-size: 38px;
-            }
-
-            .login-container {
-                width: 430px;
-            }
-        }
-
-
-        /* ================= CELULAR ================= */
-
+        /* Responsividade */
         @media (max-width: 768px) {
 
-            header {
-                height: 100px;
+            .inicio {
+                min-height: 100vh;
+                background-position: center;
             }
 
-            header img {
-                width: 75px;
-                height: 75px;
-            }
-
-            main {
-                min-height: auto;
-
-                padding: 50px 20px;
-            }
-
-            .login-area {
-                flex-direction: column;
-
-                gap: 30px;
-            }
-
-            .login-text {
-                width: 100%;
-
-                text-align: center;
-            }
-
-            .login-text h1 {
-                font-size: 32px;
-            }
-
-            .login-text p {
-                margin: auto;
-
+            .texto {
                 font-size: 16px;
+                max-width: 90%;
             }
 
-            .login-container {
-                width: 100%;
-                max-width: 480px;
-
-                padding: 35px 30px;
-            }
-
-            footer {
-                flex-direction: column;
-
-                gap: 10px;
-
+            .botao {
                 text-align: center;
-
-                padding: 20px;
+                margin-top: 25px;
             }
         }
 
 
-        /* ================= CELULAR PEQUENO ================= */
+</style>
 
-        @media (max-width: 480px) {
-
-            .login-container {
-                padding: 30px 20px;
-            }
-
-            .login-text h1 {
-                font-size: 28px;
-            }
-
-            .login-title {
-                font-size: 24px;
-            }
-        }
-    </style>
 </head>
 
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- Página inicial -->
+    <main class="inicio">
 
-    <header>
+        <div class="container conteudo">
 
-        <div class="logo">
+            <div class="row align-items-end">
 
-            <img src="/static/img/logo.png" class="rounded-circle" alt="Logo Sabor do Quintal">
+                <!-- Texto -->
+                <div class="col-md-9">
+                    <p class="texto">
+                        Sabor de Mãe traz o aconchego da culinária tradicional
+                        direto para a sua mesa. Com pratos fartos, temperos
+                        frescos e aquele cheirinho irresistível de comida feita
+                        na hora, nosso restaurante oferece o verdadeiro gosto
+                        da comida caseira em um ambiente acolhedor e familiar.
+                    </p>
+                </div>
 
-        </div>
+                <!-- Botão -->
+                <div class="col-md-3 botao text-md-end">
 
-    </header>
-
-
-    <!-- ================= MAIN ================= -->
-
-    <main>
-
-        <div class="login-area">
-
-            <!-- TEXTO -->
-
-            <div class="login-text">
-
-                <h1>
-                    Bem-vindo ao
-                    <span>Sabor do Quintal!</span>
-                </h1>
-
-                <p>
-                    Acesse sua conta para continuar e aproveitar
-                    todos os recursos do nosso restaurante.
-                </p>
-
-            </div>
-
-
-            <!-- FORMULÁRIO -->
-
-            <div class="login-container">
-
-                <form>
-
-                    <h2 class="login-title">
-                        Entrar
-                    </h2>
-
-
-                    <!-- NOME -->
-
-                    <label for="nome" class="form-label">
-                        Nome:
-                    </label>
-
-                    <input type="text" id="nome" class="form-control" placeholder="Digite seu nome">
-
-
-                    <!-- EMAIL -->
-
-                    <label for="email" class="form-label">
-                        E-mail:
-                    </label>
-
-                    <input type="email" id="email" class="form-control" placeholder="Digite seu e-mail">
-
-
-                    <!-- TELEFONE -->
-
-                    <label for="telefone" class="form-label">
-                        Telefone:
-                    </label>
-
-                    <input type="tel" id="telefone" class="form-control" placeholder="(00) 00000-0000">
-
-
-                    <!-- SENHA -->
-
-                    <label for="senha" class="form-label">
-                        Senha:
-                    </label>
-
-                    <input type="password" id="senha" class="form-control" placeholder="Digite sua senha">
-
-
-                    <!-- ESQUECEU A SENHA -->
-
-                    <a href="#" class="esqueceu-senha">
-                        Esqueceu a senha?
+                    <a href="#" class="btn btn-cadastro">
+                        Cadastre-se
                     </a>
 
-
-                    <!-- BOTÃO -->
-
-                    <button href="pagina_principal.html" type="submit" class="btn-entrar">
-                        Entrar
-                    </button>
-
-                </form>
+                </div>
 
             </div>
 
@@ -489,26 +149,7 @@
 
     </main>
 
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <p>
-            📞 (11) 93275-8484
-        </p>
-
-        <p>
-            © 2026 Sabor do Quintal - Todos os direitos reservados
-        </p>
-
-        <a href="mailto:sabordoquintal@email.com">
-            ✉ sabordoquintal@email.com
-        </a>
-
-    </footer>
-
-
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
