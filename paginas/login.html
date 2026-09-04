@@ -1,28 +1,31 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
 
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta name="description"
-        content="Este código cria uma página de login responsiva para o restaurante Sabor do Quintal, utilizando HTML, CSS e Bootstrap. 
-        A página possui cabeçalho com logo, formulário para nome, e-mail, telefone e senha, opção de recuperação de senha, 
-        botão de entrada e rodapé com informações de contato. O design utiliza cores personalizadas e se adapta a computadores, tablets e celulares.">
+        content="Página de login do restaurante Sabor do Quintal.">
+
     <meta name="keywords" content="Sabor do Quintal, restaurante, login">
+
     <meta name="author" content="Luara Pires">
-    <link rel="icon" type="image/png" href="../favicon.png">
+
     <title>Sabor do Quintal - Login</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- CSS -->
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
     <style>
 
-        
-        /*PALETA DE CORES - SABOR DO QUINTAL */
+        /* ==============================
+           PALETA DE CORES
+        ============================== */
+
         :root {
             --cinza-fundo: #D5D1CD;
             --bege: #F4E7CF;
@@ -33,51 +36,65 @@
             --preto: #000000;
         }
 
-        /* CONFIGURAÇÃO GERAL */
+
+        /* ==============================
+           CONFIGURAÇÃO GERAL
+        ============================== */
 
         html,
         body {
-
             margin: 0;
+            min-height: 100vh;
             background-color: var(--cinza-fundo);
             color: var(--preto);
             font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
-        /*HEADER */
+
+        /* ==============================
+           HEADER
+        ============================== */
 
         header {
             background-color: var(--bege);
             height: 90px;
             border-bottom: 2px solid #299EF8;
+
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
+
         /* LOGO */
+
         header img {
             width: 80px;
             height: 80px;
             object-fit: cover;
-            position: relative;
             border: 2px solid var(--terracota);
         }
 
 
-        /* MAIN*/
+        /* ==============================
+           MAIN
+        ============================== */
+
         main {
-            flex: 1;
+            min-height: calc(100vh - 138px);
+
             display: flex;
             align-items: center;
+
             padding-top: 35px;
             padding-bottom: 35px;
         }
 
-        /* TEXTO DE BOAS-VINDAS*/
+
+        /* ==============================
+           TEXTO DE BOAS-VINDAS
+        ============================== */
+
         .login-text {
             padding: 20px;
         }
@@ -102,54 +119,90 @@
             margin-top: 20px;
         }
 
-        /*CARD DE LOGIN */
+
+        /* ==============================
+           CARD DE LOGIN
+        ============================== */
+
         .login-container {
             background-color: var(--terracota);
+
             border-radius: 12px;
+
             padding: 25px;
+
             width: 100%;
             max-width: 390px;
+
             margin: auto;
-            box-shadow:
-                10px 12px 0 var(--bege-sombra);
+
+            box-shadow: 10px 12px 0 var(--bege-sombra);
         }
 
-        /* TÍTULO */
+
+        /* ==============================
+           TÍTULO
+        ============================== */
+
         .login-title {
             font-family: Georgia, 'Times New Roman', serif;
+
             font-weight: 900;
             font-style: italic;
+
             font-size: 28px;
+
             margin-bottom: 25px;
+
+            /* Texto Entrar preto */
+            color: #000000;
         }
 
-        /*LABEL */
+
+        /* ==============================
+           LABEL
+        ============================== */
+
         .form-label {
             font-family: Georgia, 'Times New Roman', serif;
+
             font-style: italic;
             font-weight: bold;
+
             font-size: 12px;
+
             margin-bottom: 4px;
         }
 
 
-        /* INPUTS*/
+        /* ==============================
+           INPUTS
+        ============================== */
+
         .form-control {
             height: 42px;
+
             border: none;
             border-radius: 8px;
+
             background-color: var(--branco);
+
             color: var(--preto);
+
             font-size: 14px;
+
             margin-bottom: 4px;
         }
+
 
         .form-control:focus {
             background-color: var(--branco);
+
             border: 2px solid var(--coral);
-            box-shadow:
-                0 0 0 0.15rem rgba(249, 132, 98, 0.35);
+
+            box-shadow: 0 0 0 0.15rem rgba(249, 132, 98, 0.35);
         }
+
 
         .form-control::placeholder {
             color: #777;
@@ -157,136 +210,274 @@
         }
 
 
-        /* ESQUECEU A SENHA */
+        /* ==============================
+           ESQUECEU A SENHA
+        ============================== */
+
         .esqueceu-senha {
             color: #59382E;
+
             font-family: Georgia, 'Times New Roman', serif;
+
             font-style: italic;
             font-weight: bold;
+
             font-size: 14px;
+
             text-decoration: none;
         }
+
 
         .esqueceu-senha:hover {
             color: var(--preto);
             text-decoration: underline;
         }
 
-        /*  BOTÃO ENTRAR */
+
+        /* ==============================
+           BOTÃO ENTRAR
+        ============================== */
+
         .btn-entrar {
+
             background-color: rgb(248, 118, 79);
-            color: black;
+
+            /* TEXTO PRETO */
+            color: #000000 !important;
+
             height: 54px;
+
+            border: none;
+
+            border-radius: 8px;
+
             font-family: Georgia, 'Times New Roman', serif;
+
             font-style: italic;
+
             font-weight: 900;
+
             font-size: 20px;
 
+            transition: 0.2s;
         }
 
+
         .btn-entrar:hover {
+
             background-color: #F47755;
-            color: var(--preto);
+
+            color: #000000 !important;
+
             transform: translateY(-2px);
         }
 
+
         .btn-entrar:active {
+
             transform: translateY(1px);
         }
 
-        /* FOOTER */
-        footer {
-            background-color: var(--bege);
-            min-height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8px 35px;
+
+        /* ==============================
+           MODAL - RECUPERAÇÃO DE SENHA
+        ============================== */
+
+        .modal-header {
+            background-color: var(--terracota);
+
+            color: #000000;
+
+            border-bottom: none;
+        }
+
+
+        .modal-title {
             font-family: Georgia, 'Times New Roman', serif;
+
+            font-style: italic;
+
+            font-weight: bold;
+        }
+
+
+        .modal-body {
+            background-color: var(--bege);
+        }
+
+
+        .btn-recuperar {
+
+            background-color: var(--coral);
+
+            color: #000000;
+
+            border: none;
+
+            font-weight: bold;
+
+            border-radius: 8px;
+
+            padding: 10px 20px;
+        }
+
+
+        .btn-recuperar:hover {
+
+            background-color: var(--terracota);
+
+            color: #000000;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+
+            background-color: var(--bege);
+
+            min-height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 8px 35px;
+
+            font-family: Georgia, 'Times New Roman', serif;
+
             font-size: 11px;
         }
+
 
         footer p {
             margin: 0;
         }
 
+
         footer a {
+
             color: var(--preto);
+
             text-decoration: none;
+
             font-size: 10px;
         }
+
 
         footer a:hover {
             text-decoration: underline;
         }
 
-        /*TABLETS */
+
+        /* ==============================
+           TABLETS
+        ============================== */
+
         @media (max-width: 768px) {
+
             main {
+
                 padding-top: 50px;
                 padding-bottom: 50px;
             }
+
 
             .login-text {
 
                 text-align: center;
             }
 
+
             .login-text h1 {
+
                 font-size: 34px;
             }
 
+
             .login-text p {
+
                 margin-left: auto;
                 margin-right: auto;
             }
 
+
             .login-container {
+
                 max-width: 400px;
             }
 
+
             footer {
+
                 flex-direction: column;
+
                 gap: 5px;
+
                 padding: 12px;
+
                 text-align: center;
             }
+
         }
 
 
-        /* CELULARES */
+        /* ==============================
+           CELULARES
+        ============================== */
+
         @media (max-width: 576px) {
+
             header {
+
                 height: 65px;
             }
 
+
             header img {
+
                 width: 65px;
                 height: 65px;
             }
 
+
             main {
+
                 padding: 35px 15px;
             }
 
+
             .login-text h1 {
+
                 font-size: 30px;
             }
 
+
             .login-text p {
+
                 font-size: 15px;
             }
 
+
             .login-container {
+
                 padding: 22px;
-                box-shadow:
-                    7px 8px 0 var(--bege-sombra);
+
+                box-shadow: 7px 8px 0 var(--bege-sombra);
             }
 
+
             .btn-entrar {
+
                 height: 50px;
             }
+
         }
+
     </style>
 
 </head>
@@ -295,107 +486,329 @@
 <body>
 
 
-    <!-- =====================HEADER==================== -->
+    <!-- ==============================
+         HEADER
+    ============================== -->
 
     <header>
 
         <div class="container text-center">
-            <img src="../imagem/logo.png" class="rounded-circle" alt="Logo Sabor do Quintal">
+
+            <img src="../imagem/logo.png"
+                class="rounded-circle"
+                alt="Logo Sabor do Quintal">
+
         </div>
 
     </header>
 
-    <!-- =================MAIN======================== -->
+
+    <!-- ==============================
+         MAIN
+    ============================== -->
+
     <main class="container">
+
         <div class="row justify-content-center align-items-center g-5">
 
+
+            <!-- TEXTO -->
+
             <div class="col-12 col-md-6 login-text">
+
                 <h1>
+
                     Bem-vindo ao
+
                     <span>
                         Sabor do Quintal!
                     </span>
+
                 </h1>
+
+
                 <p>
+
                     Acesse sua conta para continuar e aproveitar
                     todos os recursos do nosso restaurante.
+
                 </p>
+
             </div>
+
+
+            <!-- LOGIN -->
+
             <div class="col-12 col-md-6 col-lg-5">
+
                 <div class="login-container">
-                    <form action="pagina_principal.html">
+
+
+                    <!-- FORMULÁRIO -->
+
+                    <form id="formLogin"
+                        action="pagina_principal.html"
+                        method="get">
+
+
                         <!-- TÍTULO -->
+
                         <h2 class="login-title text-center">
                             Entrar
                         </h2>
+
+
                         <!-- NOME -->
+
                         <div class="mb-3">
-                            <label for="nome" class="form-label">
+
+                            <label for="nome"
+                                class="form-label">
+
                                 Nome:
+
                             </label>
-                            <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite seu nome"
-                                autocomplete="name" required>
+
+
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                class="form-control"
+                                placeholder="Digite seu nome"
+                                autocomplete="name"
+                                required
+                                minlength="3">
+
+
+                            <div class="invalid-feedback">
+                                Digite seu nome.
+                            </div>
+
                         </div>
+
 
                         <!-- EMAIL -->
+
                         <div class="mb-3">
-                            <label for="email" class="form-label">
+
+                            <label for="email"
+                                class="form-label">
+
                                 E-mail:
+
                             </label>
-                            <input type="email" id="email" name="email" class="form-control"
-                                placeholder="Digite seu e-mail" autocomplete="email" required>
+
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="Digite seu e-mail"
+                                autocomplete="email"
+                                required>
+
+
+                            <div class="invalid-feedback">
+                                Digite um e-mail válido.
+                            </div>
 
                         </div>
-
 
 
                         <!-- TELEFONE -->
+
                         <div class="mb-3">
-                            <label for="telefone" class="form-label">
+
+                            <label for="telefone"
+                                class="form-label">
+
                                 Telefone:
+
                             </label>
-                            <input type="tel" id="telefone" name="telefone" class="form-control"
-                                placeholder="(00) 00000-0000" autocomplete="tel" required>
+
+
+                            <input
+                                type="tel"
+                                id="telefone"
+                                name="telefone"
+                                class="form-control"
+                                placeholder="(00) 00000-0000"
+                                autocomplete="tel"
+                                required
+                                pattern="[0-9()\s-]{10,15}">
+
+
+                            <div class="invalid-feedback">
+                                Digite seu telefone.
+                            </div>
+
                         </div>
 
 
                         <!-- SENHA -->
-                        <div class="mb-2">
-                            <label for="senha" class="form-label">
-                                Senha:
-                            </label>
-                            <input type="password" id="senha" name="senha" class="form-control"
-                                placeholder="Digite sua senha" autocomplete="current-password" required>
-                        </div>
 
+                        <div class="mb-2">
+
+                            <label for="senha"
+                                class="form-label">
+
+                                Senha:
+
+                            </label>
+
+
+                            <input
+                                type="password"
+                                id="senha"
+                                name="senha"
+                                class="form-control"
+                                placeholder="Digite sua senha"
+                                autocomplete="current-password"
+                                required
+                                minlength="6">
+
+
+                            <div class="invalid-feedback">
+                                A senha deve ter pelo menos 6 caracteres.
+                            </div>
+
+                        </div>
 
 
                         <!-- ESQUECEU A SENHA -->
+
                         <div class="text-end mb-4">
-                            <a href="#" class="esqueceu-senha">
+
+                            <a href="#"
+                                class="esqueceu-senha"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalSenha">
+
                                 Esqueceu a senha?
+
                             </a>
+
                         </div>
 
 
+                        <!-- BOTÃO ENTRAR -->
 
-                        <!-- BOTÃO -->
-                        <button type="submit" class="btn btn-entrar w-100">
-                            <a href="pagina_principal.html">
-                                Entrar
-                            </a>
+                        <button
+                            type="submit"
+                            class="btn btn-entrar w-100">
+
+                            Entrar
+
                         </button>
+
+
                     </form>
+
                 </div>
+
             </div>
+
         </div>
+
     </main>
 
 
+    <!-- ==============================
+         MODAL RECUPERAR SENHA
+    ============================== -->
 
-    <!-- =====================================================
+    <div class="modal fade"
+        id="modalSenha"
+        tabindex="-1"
+        aria-labelledby="modalSenhaLabel"
+        aria-hidden="true">
+
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+
+                <!-- CABEÇALHO -->
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title"
+                        id="modalSenhaLabel">
+
+                        Recuperar senha
+
+                    </h5>
+
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                    </button>
+
+                </div>
+
+
+                <!-- CONTEÚDO -->
+
+                <div class="modal-body">
+
+                    <p>
+
+                        Digite seu e-mail para receber
+                        as instruções para recuperar sua senha.
+
+                    </p>
+
+
+                    <form id="formRecuperar">
+
+                        <label for="emailRecuperar"
+                            class="form-label">
+
+                            E-mail:
+
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="emailRecuperar"
+                            class="form-control"
+                            placeholder="Digite seu e-mail"
+                            required>
+
+
+                        <div class="d-grid mt-3">
+
+                            <button
+                                type="submit"
+                                class="btn btn-recuperar">
+
+                                Recuperar senha
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
          FOOTER
-         ===================================================== -->
+    ============================== -->
 
     <footer>
 
@@ -405,10 +818,8 @@
 
 
         <p>
-
             © 2026 Sabor do Quintal -
             Todos os direitos reservados
-
         </p>
 
 
@@ -421,12 +832,67 @@
     </footer>
 
 
-
-    <!-- =====================================================
+    <!-- ==============================
          BOOTSTRAP JS
-         ===================================================== -->
+    ============================== -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- ==============================
+         VALIDAÇÃO DO LOGIN
+    ============================== -->
+
+    <script>
+
+        const formLogin = document.getElementById("formLogin");
+
+        formLogin.addEventListener("submit", function (event) {
+
+            // Verifica se todos os campos estão preenchidos corretamente
+            if (!formLogin.checkValidity()) {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+            }
+
+            formLogin.classList.add("was-validated");
+
+        });
+
+
+        // ==============================
+        // RECUPERAÇÃO DE SENHA
+        // ==============================
+
+        const formRecuperar =
+            document.getElementById("formRecuperar");
+
+
+        formRecuperar.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document.getElementById("emailRecuperar").value;
+
+
+            if (email.trim() !== "") {
+
+                alert(
+                    "Se este e-mail estiver cadastrado, você receberá as instruções para recuperar sua senha."
+                );
+
+                formRecuperar.reset();
+
+            }
+
+        });
+
     </script>
 
 
