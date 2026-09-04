@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="pt-br">
 
@@ -13,9 +14,15 @@
     <meta name="keywords"
         content="Sabor do Quintal, restaurante, cardápio, comida caseira">
 
-    <meta name="author" content="Luara Pires">
+    <meta name="author"
+        content="Luara Pires, Misael Fonseca">
+
+    <link rel="icon"
+        type="image/png"
+        href="../faviconn.png">
 
     <title>Sabor do Quintal - Pedido</title>
+
 
     <style>
 
@@ -29,20 +36,17 @@
             background-color: #d5d1ce;
             min-height: 100vh;
             color: #2d241e;
+            padding-bottom: 45px;
         }
 
-        /* =========================
-           HEADER
-        ========================= */
+        /* HEADER */
 
         header {
             height: 90px;
             background-color: #f5e9cd;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             position: relative;
         }
 
@@ -50,151 +54,96 @@
             position: absolute;
             left: 30px;
             top: 10px;
-
             width: 70px;
             height: 70px;
-
             object-fit: contain;
         }
 
         header h1 {
             margin: 0;
-
             font-family: Georgia, serif;
             font-style: italic;
             font-weight: bold;
-
             font-size: 34px;
-
             color: #17120f;
         }
 
-        /* =========================
-           MAIN
-        ========================= */
+        /* MAIN */
 
         main {
-            min-height: calc(100vh - 122px);
-            padding: 45px 30px 80px;
-            position: relative;
+            min-height: calc(100vh - 135px);
+            padding: 40px 30px 70px;
         }
 
         .subtitulo {
             text-align: center;
-
             margin-bottom: 25px;
-
             color: #4b392d;
-
             font-size: 18px;
             font-weight: bold;
         }
 
-        /* =========================
-           CARD DO PEDIDO
-        ========================= */
+        /* CARD */
 
         .pedido {
             width: 100%;
-            max-width: 1150px;
-
-            min-height: 390px;
-
+            max-width: 1200px;
             margin: auto;
-
             background-color: #dfbd8c;
-
             border-radius: 25px;
-
-            padding: 50px 70px;
-
-            box-shadow:
-                0 10px 25px rgba(0, 0, 0, 0.15);
+            padding: 40px 55px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
-        /* =========================
-           LINHAS
-        ========================= */
-
-        .linha {
-            display: grid;
-
-            grid-template-columns: 130px 280px 1fr;
-
-            align-items: center;
-
-            column-gap: 50px;
-
-            margin-bottom: 40px;
+        .area-itens {
+            margin-bottom: 35px;
         }
 
-        .linha:last-child {
-            margin-bottom: 0;
+        .area-itens h2 {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 25px;
+            margin: 0 0 18px;
+            color: #2d241e;
         }
 
-        /* =========================
-           IMAGENS
-        ========================= */
+        /* ITEM */
 
-        .imagem-item {
-            width: 100px;
-            height: 100px;
-
-            object-fit: cover;
-
+        .item-pedido {
+            background-color: #f5e9cd;
             border-radius: 15px;
-
-            border: 3px solid #f5e9cd;
-
-            box-shadow:
-                0 4px 10px rgba(0, 0, 0, 0.18);
+            padding: 18px 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
         }
 
-        /* =========================
-           SELECT
-        ========================= */
-
-        select {
-            width: 250px;
+        .item-pedido select {
+            width: 310px;
             height: 44px;
-
             padding: 5px 15px;
-
             border: none;
-
             border-radius: 9px;
-
             background-color: #d96c4c;
-
             color: #000;
-
             font-size: 14px;
-
             font-weight: bold;
-
-            text-align: center;
-
             outline: none;
-
             cursor: pointer;
         }
 
-        select:hover {
+        .item-pedido select:hover {
             background-color: #cf6242;
         }
 
-        /* =========================
-           QUANTIDADE
-        ========================= */
+        /* QUANTIDADE */
 
         .quantidade {
             display: flex;
-
             align-items: center;
-
             gap: 9px;
-
-            margin-top: 12px;
         }
 
         .quantidade label {
@@ -205,19 +154,12 @@
         .quantidade button {
             width: 32px;
             height: 32px;
-
             border: none;
-
             border-radius: 7px;
-
             background-color: #d96c4c;
-
             color: #000;
-
             font-size: 20px;
-
             font-weight: bold;
-
             cursor: pointer;
         }
 
@@ -228,110 +170,91 @@
         .quantidade input {
             width: 50px;
             height: 32px;
-
             border: none;
-
             border-radius: 7px;
-
-            background-color: #f5e9cd;
-
+            background-color: white;
             text-align: center;
-
             font-weight: bold;
-
             font-size: 14px;
         }
 
-        /* =========================
-           DESCRIÇÃO
-        ========================= */
+        /* REMOVER */
 
-        .descricao {
-            width: 100%;
-            max-width: 480px;
-
-            min-height: 75px;
-
-            margin: 0;
-
-            padding: 15px 18px;
-
-            background-color: #d96c4c;
-
-            border-radius: 13px;
-
-            font-size: 13px;
-
-            font-weight: bold;
-
-            line-height: 18px;
-
-            color: #000;
+        .botao-remover {
+            width: 34px !important;
+            height: 34px !important;
+            background-color: #a63d2b !important;
+            color: white !important;
+            font-size: 15px !important;
         }
 
-        /* =========================
-           TOTAL
-        ========================= */
+        .botao-remover:hover {
+            background-color: #8f3021 !important;
+        }
+
+        /* ADICIONAR */
+
+        .botao-adicionar {
+            border: none;
+            border-radius: 9px;
+            padding: 12px 20px;
+            background-color: #d96c4c;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.12);
+        }
+
+        .botao-adicionar:hover {
+            background-color: #c75b3d;
+            transform: translateY(-1px);
+        }
+
+        /* TOTAL */
 
         .linha-total {
-            margin-top: 10px;
-            margin-bottom: 0;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 2px solid rgba(0, 0, 0, 0.12);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
         }
 
         .total-label {
-            width: 250px;
-            height: 45px;
-
+            width: 180px;
+            height: 50px;
             background-color: #d96c4c;
-
-            border-radius: 9px;
-
+            border-radius: 10px;
             display: flex;
-
             align-items: center;
             justify-content: center;
-
-            font-size: 14px;
-
+            font-size: 17px;
             font-weight: bold;
         }
 
         .valor-total {
-            width: 180px;
-            height: 50px;
-
+            width: 200px;
+            height: 55px;
             background-color: #d96c4c;
-
             border-radius: 13px;
-
             display: flex;
-
             align-items: center;
             justify-content: center;
-
-            font-size: 15px;
-
+            font-size: 19px;
             font-weight: bold;
         }
 
-        /* =========================
-           BOTÕES
-        ========================= */
+        /* BOTÕES */
 
         .botoes {
             display: flex;
-
             justify-content: flex-end;
-
             align-items: center;
-
             gap: 18px;
-
-            max-width: 1150px;
-
+            max-width: 1200px;
             margin: 25px auto 0;
-
-            padding-right: 10px;
         }
 
         .botoes a {
@@ -340,41 +263,26 @@
 
         .botoes button {
             width: 155px;
-            height: 42px;
-
+            height: 44px;
             border: none;
-
             border-radius: 9px;
-
             background-color: #d96c4c;
-
             color: #000;
-
             font-family: Georgia, serif;
-
             font-style: italic;
-
             font-weight: bold;
-
             font-size: 15px;
-
             cursor: pointer;
-
-            box-shadow:
-                0 4px 8px rgba(0, 0, 0, 0.15);
-
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
             transition: 0.2s;
         }
 
         .botoes button:hover {
             background-color: #c75b3d;
-
             transform: translateY(-2px);
         }
 
-        /* =========================
-           TELA FINAL
-        ========================= */
+        /* TELA FINAL */
 
         #telaFinal {
             display: none;
@@ -384,77 +292,71 @@
         .card-final {
             width: 100%;
             max-width: 800px;
-
             margin: 20px auto;
-
             background-color: #dfbd8c;
-
             border-radius: 25px;
-
             padding: 45px 60px;
-
-            box-shadow:
-                0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .card-final h2 {
             font-family: Georgia, serif;
-
             font-style: italic;
-
             font-size: 32px;
-
             margin-bottom: 20px;
         }
 
         .card-final p {
             font-size: 17px;
-
             font-weight: bold;
-
             line-height: 1.6;
         }
 
         .resumo {
             background-color: #d96c4c;
-
             border-radius: 15px;
-
             padding: 25px;
-
             margin: 25px 0;
-
             text-align: left;
         }
 
-        .resumo p {
-            margin: 10px 0;
+        .resumo h3 {
+            font-family: Georgia, serif;
+            margin-top: 0;
+            font-size: 21px;
+        }
 
+        .resumo-item {
+            background-color: rgba(255,255,255,0.35);
+            border-radius: 8px;
+            padding: 10px;
+            margin: 8px 0;
             font-size: 15px;
+            font-weight: bold;
+        }
+
+        .resumo-total {
+            border-top: 2px solid rgba(0,0,0,0.2);
+            margin-top: 18px;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 19px;
+            font-weight: bold;
         }
 
         .botao-voltar {
             width: 170px;
             height: 44px;
-
             border: none;
-
             border-radius: 9px;
-
             background-color: #d96c4c;
-
             color: #000;
-
             font-family: Georgia, serif;
-
             font-style: italic;
-
             font-weight: bold;
-
             font-size: 15px;
-
             cursor: pointer;
-
             margin: 5px;
         }
 
@@ -462,9 +364,7 @@
             background-color: #c75b3d;
         }
 
-        /* =========================
-           NOTA
-        ========================= */
+        /* NOTA */
 
         #telaNota {
             display: none;
@@ -474,39 +374,28 @@
         .nota {
             width: 100%;
             max-width: 900px;
-
             margin: 10px auto 40px;
-
             background-color: white;
-
             border-radius: 20px;
-
             overflow: hidden;
-
-            box-shadow:
-                0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .nota-header {
             background-color: #f5e9cd;
-
             padding: 30px;
         }
 
         .nota-header img {
             width: 75px;
             height: 75px;
-
             object-fit: contain;
         }
 
         .nota-header h2 {
             margin: 8px 0 0;
-
             font-family: Georgia, serif;
-
             font-style: italic;
-
             font-size: 32px;
         }
 
@@ -516,104 +405,71 @@
 
         .nota-conteudo {
             padding: 35px 50px;
-
             text-align: left;
         }
 
         .dados-pedido {
             display: flex;
-
             justify-content: space-between;
-
             border-bottom: 1px solid #ddd;
-
             padding-bottom: 15px;
-
             margin-bottom: 25px;
-
             font-size: 15px;
         }
 
         .produto-nota {
             background-color: #dfbd8c;
-
             border-radius: 12px;
-
             padding: 20px;
-
             margin-bottom: 18px;
         }
 
         .produto-nota h3 {
             margin: 0 0 12px;
-
             font-family: Georgia, serif;
-
             font-size: 21px;
         }
 
         .produto-nota p {
             margin: 7px 0;
-
             font-size: 15px;
         }
 
         .subtotal {
             text-align: right;
-
             font-weight: bold;
-
             font-size: 17px !important;
         }
 
         .total-nota {
             background-color: #d96c4c;
-
             color: #000;
-
             padding: 20px;
-
             border-radius: 12px;
-
             display: flex;
-
             justify-content: space-between;
-
             font-size: 21px;
-
             font-weight: bold;
-
             margin-top: 22px;
         }
 
         .botoes-nota {
             padding: 0 30px 30px;
-
             display: flex;
-
             justify-content: center;
-
             gap: 18px;
         }
 
         .botoes-nota button {
             width: 180px;
             height: 44px;
-
             border: none;
-
             border-radius: 9px;
-
             background-color: #d96c4c;
-
             font-family: Georgia, serif;
-
             font-style: italic;
-
             font-weight: bold;
-
             font-size: 14px;
-
             cursor: pointer;
         }
 
@@ -621,108 +477,58 @@
             background-color: #c75b3d;
         }
 
-        /* =========================
-           FOOTER
-        ========================= */
+        /* FOOTER */
 
         footer {
             height: 32px;
-
             background-color: #f5e9cd;
-
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
             padding: 0 20px;
-
             color: #000;
-
             font-size: 9px;
-
             position: fixed;
-
             bottom: 0;
-
             left: 0;
-
             right: 0;
-
             z-index: 10;
-        }
-
-        .footer-esquerda,
-        .footer-centro,
-        .footer-direita {
-            display: flex;
-
-            align-items: center;
         }
 
         .footer-centro {
             position: absolute;
-
             left: 50%;
-
             transform: translateX(-50%);
         }
 
-        /* =========================
-           DESKTOP
-        ========================= */
-
-        @media (min-width: 1200px) {
-
-            .pedido {
-                max-width: 1200px;
-            }
-
-            .linha {
-                grid-template-columns: 130px 300px 1fr;
-
-                column-gap: 60px;
-            }
-
-            .descricao {
-                max-width: 550px;
-            }
-
-            .botoes {
-                max-width: 1200px;
-            }
-        }
-
-        /* =========================
-           TABLET
-        ========================= */
+        /* RESPONSIVO */
 
         @media (max-width: 900px) {
 
             .pedido {
-                width: 95%;
-                padding: 35px 30px;
+                padding: 30px 25px;
             }
 
-            .linha {
-                grid-template-columns: 100px 220px 1fr;
-                column-gap: 25px;
+            .item-pedido {
+                flex-direction: column;
+                align-items: stretch;
             }
 
-            select {
-                width: 210px;
+            .item-pedido select {
+                width: 100%;
             }
 
-            .descricao {
-                max-width: 300px;
+            .quantidade {
+                justify-content: center;
             }
 
+            .linha-total {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
         }
 
-        /* =========================
-           IMPRESSÃO
-        ========================= */
+        /* IMPRESSÃO */
 
         @media print {
 
@@ -746,11 +552,8 @@
             .nota {
                 width: 100%;
                 max-width: 100%;
-
                 margin: 0;
-
                 box-shadow: none;
-
                 border-radius: 0;
             }
 
@@ -761,7 +564,6 @@
             .nota-conteudo {
                 padding: 20px;
             }
-
         }
 
     </style>
@@ -771,100 +573,52 @@
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================= -->
 
-    <header>
+<header>
 
-        <img src="../favicon.png"
-            class="logo"
-            alt="Logo Sabor do Quintal">
+    <img
+        src="../faviconn.png"
+        class="logo"
+        alt="Logo Sabor do Quintal">
 
-        <h1>
-            Sabor do Quintal
-        </h1>
+    <h1>
+        Sabor do Quintal
+    </h1>
 
-    </header>
+</header>
 
 
-    <!-- =========================
-         TELA DO PEDIDO
-    ========================= -->
+<!-- TELA DO PEDIDO -->
 
-    <main id="telaPedido">
+<main id="telaPedido">
 
-        <div class="subtitulo">
-            Escolha seu prato, bebida e quantidade
-        </div>
+    <div class="subtitulo">
+        Escolha seus pratos, bebidas e quantidades
+    </div>
 
 
-        <div class="pedido">
-
-            <!-- PRATO -->
-
-            <div class="linha">
-
-                <img src="../imagem/Prato.jpg"
-                    class="imagem-item"
-                    alt="Prato">
+    <div class="pedido">
 
 
-                <div>
+        <!-- PRATOS -->
 
-                    <select id="prato"
-                        onchange="mudarPrato()">
+        <div class="area-itens">
+
+            <h2>
+                🍽️ Escolha seus pratos
+            </h2>
+
+
+            <div id="listaPratos">
+
+                <div class="item-pedido">
+
+                    <select
+                        class="select-prato"
+                        onchange="calcularTotal()">
 
                         <option value="">
-                            Prato
-                        </option>
-
-                        <option value="24.90">
-                            Feijoada
-                        </option>
-
-                        <option value="30">
-                            Bife acebolado
-                        </option>
-
-                        <option value="32">
-                            Frango ensopado
-                        </option>
-
-                        <option value="35">
-                            Costela assada
-                        </option>
-
-                        <option value="35">
-                            Nhoque
-                        </option>
-
-                        <option value="35">
-                            Ancho
-                        </option>
-
-                        <option value="35">
-                            Cordeiro
-                        </option>
-
-                        <option value="35">
-                            Risoto
-                        </option>
-
-                        <option value="35">
-                            Filé
-                        </option>
-
-                        <option value="35">
-                            Lasanha
-                        </option>
-
-                        <option value="35">
-                            Lombo
-                        </option>
-
-                        <option value="35">
-                            Frango Recheado
+                            Escolha um prato
                         </option>
 
                     </select>
@@ -876,968 +630,1275 @@
                             Quantidade:
                         </label>
 
-                        <button type="button"
-                            onclick="alterarQuantidade('qtdPrato', -1)">
+                        <button
+                            type="button"
+                            onclick="alterarQuantidadeItem(this, -1)">
                             −
                         </button>
 
-                        <input type="number"
-                            id="qtdPrato"
+                        <input
+                            type="number"
+                            class="quantidade-item"
                             value="1"
                             min="1"
                             max="20"
                             onchange="calcularTotal()">
 
-                        <button type="button"
-                            onclick="alterarQuantidade('qtdPrato', 1)">
+                        <button
+                            type="button"
+                            onclick="alterarQuantidadeItem(this, 1)">
                             +
+                        </button>
+
+                        <button
+                            type="button"
+                            class="botao-remover"
+                            onclick="removerItem(this)">
+                            ✕
                         </button>
 
                     </div>
 
                 </div>
 
-
-                <p id="descricaoPrato"
-                    class="descricao">
-
-                    Escolha um prato.
-
-                </p>
-
             </div>
 
 
-            <!-- BEBIDA -->
+            <button
+                type="button"
+                class="botao-adicionar"
+                onclick="adicionarPrato()">
 
-            <div class="linha">
-
-                <img src="../imagem/coca cola.jpg"
-                    class="imagem-item"
-                    alt="Bebida">
-
-
-                <div>
-
-                    <select id="bebida"
-                        onchange="mudarBebida()">
-
-                        <option value="">
-                            Bebida
-                        </option>
-
-                        <option value="7.90">
-                            Coca-Cola
-                        </option>
-
-                        <option value="5">
-                            Suco natural
-                        </option>
-
-                        <option value="4">
-                            Água
-                        </option>
-
-                    </select>
-
-
-                    <div class="quantidade">
-
-                        <label>
-                            Quantidade:
-                        </label>
-
-                        <button type="button"
-                            onclick="alterarQuantidade('qtdBebida', -1)">
-                            −
-                        </button>
-
-                        <input type="number"
-                            id="qtdBebida"
-                            value="1"
-                            min="1"
-                            max="20"
-                            onchange="calcularTotal()">
-
-                        <button type="button"
-                            onclick="alterarQuantidade('qtdBebida', 1)">
-                            +
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <p id="descricaoBebida"
-                    class="descricao">
-
-                    Escolha uma bebida.
-
-                </p>
-
-            </div>
-
-
-            <!-- TOTAL -->
-
-            <div class="linha linha-total">
-
-                <div></div>
-
-                <div class="total-label">
-                    Total
-                </div>
-
-                <div id="total"
-                    class="valor-total">
-
-                    R$ 0,00
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- BOTÕES -->
-
-        <div class="botoes">
-
-            <a href="cardapio.html">
-
-                <button type="button">
-                    VOLTAR
-                </button>
-
-            </a>
-
-
-            <button type="button"
-                onclick="continuar()">
-
-                CONTINUAR
+                + Adicionar outro prato
 
             </button>
 
         </div>
 
-    </main>
 
+        <!-- BEBIDAS -->
 
-    <!-- =========================
-         TELA FINAL
-    ========================= -->
-
-    <main id="telaFinal">
-
-        <div class="card-final">
+        <div class="area-itens">
 
             <h2>
-                Pedido confirmado!
+                🥤 Escolha suas bebidas
+            </h2>
+
+
+            <div id="listaBebidas">
+
+                <div class="item-pedido">
+
+                    <select
+                        class="select-bebida"
+                        onchange="calcularTotal()">
+
+                        <option value="">
+                            Escolha uma bebida
+                        </option>
+
+                    </select>
+
+
+                    <div class="quantidade">
+
+                        <label>
+                            Quantidade:
+                        </label>
+
+                        <button
+                            type="button"
+                            onclick="alterarQuantidadeItem(this, -1)">
+                            −
+                        </button>
+
+                        <input
+                            type="number"
+                            class="quantidade-item"
+                            value="1"
+                            min="1"
+                            max="20"
+                            onchange="calcularTotal()">
+
+                        <button
+                            type="button"
+                            onclick="alterarQuantidadeItem(this, 1)">
+                            +
+                        </button>
+
+                        <button
+                            type="button"
+                            class="botao-remover"
+                            onclick="removerItem(this)">
+                            ✕
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="botao-adicionar"
+                onclick="adicionarBebida()">
+
+                + Adicionar outra bebida
+
+            </button>
+
+        </div>
+
+
+        <!-- TOTAL -->
+
+        <div class="linha-total">
+
+            <div class="total-label">
+                Total
+            </div>
+
+            <div id="total" class="valor-total">
+                R$ 0,00
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTÕES -->
+
+    <div class="botoes">
+
+        <a href="cardapio.html">
+
+            <button type="button">
+                VOLTAR
+            </button>
+
+        </a>
+
+
+        <button
+            type="button"
+            onclick="continuar()">
+
+            CONTINUAR
+
+        </button>
+
+    </div>
+
+</main>
+
+
+<!-- TELA FINAL -->
+
+<main id="telaFinal">
+
+    <div class="card-final">
+
+        <h2>
+            Pedido confirmado!
+        </h2>
+
+        <p>
+            Confira os dados do seu pedido:
+        </p>
+
+
+        <div class="resumo">
+
+            <p>
+                <strong>Pedido:</strong>
+                <span id="resumoNumeroPedido">
+                    #000001
+                </span>
+            </p>
+
+
+            <h3>
+                🍽️ Pratos
+            </h3>
+
+            <div id="resumoPratos"></div>
+
+
+            <h3>
+                🥤 Bebidas
+            </h3>
+
+            <div id="resumoBebidas"></div>
+
+
+            <div class="resumo-total">
+
+                <span>
+                    TOTAL
+                </span>
+
+                <span id="resumoTotal">
+                    R$ 0,00
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <p>
+            Obrigado por escolher o
+            Sabor do Quintal!
+        </p>
+
+
+        <button
+            type="button"
+            class="botao-voltar"
+            onclick="voltarPedido()">
+
+            Voltar
+
+        </button>
+
+
+        <button
+            type="button"
+            class="botao-voltar"
+            onclick="mostrarNota()">
+
+            Nota fiscal
+
+        </button>
+
+    </div>
+
+</main>
+
+
+<!-- TELA DA NOTA -->
+
+<main id="telaNota">
+
+    <div class="nota">
+
+        <div class="nota-header">
+
+            <img
+                src="../faviconn.png"
+                alt="Logo">
+
+            <h2>
+                Sabor do Quintal
             </h2>
 
             <p>
-                Confira os dados do seu pedido:
+                Comprovante do pedido
             </p>
 
+        </div>
 
-            <div class="resumo">
 
-                <p>
-                    <strong>Prato:</strong>
-                    <span id="resumoPrato">Nenhum</span>
-                </p>
+        <div class="nota-conteudo">
 
-                <p>
-                    <strong>Quantidade de pratos:</strong>
-                    <span id="resumoQtdPrato">0</span>
-                </p>
+            <div class="dados-pedido">
 
-                <p>
-                    <strong>Bebida:</strong>
-                    <span id="resumoBebida">Nenhuma</span>
-                </p>
+                <div>
 
-                <p>
-                    <strong>Quantidade de bebidas:</strong>
-                    <span id="resumoQtdBebida">0</span>
-                </p>
+                    <p>
+                        <strong>Pedido:</strong>
+                        <span id="numeroPedido">
+                            #000001
+                        </span>
+                    </p>
 
-                <p>
-                    <strong>Total:</strong>
-                    <span id="resumoTotal">R$ 0,00</span>
-                </p>
+                    <p>
+                        <strong>Cliente:</strong>
+                        Cliente
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <p>
+                        <strong>Data:</strong>
+                        <span id="dataPedido"></span>
+                    </p>
+
+                </div>
 
             </div>
 
 
-            <p>
-                Obrigado por escolher o
-                Sabor do Quintal!
-            </p>
+            <h3>
+                🍽️ Pratos
+            </h3>
+
+            <div id="notaPratos"></div>
 
 
-            <button type="button"
-                class="botao-voltar"
-                onclick="voltarPedido()">
+            <h3>
+                🥤 Bebidas
+            </h3>
 
-                Voltar
+            <div id="notaBebidas"></div>
+
+
+            <div class="total-nota">
+
+                <span>
+                    TOTAL
+                </span>
+
+                <span id="notaTotal">
+                    R$ 0,00
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="botoes-nota">
+
+            <button
+                type="button"
+                onclick="voltarFinal()">
+
+                ← VOLTAR
 
             </button>
 
 
-            <button type="button"
-                class="botao-voltar"
-                onclick="mostrarNota()">
+            <button
+                type="button"
+                onclick="imprimirNota()">
 
-                Nota fiscal
+                🖨️ IMPRIMIR NOTA
 
             </button>
 
         </div>
 
-    </main>
+    </div>
+
+</main>
 
 
-    <!-- =========================
-         TELA DA NOTA
-    ========================= -->
+<!-- FOOTER -->
 
-    <main id="telaNota">
+<footer>
 
-        <div class="nota">
+    <div>
+        📍 (11) 32758484
+    </div>
 
-            <div class="nota-header">
+    <div class="footer-centro">
+        © Direitos autorais
+    </div>
 
-                <img src="../favicon.png"
-                    alt="Logo">
+    <div>
+        sabordoquintal@gmail.com
+    </div>
 
-                <h2>
-                    Sabor do Quintal
-                </h2>
-
-                <p>
-                    Comprovante do pedido
-                </p>
-
-            </div>
+</footer>
 
 
-            <div class="nota-conteudo">
+<script>
 
-                <div class="dados-pedido">
+/* =========================
+   PRODUTOS
+========================= */
 
-                    <div>
+const pratos = [
 
-                        <p>
-                            <strong>Pedido:</strong>
+    {
+        nome: "Feijoada",
+        preco: 24.90
+    },
 
-                            <span id="numeroPedido">
-                                #000125
-                            </span>
-                        </p>
+    {
+        nome: "Bife acebolado",
+        preco: 30
+    },
 
-                        <p>
-                            <strong>Cliente:</strong>
-                            Cliente
-                        </p>
+    {
+        nome: "Frango ensopado",
+        preco: 32
+    },
 
-                    </div>
+    {
+        nome: "Costela assada",
+        preco: 35
+    },
 
+    {
+        nome: "Nhoque",
+        preco: 35
+    },
 
-                    <div>
+    {
+        nome: "Ancho",
+        preco: 35
+    },
 
-                        <p>
-                            <strong>Data:</strong>
+    {
+        nome: "Cordeiro",
+        preco: 35
+    },
 
-                            <span id="dataPedido"></span>
-                        </p>
+    {
+        nome: "Risoto",
+        preco: 35
+    },
 
-                    </div>
+    {
+        nome: "Filé",
+        preco: 35
+    },
 
-                </div>
+    {
+        nome: "Lasanha",
+        preco: 35
+    },
 
+    {
+        nome: "Lombo",
+        preco: 35
+    },
 
-                <!-- PRATO -->
+    {
+        nome: "Frango Recheado",
+        preco: 35
+    }
 
-                <div class="produto-nota">
-
-                    <h3 id="notaPrato">
-                        Prato
-                    </h3>
-
-                    <p>
-                        Quantidade:
-                        <strong id="notaQtdPrato">
-                            0
-                        </strong>
-                    </p>
-
-                    <p>
-                        Valor unitário:
-                        <strong id="notaPrecoPrato">
-                            R$ 0,00
-                        </strong>
-                    </p>
-
-                    <p class="subtotal">
-
-                        Subtotal:
-                        <span id="notaSubtotalPrato">
-                            R$ 0,00
-                        </span>
-
-                    </p>
-
-                </div>
-
-
-                <!-- BEBIDA -->
-
-                <div class="produto-nota">
-
-                    <h3 id="notaBebida">
-                        Bebida
-                    </h3>
-
-                    <p>
-                        Quantidade:
-                        <strong id="notaQtdBebida">
-                            0
-                        </strong>
-                    </p>
-
-                    <p>
-                        Valor unitário:
-                        <strong id="notaPrecoBebida">
-                            R$ 0,00
-                        </strong>
-                    </p>
-
-                    <p class="subtotal">
-
-                        Subtotal:
-                        <span id="notaSubtotalBebida">
-                            R$ 0,00
-                        </span>
-
-                    </p>
-
-                </div>
+];
 
 
-                <!-- TOTAL -->
+const bebidas = [
 
-                <div class="total-nota">
+    {
+        nome: "Coca-Cola",
+        preco: 7.90
+    },
 
-                    <span>
-                        TOTAL
-                    </span>
+    {
+        nome: "Suco natural",
+        preco: 5
+    },
 
-                    <span id="notaTotal">
-                        R$ 0,00
-                    </span>
+    {
+        nome: "Água",
+        preco: 4
+    }
 
-                </div>
-
-            </div>
-
-
-            <!-- BOTÕES -->
-
-            <div class="botoes-nota">
-
-                <button type="button"
-                    onclick="voltarFinal()">
-
-                    ← VOLTAR
-
-                </button>
+];
 
 
-                <button type="button"
-                    onclick="imprimirNota()">
+/* =========================
+   FORMATAR DINHEIRO
+========================= */
 
-                    🖨️ IMPRIMIR NOTA
+function formatarDinheiro(valor) {
 
-                </button>
+    return Number(valor).toLocaleString(
+        "pt-BR",
+        {
+            style: "currency",
+            currency: "BRL"
+        }
+    );
 
-            </div>
+}
+
+
+/* =========================
+   OPÇÕES DOS PRATOS
+========================= */
+
+function opcoesPratos() {
+
+    let html = `
+        <option value="">
+            Escolha um prato
+        </option>
+    `;
+
+    pratos.forEach(function(prato, index) {
+
+        html += `
+            <option value="${index}">
+                ${prato.nome} - ${formatarDinheiro(prato.preco)}
+            </option>
+        `;
+
+    });
+
+    return html;
+}
+
+
+/* =========================
+   OPÇÕES DAS BEBIDAS
+========================= */
+
+function opcoesBebidas() {
+
+    let html = `
+        <option value="">
+            Escolha uma bebida
+        </option>
+    `;
+
+    bebidas.forEach(function(bebida, index) {
+
+        html += `
+            <option value="${index}">
+                ${bebida.nome} - ${formatarDinheiro(bebida.preco)}
+            </option>
+        `;
+
+    });
+
+    return html;
+}
+
+
+/* =========================
+   CARREGAR OPÇÕES INICIAIS
+========================= */
+
+document.querySelector(".select-prato").innerHTML =
+    opcoesPratos();
+
+document.querySelector(".select-bebida").innerHTML =
+    opcoesBebidas();
+
+
+/* =========================
+   ADICIONAR PRATO
+========================= */
+
+function adicionarPrato() {
+
+    const lista =
+        document.getElementById("listaPratos");
+
+    const item =
+        document.createElement("div");
+
+    item.className =
+        "item-pedido";
+
+    item.innerHTML = `
+
+        <select
+            class="select-prato"
+            onchange="calcularTotal()">
+
+            ${opcoesPratos()}
+
+        </select>
+
+        <div class="quantidade">
+
+            <label>
+                Quantidade:
+            </label>
+
+            <button
+                type="button"
+                onclick="alterarQuantidadeItem(this, -1)">
+                −
+            </button>
+
+            <input
+                type="number"
+                class="quantidade-item"
+                value="1"
+                min="1"
+                max="20"
+                onchange="calcularTotal()">
+
+            <button
+                type="button"
+                onclick="alterarQuantidadeItem(this, 1)">
+                +
+            </button>
+
+            <button
+                type="button"
+                class="botao-remover"
+                onclick="removerItem(this)">
+                ✕
+            </button>
 
         </div>
 
-    </main>
+    `;
+
+    lista.appendChild(item);
+
+}
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+/* =========================
+   ADICIONAR BEBIDA
+========================= */
 
-    <footer>
+function adicionarBebida() {
 
-        <div class="footer-esquerda">
-            📍 (11) 32758484
+    const lista =
+        document.getElementById("listaBebidas");
+
+    const item =
+        document.createElement("div");
+
+    item.className =
+        "item-pedido";
+
+    item.innerHTML = `
+
+        <select
+            class="select-bebida"
+            onchange="calcularTotal()">
+
+            ${opcoesBebidas()}
+
+        </select>
+
+        <div class="quantidade">
+
+            <label>
+                Quantidade:
+            </label>
+
+            <button
+                type="button"
+                onclick="alterarQuantidadeItem(this, -1)">
+                −
+            </button>
+
+            <input
+                type="number"
+                class="quantidade-item"
+                value="1"
+                min="1"
+                max="20"
+                onchange="calcularTotal()">
+
+            <button
+                type="button"
+                onclick="alterarQuantidadeItem(this, 1)">
+                +
+            </button>
+
+            <button
+                type="button"
+                class="botao-remover"
+                onclick="removerItem(this)">
+                ✕
+            </button>
+
         </div>
 
-        <div class="footer-centro">
-            © Direitos autorais
-        </div>
+    `;
 
-        <div class="footer-direita">
-            sabordoquintal@gmail.com
-        </div>
+    lista.appendChild(item);
 
-    </footer>
+}
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
+/* =========================
+   ALTERAR QUANTIDADE
+========================= */
 
-    <script>
+function alterarQuantidadeItem(botao, valor) {
 
-        let precoPrato = 0;
-        let precoBebida = 0;
+    const item =
+        botao.closest(".item-pedido");
 
+    const campo =
+        item.querySelector(".quantidade-item");
 
-        /* =========================
-           MUDAR PRATO
-        ========================= */
+    let quantidade =
+        Number(campo.value);
 
-        function mudarPrato() {
+    quantidade += valor;
 
-            let prato =
-                document.getElementById("prato").value;
+    if (quantidade < 1) {
+        quantidade = 1;
+    }
 
-            let descricao =
-                document.getElementById("descricaoPrato");
+    if (quantidade > 20) {
+        quantidade = 20;
+    }
 
-            precoPrato = Number(prato);
+    campo.value =
+        quantidade;
 
+    calcularTotal();
 
-            if (prato == "24.90") {
+}
 
-                descricao.innerHTML =
-                    "Prato tradicional com feijoada saborosa, arroz soltinho e torresmo crocante - R$ 24,90";
 
-            }
+/* =========================
+   REMOVER ITEM
+========================= */
 
-            else if (prato == "30") {
+function removerItem(botao) {
 
-                descricao.innerHTML =
-                    "Arroz, feijão, bife acebolado e batata frita - R$ 30,00";
+    const item =
+        botao.closest(".item-pedido");
 
-            }
+    const lista =
+        item.parentElement;
 
-            else if (prato == "32") {
+    if (lista.children.length > 1) {
 
-                descricao.innerHTML =
-                    "Frango ensopado com legumes, arroz e salada - R$ 32,00";
+        item.remove();
 
-            }
+    } else {
 
-            else if (prato == "35") {
+        const select =
+            item.querySelector("select");
 
-                descricao.innerHTML =
-                    "Prato especial da casa acompanhado de arroz e complementos - R$ 35,00";
+        select.value = "";
 
-            }
+        item.querySelector(
+            ".quantidade-item"
+        ).value = 1;
 
-            else {
+    }
 
-                descricao.innerHTML =
-                    "Escolha um prato.";
+    calcularTotal();
 
-            }
+}
 
-            calcularTotal();
 
-        }
+/* =========================
+   PEGAR ITENS
+========================= */
 
+function pegarItens(classeSelect, listaProdutos) {
 
-        /* =========================
-           MUDAR BEBIDA
-        ========================= */
+    const itens = [];
 
-        function mudarBebida() {
+    document
+        .querySelectorAll(classeSelect)
+        .forEach(function(select) {
 
-            let bebida =
-                document.getElementById("bebida").value;
+            if (select.value !== "") {
 
-            let descricao =
-                document.getElementById("descricaoBebida");
+                const item =
+                    select.closest(".item-pedido");
 
-            precoBebida = Number(bebida);
+                let quantidade =
+                    Number(
+                        item.querySelector(
+                            ".quantidade-item"
+                        ).value
+                    );
 
-
-            if (bebida == "7.90") {
-
-                descricao.innerHTML =
-                    "Coca-Cola refrescante - R$ 7,90";
-
-            }
-
-            else if (bebida == "5") {
-
-                descricao.innerHTML =
-                    "Suco natural da casa - R$ 5,00";
-
-            }
-
-            else if (bebida == "4") {
-
-                descricao.innerHTML =
-                    "Água mineral - R$ 4,00";
-
-            }
-
-            else {
-
-                descricao.innerHTML =
-                    "Escolha uma bebida.";
-
-            }
-
-            calcularTotal();
-
-        }
-
-
-        /* =========================
-           ALTERAR QUANTIDADE
-        ========================= */
-
-        function alterarQuantidade(id, valor) {
-
-            let campo =
-                document.getElementById(id);
-
-            let quantidade =
-                Number(campo.value);
-
-            quantidade += valor;
-
-
-            if (quantidade < 1) {
-                quantidade = 1;
-            }
-
-            if (quantidade > 20) {
-                quantidade = 20;
-            }
-
-
-            campo.value = quantidade;
-
-            calcularTotal();
-
-        }
-
-
-        /* =========================
-           CALCULAR TOTAL
-        ========================= */
-
-        function calcularTotal() {
-
-            let quantidadePrato =
-                Number(
-                    document.getElementById("qtdPrato").value
-                );
-
-            let quantidadeBebida =
-                Number(
-                    document.getElementById("qtdBebida").value
-                );
-
-
-            let totalPratos =
-                precoPrato * quantidadePrato;
-
-            let totalBebidas =
-                precoBebida * quantidadeBebida;
-
-            let total =
-                totalPratos + totalBebidas;
-
-
-            document.getElementById("total").innerHTML =
-                total.toLocaleString(
-                    "pt-BR",
-                    {
-                        style: "currency",
-                        currency: "BRL"
-                    }
-                );
-
-        }
-
-
-        /* =========================
-           CONTINUAR
-        ========================= */
-
-        function continuar() {
-
-            const pratoSelect =
-                document.getElementById("prato");
-
-            const bebidaSelect =
-                document.getElementById("bebida");
-
-
-            if (pratoSelect.value === "") {
-
-                alert(
-                    "Escolha um prato antes de continuar."
-                );
-
-                return;
-            }
-
-
-            if (bebidaSelect.value === "") {
-
-                alert(
-                    "Escolha uma bebida antes de continuar."
-                );
-
-                return;
-            }
-
-
-            const pratoSelecionado =
-                pratoSelect.options[
-                    pratoSelect.selectedIndex
-                ];
-
-            const bebidaSelecionada =
-                bebidaSelect.options[
-                    bebidaSelect.selectedIndex
-                ];
-
-
-            const nomePrato =
-                pratoSelecionado.text.trim();
-
-            const precoPratoSelecionado =
-                Number(pratoSelecionado.value);
-
-
-            const nomeBebida =
-                bebidaSelecionada.text.trim();
-
-            const precoBebidaSelecionada =
-                Number(bebidaSelecionada.value);
-
-
-            const quantidadePrato =
-                Number(
-                    document.getElementById("qtdPrato").value
-                );
-
-            const quantidadeBebida =
-                Number(
-                    document.getElementById("qtdBebida").value
-                );
-
-
-            const subtotalPrato =
-                precoPratoSelecionado *
-                quantidadePrato;
-
-            const subtotalBebida =
-                precoBebidaSelecionada *
-                quantidadeBebida;
-
-            const total =
-                subtotalPrato +
-                subtotalBebida;
-
-
-            /* =========================
-               SALVAR PEDIDO
-            ========================= */
-
-            const pedido = {
-
-                prato: nomePrato,
-
-                precoPrato:
-                    precoPratoSelecionado,
-
-                quantidadePrato:
-                    quantidadePrato,
-
-                subtotalPrato:
-                    subtotalPrato,
-
-
-                bebida: nomeBebida,
-
-                precoBebida:
-                    precoBebidaSelecionada,
-
-                quantidadeBebida:
-                    quantidadeBebida,
-
-                subtotalBebida:
-                    subtotalBebida,
-
-
-                total:
-                    total
-
-            };
-
-
-            localStorage.setItem(
-                "pedidoSaborQuintal",
-                JSON.stringify(pedido)
-            );
-
-
-            /* =========================
-               MOSTRAR RESUMO
-            ========================= */
-
-            document.getElementById(
-                "resumoPrato"
-            ).textContent =
-                nomePrato;
-
-
-            document.getElementById(
-                "resumoQtdPrato"
-            ).textContent =
-                quantidadePrato;
-
-
-            document.getElementById(
-                "resumoBebida"
-            ).textContent =
-                nomeBebida;
-
-
-            document.getElementById(
-                "resumoQtdBebida"
-            ).textContent =
-                quantidadeBebida;
-
-
-            document.getElementById(
-                "resumoTotal"
-            ).textContent =
-                formatarDinheiro(total);
-
-
-            document.getElementById(
-                "telaPedido"
-            ).style.display =
-                "none";
-
-
-            document.getElementById(
-                "telaFinal"
-            ).style.display =
-                "block";
-
-        }
-
-
-        /* =========================
-           VOLTAR PARA PEDIDO
-        ========================= */
-
-        function voltarPedido() {
-
-            document.getElementById(
-                "telaFinal"
-            ).style.display =
-                "none";
-
-            document.getElementById(
-                "telaPedido"
-            ).style.display =
-                "block";
-
-        }
-
-
-        /* =========================
-           MOSTRAR NOTA
-        ========================= */
-
-        function mostrarNota() {
-
-            const dados =
-                localStorage.getItem(
-                    "pedidoSaborQuintal"
-                );
-
-
-            if (!dados) {
-
-                alert(
-                    "Nenhum pedido encontrado."
-                );
-
-                return;
-            }
-
-
-            const pedido =
-                JSON.parse(dados);
-
-
-            /* DATA */
-
-            const data =
-                new Date();
-
-
-            document.getElementById(
-                "dataPedido"
-            ).textContent =
-                data.toLocaleDateString("pt-BR");
-
-
-            /* PRATO */
-
-            document.getElementById(
-                "notaPrato"
-            ).textContent =
-                pedido.prato;
-
-
-            document.getElementById(
-                "notaQtdPrato"
-            ).textContent =
-                pedido.quantidadePrato;
-
-
-            document.getElementById(
-                "notaPrecoPrato"
-            ).textContent =
-                formatarDinheiro(
-                    pedido.precoPrato
-                );
-
-
-            document.getElementById(
-                "notaSubtotalPrato"
-            ).textContent =
-                formatarDinheiro(
-                    pedido.subtotalPrato
-                );
-
-
-            /* BEBIDA */
-
-            document.getElementById(
-                "notaBebida"
-            ).textContent =
-                pedido.bebida;
-
-
-            document.getElementById(
-                "notaQtdBebida"
-            ).textContent =
-                pedido.quantidadeBebida;
-
-
-            document.getElementById(
-                "notaPrecoBebida"
-            ).textContent =
-                formatarDinheiro(
-                    pedido.precoBebida
-                );
-
-
-            document.getElementById(
-                "notaSubtotalBebida"
-            ).textContent =
-                formatarDinheiro(
-                    pedido.subtotalBebida
-                );
-
-
-            /* TOTAL */
-
-            document.getElementById(
-                "notaTotal"
-            ).textContent =
-                formatarDinheiro(
-                    pedido.total
-                );
-
-
-            /* MOSTRA NOTA */
-
-            document.getElementById(
-                "telaFinal"
-            ).style.display =
-                "none";
-
-
-            document.getElementById(
-                "telaNota"
-            ).style.display =
-                "block";
-
-        }
-
-
-        /* =========================
-           FORMATAR DINHEIRO
-        ========================= */
-
-        function formatarDinheiro(valor) {
-
-            return Number(valor).toLocaleString(
-                "pt-BR",
-                {
-                    style: "currency",
-                    currency: "BRL"
+                if (!quantidade || quantidade < 1) {
+                    quantidade = 1;
                 }
-            );
 
-        }
+                const produto =
+                    listaProdutos[
+                        Number(select.value)
+                    ];
+
+                const subtotal =
+                    produto.preco * quantidade;
+
+                itens.push({
+
+                    nome:
+                        produto.nome,
+
+                    preco:
+                        produto.preco,
+
+                    quantidade:
+                        quantidade,
+
+                    subtotal:
+                        subtotal
+
+                });
+
+            }
+
+        });
+
+    return itens;
+
+}
 
 
-        /* =========================
-           VOLTAR DA NOTA
-        ========================= */
+/* =========================
+   CALCULAR TOTAL
+========================= */
 
-        function voltarFinal() {
+function calcularTotal() {
 
-            document.getElementById(
-                "telaNota"
-            ).style.display =
-                "none";
+    const listaPratos =
+        pegarItens(
+            ".select-prato",
+            pratos
+        );
+
+    const listaBebidas =
+        pegarItens(
+            ".select-bebida",
+            bebidas
+        );
+
+    let total = 0;
 
 
-            document.getElementById(
-                "telaFinal"
-            ).style.display =
-                "block";
+    /* SOMA OS PRATOS */
 
-        }
+    listaPratos.forEach(function(item) {
+
+        total += item.subtotal;
+
+    });
 
 
-        /* =========================
-           IMPRIMIR
-        ========================= */
+    /* SOMA AS BEBIDAS */
 
-        function imprimirNota() {
+    listaBebidas.forEach(function(item) {
 
-            window.print();
+        total += item.subtotal;
 
-        }
+    });
 
-    </script>
+
+    /* MOSTRA O TOTAL */
+
+    document.getElementById("total")
+        .textContent =
+        formatarDinheiro(total);
+
+}
+
+
+/* =========================
+   GERAR NÚMERO DO PEDIDO
+========================= */
+
+function gerarNumeroPedido() {
+
+    let numeroAtual =
+        Number(
+            localStorage.getItem(
+                "numeroPedidoSaborQuintal"
+            )
+        ) || 0;
+
+    numeroAtual++;
+
+    localStorage.setItem(
+        "numeroPedidoSaborQuintal",
+        numeroAtual
+    );
+
+    return "#" +
+        String(numeroAtual)
+            .padStart(6, "0");
+
+}
+
+
+/* =========================
+   CONTINUAR
+========================= */
+
+function continuar() {
+
+    const listaPratos =
+        pegarItens(
+            ".select-prato",
+            pratos
+        );
+
+    const listaBebidas =
+        pegarItens(
+            ".select-bebida",
+            bebidas
+        );
+
+
+    if (listaPratos.length === 0) {
+
+        alert(
+            "Escolha pelo menos um prato."
+        );
+
+        return;
+    }
+
+
+    if (listaBebidas.length === 0) {
+
+        alert(
+            "Escolha pelo menos uma bebida."
+        );
+
+        return;
+    }
+
+
+    let total = 0;
+
+
+    listaPratos.forEach(function(item) {
+
+        total += item.subtotal;
+
+    });
+
+
+    listaBebidas.forEach(function(item) {
+
+        total += item.subtotal;
+
+    });
+
+
+    const numeroPedido =
+        gerarNumeroPedido();
+
+
+    const pedido = {
+
+        numeroPedido:
+            numeroPedido,
+
+        pratos:
+            listaPratos,
+
+        bebidas:
+            listaBebidas,
+
+        total:
+            total
+
+    };
+
+
+    localStorage.setItem(
+        "pedidoSaborQuintal",
+        JSON.stringify(pedido)
+    );
+
+
+    /* RESUMO DOS PRATOS */
+
+    let htmlPratos = "";
+
+    listaPratos.forEach(function(item) {
+
+        htmlPratos += `
+
+            <div class="resumo-item">
+
+                ${item.quantidade}x
+                ${item.nome}
+                -
+                ${formatarDinheiro(item.subtotal)}
+
+            </div>
+
+        `;
+
+    });
+
+
+    document.getElementById(
+        "resumoPratos"
+    ).innerHTML =
+        htmlPratos;
+
+
+    /* RESUMO DAS BEBIDAS */
+
+    let htmlBebidas = "";
+
+    listaBebidas.forEach(function(item) {
+
+        htmlBebidas += `
+
+            <div class="resumo-item">
+
+                ${item.quantidade}x
+                ${item.nome}
+                -
+                ${formatarDinheiro(item.subtotal)}
+
+            </div>
+
+        `;
+
+    });
+
+
+    document.getElementById(
+        "resumoBebidas"
+    ).innerHTML =
+        htmlBebidas;
+
+
+    document.getElementById(
+        "resumoNumeroPedido"
+    ).textContent =
+        numeroPedido;
+
+
+    document.getElementById(
+        "resumoTotal"
+    ).textContent =
+        formatarDinheiro(total);
+
+
+    document.getElementById(
+        "telaPedido"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "telaFinal"
+    ).style.display =
+        "block";
+
+}
+
+
+/* =========================
+   VOLTAR PARA PEDIDO
+========================= */
+
+function voltarPedido() {
+
+    document.getElementById(
+        "telaFinal"
+    ).style.display =
+        "none";
+
+    document.getElementById(
+        "telaPedido"
+    ).style.display =
+        "block";
+
+}
+
+
+/* =========================
+   MOSTRAR NOTA
+========================= */
+
+function mostrarNota() {
+
+    const dados =
+        localStorage.getItem(
+            "pedidoSaborQuintal"
+        );
+
+
+    if (!dados) {
+
+        alert(
+            "Nenhum pedido encontrado."
+        );
+
+        return;
+    }
+
+
+    const pedido =
+        JSON.parse(dados);
+
+
+    document.getElementById(
+        "numeroPedido"
+    ).textContent =
+        pedido.numeroPedido;
+
+
+    const data =
+        new Date();
+
+
+    document.getElementById(
+        "dataPedido"
+    ).textContent =
+        data.toLocaleDateString(
+            "pt-BR"
+        );
+
+
+    /* NOTA DOS PRATOS */
+
+    let htmlPratos = "";
+
+    pedido.pratos.forEach(function(item) {
+
+        htmlPratos += `
+
+            <div class="produto-nota">
+
+                <h3>
+                    ${item.nome}
+                </h3>
+
+                <p>
+                    Quantidade:
+                    <strong>
+                        ${item.quantidade}
+                    </strong>
+                </p>
+
+                <p>
+                    Valor unitário:
+                    <strong>
+                        ${formatarDinheiro(item.preco)}
+                    </strong>
+                </p>
+
+                <p class="subtotal">
+                    Subtotal:
+                    ${formatarDinheiro(item.subtotal)}
+                </p>
+
+            </div>
+
+        `;
+
+    });
+
+
+    document.getElementById(
+        "notaPratos"
+    ).innerHTML =
+        htmlPratos;
+
+
+    /* NOTA DAS BEBIDAS */
+
+    let htmlBebidas = "";
+
+    pedido.bebidas.forEach(function(item) {
+
+        htmlBebidas += `
+
+            <div class="produto-nota">
+
+                <h3>
+                    ${item.nome}
+                </h3>
+
+                <p>
+                    Quantidade:
+                    <strong>
+                        ${item.quantidade}
+                    </strong>
+                </p>
+
+                <p>
+                    Valor unitário:
+                    <strong>
+                        ${formatarDinheiro(item.preco)}
+                    </strong>
+                </p>
+
+                <p class="subtotal">
+                    Subtotal:
+                    ${formatarDinheiro(item.subtotal)}
+                </p>
+
+            </div>
+
+        `;
+
+    });
+
+
+    document.getElementById(
+        "notaBebidas"
+    ).innerHTML =
+        htmlBebidas;
+
+
+    /* TOTAL DA NOTA */
+
+    document.getElementById(
+        "notaTotal"
+    ).textContent =
+        formatarDinheiro(
+            pedido.total
+        );
+
+
+    document.getElementById(
+        "telaFinal"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "telaNota"
+    ).style.display =
+        "block";
+
+}
+
+
+/* =========================
+   VOLTAR DA NOTA
+========================= */
+
+function voltarFinal() {
+
+    document.getElementById(
+        "telaNota"
+    ).style.display =
+        "none";
+
+    document.getElementById(
+        "telaFinal"
+    ).style.display =
+        "block";
+
+}
+
+
+/* =========================
+   IMPRIMIR NOTA
+========================= */
+
+function imprimirNota() {
+
+    window.print();
+
+}
+
+
+/* =========================
+   CALCULAR AO ABRIR
+========================= */
+
+calcularTotal();
+
+</script>
+
 
 </body>
 
