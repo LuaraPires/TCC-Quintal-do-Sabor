@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="O código desenvolve uma página de reservas para o restaurante Sabor do Quintal, utilizando HTML, CSS e Bootstrap.
+    <meta name="description"
+        content="O código desenvolve uma página de reservas para o restaurante Sabor do Quintal, utilizando HTML, CSS e Bootstrap.
     O cabeçalho apresenta o logo, nome do restaurante e botão de acesso à página inicial.
     A página permite escolher entre ambiente interno ou externo, mostrando imagens e descrições dos espaços disponíveis.
     Na área de reserva, o cliente pode selecionar o horário, a mesa disponível e informar seu nome, finalizando a reserva pelo botão “Finalizar”.
@@ -15,23 +16,22 @@
     <title>Sabor do Quintal - Reserva</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
 
     <style>
-           /* RESET */
+        /* RESET */
         * {
             margin: 0;
             padding: 0;
@@ -54,6 +54,7 @@
 
             font-family: "Montserrat", sans-serif;
         }
+
         /*HEADER*/
         header {
             width: 100%;
@@ -71,6 +72,7 @@
 
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
+
         /* LOGO */
         .logo {
             position: absolute;
@@ -81,6 +83,7 @@
             object-fit: contain;
             border-radius: 50%;
         }
+
         /* TÍTULO */
         .titulo {
             margin: 0;
@@ -91,6 +94,7 @@
             letter-spacing: 1px;
             color: #111;
         }
+
         /* HOME */
         .home {
             position: absolute;
@@ -114,8 +118,8 @@
             transform: translateY(-2px);
             color: #df6a4b;
         }
-        
-           /* CONTEÚDO PRINCIPAL */
+
+        /* CONTEÚDO PRINCIPAL */
         main {
             width: 100%;
             max-width: 1250px;
@@ -124,7 +128,7 @@
             padding: 28px 35px 35px;
         }
 
-           /* SELECT SUPERIOR */
+        /* SELECT SUPERIOR */
 
         .select-area {
             margin-bottom: 20px;
@@ -477,7 +481,6 @@
             }
 
         }
-
     </style>
 
 </head>
@@ -485,14 +488,10 @@
 
 <body>
 
-        <!-- HEADER -->
+    <!-- HEADER -->
     <header>
 
-        <img
-            src="../imagem/logo.png"
-            alt="Logo Sabor do Quintal"
-            class="logo"
-        >
+        <img src="../imagem/logo.png" alt="Logo Sabor do Quintal" class="logo">
 
 
         <h1 class="titulo">
@@ -511,7 +510,6 @@
     </header>
 
     
-         CONTEÚDO
 
     <main>
 
@@ -536,7 +534,7 @@
         </div>
 
         <!-- AMBIENTES -->
-       
+
         <section class="ambientes">
 
 
@@ -544,21 +542,17 @@
 
             <article class="ambiente">
 
-                <img
-                    src=""
-                    alt="Ambiente interno do restaurante"
-                    class="foto"
-                >
+                <img src="../imagem/mesa_interna.png" alt="Ambiente interno do restaurante" class="foto">
 
                 <div class="descricao">
                     <p>Ambientes aconchegantes e bem planejados para todos os
-                    momentos: desde mesas intimistas para duas pessoas, ideais
-                    para encontros tranquilos, até opções mais amplas para grupos
-                    e reuniões em família. Também contamos com mesas
-                    confortáveis para quatro pessoas e espaços com sofá, que
-                    oferecem ainda mais comodidade e uma experiência acolhedora
-                    para aproveitar cada detalhe da sua visita.
-                    </p>    
+                        momentos: desde mesas intimistas para duas pessoas, ideais
+                        para encontros tranquilos, até opções mais amplas para grupos
+                        e reuniões em família. Também contamos com mesas
+                        confortáveis para quatro pessoas e espaços com sofá, que
+                        oferecem ainda mais comodidade e uma experiência acolhedora
+                        para aproveitar cada detalhe da sua visita.
+                    </p>
                 </div>
 
             </article>
@@ -569,22 +563,18 @@
 
             <article class="ambiente">
 
-                <img
-                    src=""
-                    alt="Área externa do restaurante"
-                    class="foto"
-                >
+                <img src="../imagem/mesa_externa.png" alt="Área externa do restaurante" class="foto">
 
 
                 <div class="descricao">
 
-                   <p> Em um cenário ao ar livre com vista para o rio, o ambiente
-                    combina natureza, charme e aconchego para proporcionar uma
-                    experiência única. Com opções que vão de mesas para duas
-                    pessoas até espaços amplos para grupos e encontros em família,
-                    além de áreas com sofá que oferecem ainda mais conforto, tudo
-                    é envolvido por uma iluminação delicada que torna cada
-                    momento ainda mais especial e inesquecível.</p>
+                    <p> Em um cenário ao ar livre com vista para o rio, o ambiente
+                        combina natureza, charme e aconchego para proporcionar uma
+                        experiência única. Com opções que vão de mesas para duas
+                        pessoas até espaços amplos para grupos e encontros em família,
+                        além de áreas com sofá que oferecem ainda mais conforto, tudo
+                        é envolvido por uma iluminação delicada que torna cada
+                        momento ainda mais especial e inesquecível.</p>
 
                 </div>
 
@@ -592,9 +582,9 @@
 
         </section>
 
-       
-            <!-- RESERVA -->
-        
+
+        <!-- RESERVA -->
+
         <section class="reserva">
 
             <!-- HORÁRIO -->
@@ -652,17 +642,10 @@
 
             <div class="formulario">
 
-                <input
-                    type="text"
-                    class="nome"
-                    placeholder="Nome do cliente"
-                >
+                <input type="text" class="nome" placeholder="Nome do cliente">
 
 
-                <a
-                    href="pagina_principal.html"
-                    class="finalizar"
-                >
+                <a href="pagina_principal.html" class="finalizar">
                     Finalizar
                 </a>
 
