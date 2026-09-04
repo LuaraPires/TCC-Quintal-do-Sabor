@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Página oficial do Sabor do Quintal, um restaurante de estilo rústico que oferece pratos caseiros e saborosos.
+    Conheça nosso cardápio, confira nossos pratos, faça sua reserva e encontre nossa localização.">
+    <meta name="keywords" content="Sabor do Quintal, restaurante, login">
+    <meta name="author" content="Luara Pires">
+    <link rel="icon" type="image/png" href="../faviconn.png">
+    <title>Sabor do Quintal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Slab', serif;
+            background-color: #f3ead8;
+        }
+
+        /* Área principal */
+        .inicio {
+            min-height: 100vh;
+            position: relative;
+
+            background-image: url("imagem/entrada4.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            align-items: center;
+        }
+
+        /* Camada transparente sobre a imagem */
+        .inicio::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(45, 35, 20, 0.30);
+        }
+
+        /* Conteúdo */
+        .conteudo {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        /* Texto */
+        .texto {
+            max-width: 1000px;
+            color: #111;
+            font-weight: 900;
+            font-size: 30px;
+            line-height: 1.35;
+
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Botão */
+        .btn-cadastro {
+            background-color: #f27b55;
+            border: none;
+            color: #111;
+
+            font-weight: 700;
+            font-size: 13px;
+
+            padding: 10px 28px;
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .btn-cadastro:hover {
+            background-color: #d9633e;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+
+            .inicio {
+                min-height: 100vh;
+                background-position: center;
+            }
+
+            .texto {
+                font-size: 16px;
+                max-width: 90%;
+            }
+
+            .botao {
+                text-align: center;
+                margin-top: 25px;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- Página inicial -->
+    <main class="inicio">
+
+
+        <div class="container conteudo">
+
+            <div class="row align-items-end">
+
+                <!-- Texto -->
+                <div class="col-md-9">
+                    <p class="texto">
+                        Sabor de Mãe traz o aconchego da culinária tradicional
+                        direto para a sua mesa. Com pratos fartos, temperos
+                        frescos e aquele cheirinho irresistível de comida feita
+                        na hora, nosso restaurante oferece o verdadeiro gosto
+                        da comida caseira em um ambiente acolhedor e familiar.
+                    </p>
+                </div>
+
+                <!-- Botão -->
+                <div class="col-md-3 botao text-md-end">
+
+                    <a href="#" class="btn btn-cadastro">
+                        Cadastre-se
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
