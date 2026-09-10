@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -53,7 +54,9 @@
 
     <style>
 
-        /* RESET */
+        /* =========================
+           RESET
+        ========================= */
 
         * {
             margin: 0;
@@ -72,9 +75,15 @@
             min-height: 100vh;
 
             display: flex;
+
             flex-direction: column;
 
-            background-color: #d8d4d1;
+            background:
+                linear-gradient(
+                    135deg,
+                    #d8d4d1,
+                    #e9dfd1
+                );
 
             color: #171717;
 
@@ -82,66 +91,101 @@
         }
 
 
-        /* HEADER */
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
 
             width: 100%;
-            height: 85px;
+
+            height: 90px;
 
             position: relative;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
-            background-color: #f8e9cd;
+            background:
+                linear-gradient(
+                    90deg,
+                    #f8e9cd,
+                    #fff4df,
+                    #f8e9cd
+                );
 
-            border-bottom: 1px solid #e3d5bc;
+            border-bottom: 1px solid #dfcda9;
 
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.10);
+
+            z-index: 10;
         }
 
 
-        /* LOGO */
+        /* =========================
+           LOGO
+        ========================= */
 
         .logo {
 
             position: absolute;
 
             left: 40px;
-            top: 8px;
+
+            top: 10px;
 
             width: 70px;
+
             height: 70px;
 
             object-fit: contain;
 
             border-radius: 50%;
+
+            transition: 0.3s;
         }
 
 
-        /* TITULO */
+        .logo:hover {
+
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           TÍTULO
+        ========================= */
 
         .titulo {
 
             margin: 0;
 
-            font-family: "DM Serif Display", serif;
+            font-family:
+                "DM Serif Display",
+                serif;
 
-            font-size: 32px;
+            font-size: 35px;
 
             font-weight: bold;
 
             font-style: italic;
 
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
 
-            color: #111;
+            color: #2d241e;
+
+            text-shadow:
+                1px 2px 2px rgba(0, 0, 0, 0.08);
         }
 
 
-        /* HOME */
+        /* =========================
+           HOME
+        ========================= */
 
         .home {
 
@@ -157,54 +201,66 @@
 
             gap: 2px;
 
+            padding: 7px 10px;
+
             text-decoration: none;
 
-            color: #111;
+            color: #2d241e;
 
             font-size: 10px;
 
             font-weight: 700;
 
-            transition: 0.2s;
+            border-radius: 12px;
+
+            transition: 0.3s;
         }
 
 
         .home i {
+
             font-size: 25px;
         }
 
 
         .home:hover {
 
-            transform: translateY(-2px);
+            background-color: #df6a4b;
 
-            color: #df6a4b;
+            color: #fff;
+
+            transform: translateY(-2px);
         }
 
 
-        /* CONTEÚDO */
+        /* =========================
+           CONTEÚDO
+        ========================= */
 
         main {
 
             width: 100%;
 
-            max-width: 1250px;
+            max-width: 1300px;
 
             margin: 0 auto;
 
             flex: 1;
 
-            padding: 28px 35px 45px;
+            padding: 35px 35px 55px;
         }
 
 
-        /* AMBIENTES */
+        /* =========================
+           AMBIENTES
+        ========================= */
 
         .ambientes {
 
             display: grid;
 
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns:
+                1fr 1fr;
 
             gap: 45px;
         }
@@ -213,90 +269,128 @@
         .ambiente {
 
             width: 100%;
-        }
 
-
-        /* IMAGENS */
-
-        .foto {
-
-            width: 100%;
-
-            height: 300px;
-
-            display: block;
-
-            /* MOSTRA A IMAGEM INTEIRA SEM CORTAR */
-
-            object-fit: contain;
-
-            /* FUNDO PARA O ESPAÇO QUE SOBRAR */
-
-            background-color: #f8e9cd;
+            padding: 10px;
 
             border-radius: 30px;
-
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
 
             transition: 0.3s;
         }
 
 
-        .foto:hover {
+        .ambiente:hover {
 
-            transform: translateY(-3px);
-
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+            transform: translateY(-4px);
         }
 
 
-        /* DESCRIÇÃO */
+        /* =========================
+           IMAGENS
+           SEM CORTAR
+           SEM FUNDO NAS SOBRAS
+        ========================= */
+
+        .foto {
+
+            width: 100%;
+
+            height: 310px;
+
+            display: block;
+
+            object-fit: contain;
+
+            object-position: center;
+
+            border-radius: 28px;
+
+        }
+
+
+        .foto:hover {
+
+            transform: scale(1.015);
+
+            box-shadow:
+                0 10px 25px
+                rgba(0, 0, 0, 0.22);
+        }
+
+
+        /* =========================
+           DESCRIÇÃO
+        ========================= */
 
         .descricao {
 
-            min-height: 152px;
+            min-height: 150px;
 
-            margin: 20px 15px 0;
+            margin: 18px 10px 0;
 
-            padding: 18px 16px;
+            padding: 20px;
 
             display: flex;
 
-            align-items: flex-start;
+            align-items: center;
 
-            background-color: #e1bc87;
+            background:
+                linear-gradient(
+                    135deg,
+                    #e1bc87,
+                    #e8c996
+                );
 
-            border-radius: 27px;
+            border-radius: 22px;
 
             font-family: Georgia, serif;
 
             font-size: 13px;
 
-            line-height: 1.35;
+            line-height: 1.5;
 
-            color: #151515;
+            color: #2b211a;
 
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            box-shadow:
+                0 5px 12px
+                rgba(0, 0, 0, 0.10);
+
+            border-left:
+                5px solid #df6a4b;
         }
 
 
-        /* ÁREA DA RESERVA */
+        .descricao p {
+
+            margin: 0;
+        }
+
+
+        /* =========================
+           ÁREA DA RESERVA
+        ========================= */
 
         .reserva {
 
             margin-top: 55px;
 
-            padding: 25px;
+            padding: 30px;
 
-            background-color: rgba(248, 233, 205, 0.55);
+            background:
+                rgba(248, 233, 205, 0.82);
 
-            border-radius: 25px;
+            border-radius: 30px;
 
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border:
+                1px solid rgba(255, 255, 255, 0.5);
+
+            box-shadow:
+                0 8px 25px
+                rgba(0, 0, 0, 0.10);
 
             display: grid;
 
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns:
+                1fr 1fr 1fr;
 
             gap: 25px;
 
@@ -304,15 +398,19 @@
         }
 
 
-        /* TITULOS */
+        /* =========================
+           TÍTULOS DOS CAMPOS
+        ========================= */
 
         .titulo-reserva {
 
             width: 100%;
 
-            height: 36px;
+            min-height: 38px;
 
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+
+            padding: 7px;
 
             display: flex;
 
@@ -320,37 +418,46 @@
 
             justify-content: center;
 
-            background-color: #df6a4b;
+            background:
+                linear-gradient(
+                    135deg,
+                    #df6a4b,
+                    #e77b5d
+                );
 
-            border-radius: 8px 8px 0 0;
+            border-radius: 10px;
 
-            font-size: 11px;
+            font-size: 10px;
 
             font-weight: 800;
 
             color: #000;
 
-            box-shadow: 2px 3px 0 #777;
+            box-shadow:
+                0 3px 6px
+                rgba(0, 0, 0, 0.15);
         }
 
 
-        /* CAMPOS */
+        /* =========================
+           CAMPOS
+        ========================= */
 
         .campo {
 
             width: 100%;
 
-            height: 38px;
+            height: 43px;
 
-            padding: 0 12px;
+            padding: 0 14px;
 
-            border: none;
+            border: 2px solid transparent;
 
-            border-radius: 8px;
+            border-radius: 10px;
 
-            background-color: #df6a4b;
+            background-color: #fff;
 
-            color: #000;
+            color: #2d241e;
 
             font-size: 11px;
 
@@ -360,21 +467,29 @@
 
             outline: none;
 
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+            box-shadow:
+                0 3px 8px
+                rgba(0, 0, 0, 0.10);
 
-            transition: 0.2s;
+            transition: 0.3s;
         }
 
 
         .campo:hover {
 
-            background-color: #d45d3e;
+            border-color: #df6a4b;
+
+            transform: translateY(-1px);
         }
 
 
         .campo:focus {
 
-            box-shadow: 0 0 0 2px #b84f34;
+            border-color: #df6a4b;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(223, 106, 75, 0.20);
         }
 
 
@@ -384,15 +499,17 @@
         }
 
 
-        /* FORMULÁRIO */
+        /* =========================
+           FORMULÁRIO
+        ========================= */
 
         .formulario {
 
             width: 100%;
 
-            min-height: 200px;
+            min-height: 220px;
 
-            padding: 14px;
+            padding: 18px;
 
             display: flex;
 
@@ -400,27 +517,36 @@
 
             justify-content: space-between;
 
-            gap: 10px;
+            gap: 12px;
 
-            background-color: #e1bc87;
+            background:
+                linear-gradient(
+                    135deg,
+                    #e1bc87,
+                    #edcf9e
+                );
 
-            border-radius: 27px;
+            border-radius: 24px;
 
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            box-shadow:
+                0 5px 14px
+                rgba(0, 0, 0, 0.12);
         }
 
 
-        /* NOME E TELEFONE */
+        /* =========================
+           NOME E TELEFONE
+        ========================= */
 
         .nome {
 
             width: 100%;
 
-            height: 38px;
+            height: 42px;
 
-            padding: 0 12px;
+            padding: 0 14px;
 
-            border: none;
+            border: 2px solid transparent;
 
             border-radius: 10px;
 
@@ -430,7 +556,7 @@
 
             font-family: Georgia, serif;
 
-            font-size: 11px;
+            font-size: 12px;
 
             font-weight: bold;
 
@@ -438,13 +564,13 @@
 
             outline: none;
 
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
         }
 
 
         .nome::placeholder {
 
-            color: #111;
+            color: #555;
 
             opacity: 1;
         }
@@ -452,13 +578,21 @@
 
         .nome:focus {
 
-            box-shadow: 0 0 0 2px #df6a4b;
+            border-color: #df6a4b;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(223, 106, 75, 0.18);
         }
 
 
-        /* RESUMO */
+        /* =========================
+           RESUMO
+        ========================= */
 
         .resumo {
+
+            padding: 8px;
 
             font-family: Georgia, serif;
 
@@ -466,19 +600,19 @@
 
             line-height: 1.5;
 
-            margin-top: 8px;
-
-            color: #171717;
+            color: #2d241e;
         }
 
 
-        /* BOTÃO */
+        /* =========================
+           BOTÃO FINALIZAR
+        ========================= */
 
         .finalizar {
 
-            width: 153px;
+            width: 170px;
 
-            height: 36px;
+            height: 42px;
 
             margin-left: auto;
 
@@ -490,15 +624,22 @@
 
             border: none;
 
-            border-radius: 8px;
+            border-radius: 10px;
 
-            background-color: #df6a4b;
+            background:
+                linear-gradient(
+                    135deg,
+                    #df6a4b,
+                    #c85639
+                );
 
-            color: #000;
+            color: #fff;
 
-            font-family: "DM Serif Display", serif;
+            font-family:
+                "DM Serif Display",
+                serif;
 
-            font-size: 14px;
+            font-size: 16px;
 
             font-style: italic;
 
@@ -506,33 +647,44 @@
 
             cursor: pointer;
 
-            transition: 0.2s;
+            box-shadow:
+                0 4px 10px
+                rgba(0, 0, 0, 0.18);
+
+            transition: 0.3s;
         }
 
 
         .finalizar:hover {
 
-            background-color: #c85639;
+            transform: translateY(-2px);
 
-            transform: translateY(-1px);
-
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+            box-shadow:
+                0 7px 15px
+                rgba(0, 0, 0, 0.22);
         }
 
 
-        /* MENSAGEM */
+        /* =========================
+           MENSAGEM
+        ========================= */
 
         .mensagem {
 
             display: none;
 
-            margin-top: 20px;
+            margin-top: 25px;
 
-            padding: 18px;
+            padding: 22px;
 
-            background-color: #e1bc87;
+            background:
+                linear-gradient(
+                    135deg,
+                    #e1bc87,
+                    #efd2a2
+                );
 
-            border-radius: 15px;
+            border-radius: 20px;
 
             text-align: center;
 
@@ -540,39 +692,56 @@
 
             font-size: 14px;
 
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+            box-shadow:
+                0 5px 15px
+                rgba(0, 0, 0, 0.12);
+
+            border-left:
+                5px solid #df6a4b;
         }
 
 
         .mensagem i {
 
-            font-size: 25px;
+            font-size: 30px;
 
             display: block;
 
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+
+            color: #2d241e;
         }
 
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
 
             width: 100%;
 
-            min-height: 38px;
+            min-height: 45px;
 
             display: grid;
 
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns:
+                1fr 1fr 1fr;
 
             align-items: center;
 
-            padding: 5px 12px;
+            padding: 7px 20px;
 
-            background-color: #f8e9cd;
+            background:
+                linear-gradient(
+                    90deg,
+                    #f8e9cd,
+                    #fff4df,
+                    #f8e9cd
+                );
 
-            border-top: 1px solid #e3d5bc;
+            border-top:
+                1px solid #dfcda9;
 
             font-size: 8px;
 
@@ -630,17 +799,21 @@
 
             cursor: pointer;
 
-            transition: 0.2s;
+            transition: 0.3s;
         }
 
 
         .config:hover {
 
-            transform: rotate(30deg);
+            transform:
+                rotate(30deg)
+                scale(1.1);
         }
 
 
-        /* TABLET */
+        /* =========================
+           TABLET
+        ========================= */
 
         @media (max-width: 900px) {
 
@@ -652,19 +825,23 @@
 
             .reserva {
 
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns:
+                    1fr 1fr;
             }
 
 
             .formulario {
 
-                grid-column: 1 / -1;
+                grid-column:
+                    1 / -1;
             }
 
         }
 
 
-        /* CELULAR */
+        /* =========================
+           CELULAR
+        ========================= */
 
         @media (max-width: 600px) {
 
@@ -694,7 +871,7 @@
 
             .home {
 
-                right: 15px;
+                right: 10px;
 
                 font-size: 8px;
             }
@@ -708,7 +885,10 @@
 
             main {
 
-                padding: 20px 15px 30px;
+                padding:
+                    20px
+                    12px
+                    35px;
             }
 
 
@@ -716,11 +896,11 @@
 
                 grid-template-columns: 1fr;
 
-                gap: 30px;
+                gap: 25px;
             }
 
 
-            /* IMAGEM NO CELULAR SEM CORTAR */
+            /* IMAGEM CELULAR */
 
             .foto {
 
@@ -730,9 +910,13 @@
 
                 object-fit: contain;
 
-                background-color: #f8e9cd;
+                object-position: center;
 
-                border-radius: 25px;
+                border-radius: 22px;
+
+                box-shadow:
+                    0 5px 14px
+                    rgba(0, 0, 0, 0.15);
             }
 
 
@@ -740,11 +924,16 @@
 
                 min-height: auto;
 
-                margin: 12px 5px 0;
+                margin:
+                    12px
+                    3px
+                    0;
 
-                padding: 15px;
+                padding: 16px;
 
                 font-size: 12px;
+
+                line-height: 1.45;
             }
 
 
@@ -752,11 +941,13 @@
 
                 grid-template-columns: 1fr;
 
-                gap: 20px;
+                gap: 18px;
 
-                margin-top: 40px;
+                margin-top: 35px;
 
                 padding: 18px;
+
+                border-radius: 22px;
             }
 
 
@@ -764,7 +955,9 @@
 
                 grid-column: auto;
 
-                min-height: 200px;
+                min-height: 220px;
+
+                padding: 15px;
             }
 
 
@@ -776,13 +969,13 @@
 
             footer {
 
-                min-height: 80px;
+                min-height: 90px;
 
                 grid-template-columns: 1fr;
 
-                gap: 7px;
+                gap: 8px;
 
-                padding: 10px;
+                padding: 12px;
             }
 
 
@@ -961,27 +1154,16 @@
                     </option>
 
                     <option value="10:00">10:00</option>
-
                     <option value="11:00">11:00</option>
-
                     <option value="12:00">12:00</option>
-
                     <option value="13:00">13:00</option>
-
                     <option value="14:00">14:00</option>
-
                     <option value="15:00">15:00</option>
-
                     <option value="16:00">16:00</option>
-
                     <option value="17:00">17:00</option>
-
                     <option value="18:00">18:00</option>
-
                     <option value="19:00">19:00</option>
-
                     <option value="20:00">20:00</option>
-
                     <option value="21:00">21:00</option>
 
                 </select>
@@ -1011,37 +1193,14 @@
                         Quantas pessoas?
                     </option>
 
-                    <option value="1">
-                        1 pessoa
-                    </option>
-
-                    <option value="2">
-                        2 pessoas
-                    </option>
-
-                    <option value="3">
-                        3 pessoas
-                    </option>
-
-                    <option value="4">
-                        4 pessoas
-                    </option>
-
-                    <option value="5">
-                        5 pessoas
-                    </option>
-
-                    <option value="6">
-                        6 pessoas
-                    </option>
-
-                    <option value="7">
-                        7 pessoas
-                    </option>
-
-                    <option value="8">
-                        8 pessoas
-                    </option>
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
 
                 </select>
 
@@ -1115,9 +1274,6 @@
 
             <div class="formulario">
 
-
-                <!-- NOME -->
-
                 <input
                     type="text"
                     id="nome"
@@ -1125,16 +1281,12 @@
                     placeholder="Nome do cliente">
 
 
-                <!-- TELEFONE -->
-
                 <input
                     type="tel"
                     id="telefone"
                     class="nome"
                     placeholder="Telefone do cliente">
 
-
-                <!-- RESUMO -->
 
                 <div
                     class="resumo"
@@ -1144,8 +1296,6 @@
 
                 </div>
 
-
-                <!-- BOTÃO -->
 
                 <button
                     type="button"
@@ -1187,7 +1337,6 @@
 
     <footer>
 
-
         <div class="footer-esquerda">
 
             <i class="bi bi-geo-alt"></i>
@@ -1226,11 +1375,6 @@
 
     <script>
 
-
-        /* ==========================================
-           CAMPOS
-        ========================================== */
-
         const campoData =
             document.getElementById("data");
 
@@ -1256,35 +1400,26 @@
             document.getElementById("resumo");
 
 
+        /* DATA MÍNIMA */
 
-        /* ==========================================
-           DATA MÍNIMA = DATA ATUAL
-        ========================================== */
-
-        const hoje =
-            new Date();
+        const hoje = new Date();
 
         const ano =
             hoje.getFullYear();
 
         const mes =
-            String(
-                hoje.getMonth() + 1
-            ).padStart(2, "0");
+            String(hoje.getMonth() + 1)
+            .padStart(2, "0");
 
         const dia =
-            String(
-                hoje.getDate()
-            ).padStart(2, "0");
+            String(hoje.getDate())
+            .padStart(2, "0");
 
         campoData.min =
             ano + "-" + mes + "-" + dia;
 
 
-
-        /* ==========================================
-           MESAS DO RESTAURANTE
-        ========================================== */
+        /* MESAS */
 
         const mesas = {
 
@@ -1311,7 +1446,6 @@
                 }
 
             ],
-
 
             Externo: [
 
@@ -1340,10 +1474,7 @@
         };
 
 
-
-        /* ==========================================
-           ATUALIZA AS MESAS
-        ========================================== */
+        /* ATUALIZA MESAS */
 
         function atualizarMesas() {
 
@@ -1352,7 +1483,6 @@
 
             const quantidade =
                 Number(pessoas.value);
-
 
             mesa.innerHTML = "";
 
@@ -1376,14 +1506,11 @@
             opcaoInicial.textContent =
                 "Escolha a mesa";
 
-            mesa.appendChild(
-                opcaoInicial
-            );
+            mesa.appendChild(opcaoInicial);
 
 
             mesas[ambienteEscolhido]
                 .forEach(function (item) {
-
 
                     if (
                         !quantidade ||
@@ -1393,10 +1520,8 @@
                         const opcao =
                             document.createElement("option");
 
-
                         opcao.value =
                             item.nome;
-
 
                         opcao.textContent =
                             item.nome +
@@ -1404,10 +1529,7 @@
                             item.capacidade +
                             " pessoas";
 
-
-                        mesa.appendChild(
-                            opcao
-                        );
+                        mesa.appendChild(opcao);
 
                     }
 
@@ -1419,10 +1541,7 @@
         }
 
 
-
-        /* ==========================================
-           EVENTOS
-        ========================================== */
+        /* EVENTOS */
 
         ambiente.addEventListener(
             "change",
@@ -1466,10 +1585,7 @@
         );
 
 
-
-        /* ==========================================
-           RESUMO
-        ========================================== */
+        /* RESUMO */
 
         function atualizarResumo() {
 
@@ -1532,13 +1648,9 @@
         }
 
 
-
-        /* ==========================================
-           FINALIZAR RESERVA
-        ========================================== */
+        /* FINALIZAR RESERVA */
 
         function finalizarReserva() {
-
 
             const data =
                 campoData.value;
@@ -1562,9 +1674,6 @@
                 telefone.value.trim();
 
 
-
-            /* VERIFICA NOME */
-
             if (!nomeCliente) {
 
                 alert(
@@ -1576,9 +1685,6 @@
                 return;
             }
 
-
-
-            /* VERIFICA TELEFONE */
 
             if (!telefoneCliente) {
 
@@ -1592,9 +1698,6 @@
             }
 
 
-
-            /* VERIFICA DATA */
-
             if (!data) {
 
                 alert(
@@ -1606,9 +1709,6 @@
                 return;
             }
 
-
-
-            /* VERIFICA HORÁRIO */
 
             if (!hora) {
 
@@ -1622,9 +1722,6 @@
             }
 
 
-
-            /* VERIFICA PESSOAS */
-
             if (!qtd) {
 
                 alert(
@@ -1636,9 +1733,6 @@
                 return;
             }
 
-
-
-            /* VERIFICA AMBIENTE */
 
             if (!ambienteEscolhido) {
 
@@ -1652,9 +1746,6 @@
             }
 
 
-
-            /* VERIFICA MESA */
-
             if (!mesaEscolhida) {
 
                 alert(
@@ -1667,22 +1758,12 @@
             }
 
 
-
-            /* ==========================================
-               FORMATA DATA
-            ========================================== */
-
             const dataFormatada =
                 data
                     .split("-")
                     .reverse()
                     .join("/");
 
-
-
-            /* ==========================================
-               CRIA DATA DA RESERVA
-            ========================================== */
 
             const dataReserva =
                 new Date(
@@ -1692,11 +1773,6 @@
                     ":00"
                 );
 
-
-
-            /* ==========================================
-               5 DIAS ANTES
-            ========================================== */
 
             const cincoDias =
                 5 *
@@ -1711,11 +1787,6 @@
                 -
                 cincoDias;
 
-
-
-            /* ==========================================
-               SALVA A RESERVA
-            ========================================== */
 
             const reserva = {
 
@@ -1754,11 +1825,6 @@
                 JSON.stringify(reserva)
             );
 
-
-
-            /* ==========================================
-               MOSTRA CONFIRMAÇÃO
-            ========================================== */
 
             const mensagem =
                 document.getElementById(
@@ -1823,28 +1889,17 @@
             });
 
 
-
-            /* ==========================================
-               CRIA O LEMBRETE
-            ========================================== */
-
-            criarLembrete(
-                reserva
-            );
+            criarLembrete(reserva);
 
         }
 
 
-
-        /* ==========================================
-           CRIAR LEMBRETE
-        ========================================== */
+        /* CRIAR LEMBRETE */
 
         function criarLembrete(reserva) {
 
             const agora =
                 new Date().getTime();
-
 
             const tempoRestante =
                 reserva.dataLembrete -
@@ -1874,13 +1929,9 @@
         }
 
 
-
-        /* ==========================================
-           MOSTRAR LEMBRETE
-        ========================================== */
+        /* MOSTRAR LEMBRETE */
 
         function mostrarLembrete(reserva) {
-
 
             const mensagemLembrete =
 
@@ -1925,15 +1976,11 @@
         }
 
 
-
-        /* ==========================================
-           RECUPERA A RESERVA AO ABRIR O SITE
-        ========================================== */
+        /* RECUPERA RESERVA */
 
         window.addEventListener(
             "load",
             function () {
-
 
                 const reservaSalva =
                     localStorage.getItem(
@@ -1942,7 +1989,6 @@
 
 
                 if (reservaSalva) {
-
 
                     const reserva =
                         JSON.parse(
@@ -1970,7 +2016,6 @@
         );
 
     </script>
-
 
 
     <!-- Bootstrap JS -->
