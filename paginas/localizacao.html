@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -19,7 +18,6 @@
     <link rel="icon" type="image/png" href="../faviconn.png">
 
     <title>Sabor do Quintal - Localização</title>
-
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -113,12 +111,20 @@
             font-family: Arial, sans-serif;
 
             font-size: 11px;
+
+            transition: 0.2s;
         }
 
 
         .home i {
 
             font-size: 29px;
+        }
+
+
+        .home:hover {
+
+            transform: scale(1.08);
         }
 
 
@@ -333,6 +339,14 @@
             font-size: 16px;
 
             line-height: 1.3;
+        }
+
+
+        .descricao i {
+
+            font-size: 24px;
+
+            margin-right: 5px;
         }
 
 
@@ -580,6 +594,7 @@
                         <input
                             type="text"
                             id="estado"
+                            value="São Paulo"
                             placeholder="Ex: São Paulo"
                         >
 
@@ -597,6 +612,7 @@
                         <input
                             type="text"
                             id="cidade"
+                            value="São Roque"
                             placeholder="Ex: São Roque"
                         >
 
@@ -614,7 +630,8 @@
                         <input
                             type="text"
                             id="bairro"
-                            placeholder="Ex: Monte Alegre"
+                            value="Canguera"
+                            placeholder="Ex: Canguera"
                         >
 
                     </div>
@@ -631,7 +648,8 @@
                         <input
                             type="text"
                             id="rua"
-                            placeholder="Ex: Rua das Flores, 100"
+                            value="Estrada do Vinho, 2450"
+                            placeholder="Ex: Estrada do Vinho, 2450"
                         >
 
                     </div>
@@ -695,7 +713,7 @@
 
                     <iframe
                         id="mapaGoogle"
-                        src="https://www.google.com/maps?q=Sabor%20do%20Quintal%20Restaurante%20Rural%2C%20São%20Roque%2C%20São%20Paulo&output=embed"
+                        src="https://www.google.com/maps?q=Estrada%20do%20Vinho%2C%202450%2C%20Canguera%2C%20São%20Roque%2C%20São%20Paulo%2C%2018145-000&output=embed"
                         loading="lazy"
                         allowfullscreen>
                     </iframe>
@@ -712,10 +730,11 @@
 
                         <i class="bi bi-geo-alt-fill"></i>
 
-                        Digite o endereço ao lado e clique em
-                        <strong>"Encontrar no mapa"</strong>.
-                        A localização será atualizada
-                        automaticamente nesta tela.
+                        <strong>Sabor do Quintal – Restaurante Rural</strong><br>
+
+                        Estrada do Vinho, 2450 – Canguera<br>
+
+                        São Roque – SP | CEP 18145-000
 
                     </p>
 
@@ -778,7 +797,8 @@
 
         function mostrarMapa() {
 
-            // Pega os valores dos campos
+            // Pega os valores digitados
+
             const estado =
                 document.getElementById("estado").value.trim();
 
@@ -792,12 +812,12 @@
                 document.getElementById("rua").value.trim();
 
 
-            // Pega a mensagem
             const mensagem =
                 document.getElementById("mensagem");
 
 
-            // Verifica se os campos principais estão preenchidos
+            // Verifica os campos
+
             if (
                 estado === "" ||
                 cidade === "" ||
@@ -809,15 +829,22 @@
                 mensagem.style.color = "#a00000";
 
                 mensagem.innerHTML =
-                    "Preencha o Estado, a Cidade e o Bairro.";
+                    "Preencha Estado, Cidade e Bairro.";
 
                 return;
+
             }
 
 
-            // Monta o endereço
-            let endereco =
-                "Sabor do Quintal Restaurante Rural, ";
+            /*
+                Monta o endereço.
+
+                Aqui NÃO colocamos o nome do restaurante,
+                pois queremos que o Google Maps procure
+                diretamente pelo endereço.
+            */
+
+            let endereco = "";
 
 
             if (rua !== "") {
@@ -834,7 +861,8 @@
 
 
             /*
-                Cria o endereço para o Google Maps.
+                Transforma o endereço em formato
+                adequado para a URL.
             */
 
             const enderecoMapa =
@@ -842,9 +870,7 @@
 
 
             /*
-                Atualiza o iframe do mapa.
-
-                O mapa aparece diretamente
+                Atualiza o mapa que aparece
                 dentro da página.
             */
 
@@ -858,17 +884,20 @@
                 "&output=embed";
 
 
-            // Mostra mensagem
+            /*
+                Mostra confirmação.
+            */
+
             mensagem.style.display = "block";
 
             mensagem.style.color = "#155724";
 
             mensagem.innerHTML =
-                "Localização encontrada no mapa!";
+                "Localização atualizada no mapa!";
 
 
             /*
-                Rola a tela até o mapa.
+                Leva o usuário até o mapa.
             */
 
             document.querySelector(".mapa").scrollIntoView({
@@ -883,8 +912,8 @@
 
 
         /*
-            Permite apertar ENTER
-            para pesquisar o endereço.
+            Permite usar a tecla ENTER
+            para pesquisar.
         */
 
         document.querySelectorAll(".campo input").forEach(function(input) {
@@ -907,4 +936,4 @@
 </body>
 
 </html>
-```
+

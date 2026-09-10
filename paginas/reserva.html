@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -199,50 +198,6 @@
         }
 
 
-        /* SELECT SUPERIOR */
-
-        .select-area {
-
-            margin-bottom: 20px;
-        }
-
-
-        .select-custom {
-
-            width: 190px;
-
-            height: 36px;
-
-            padding: 0 12px;
-
-            border: none;
-
-            border-radius: 8px;
-
-            background-color: #df6a4b;
-
-            color: #000;
-
-            font-size: 11px;
-
-            font-weight: 700;
-
-            cursor: pointer;
-
-            outline: none;
-
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-
-            transition: 0.2s;
-        }
-
-
-        .select-custom:hover {
-
-            background-color: #d45d3e;
-        }
-
-
         /* AMBIENTES */
 
         .ambientes {
@@ -267,11 +222,17 @@
 
             width: 100%;
 
-            height: 255px;
+            height: 300px;
 
             display: block;
 
-            object-fit: cover;
+            /* MOSTRA A IMAGEM INTEIRA SEM CORTAR */
+
+            object-fit: contain;
+
+            /* FUNDO PARA O ESPAÇO QUE SOBRAR */
+
+            background-color: #f8e9cd;
 
             border-radius: 30px;
 
@@ -429,7 +390,7 @@
 
             width: 100%;
 
-            min-height: 150px;
+            min-height: 200px;
 
             padding: 14px;
 
@@ -439,6 +400,8 @@
 
             justify-content: space-between;
 
+            gap: 10px;
+
             background-color: #e1bc87;
 
             border-radius: 27px;
@@ -447,7 +410,7 @@
         }
 
 
-        /* NOME */
+        /* NOME E TELEFONE */
 
         .nome {
 
@@ -749,12 +712,6 @@
             }
 
 
-            .select-custom {
-
-                width: 100%;
-            }
-
-
             .ambientes {
 
                 grid-template-columns: 1fr;
@@ -763,9 +720,17 @@
             }
 
 
+            /* IMAGEM NO CELULAR SEM CORTAR */
+
             .foto {
 
-                height: 220px;
+                width: 100%;
+
+                height: 240px;
+
+                object-fit: contain;
+
+                background-color: #f8e9cd;
 
                 border-radius: 25px;
             }
@@ -799,7 +764,7 @@
 
                 grid-column: auto;
 
-                min-height: 150px;
+                min-height: 200px;
             }
 
 
@@ -880,6 +845,8 @@
 
 
     <main>
+
+
         <!-- AMBIENTES -->
 
         <section class="ambientes">
@@ -1149,12 +1116,25 @@
             <div class="formulario">
 
 
+                <!-- NOME -->
+
                 <input
                     type="text"
                     id="nome"
                     class="nome"
                     placeholder="Nome do cliente">
 
+
+                <!-- TELEFONE -->
+
+                <input
+                    type="tel"
+                    id="telefone"
+                    class="nome"
+                    placeholder="Telefone do cliente">
+
+
+                <!-- RESUMO -->
 
                 <div
                     class="resumo"
@@ -1164,6 +1144,8 @@
 
                 </div>
 
+
+                <!-- BOTÃO -->
 
                 <button
                     type="button"
@@ -1245,7 +1227,9 @@
     <script>
 
 
-        /* CAMPOS */
+        /* ==========================================
+           CAMPOS
+        ========================================== */
 
         const campoData =
             document.getElementById("data");
@@ -1265,29 +1249,42 @@
         const nome =
             document.getElementById("nome");
 
+        const telefone =
+            document.getElementById("telefone");
+
         const resumo =
             document.getElementById("resumo");
 
 
-        /* DATA MÍNIMA = DATA ATUAL */
 
-        const hoje = new Date();
+        /* ==========================================
+           DATA MÍNIMA = DATA ATUAL
+        ========================================== */
+
+        const hoje =
+            new Date();
 
         const ano =
             hoje.getFullYear();
 
         const mes =
-            String(hoje.getMonth() + 1).padStart(2, "0");
+            String(
+                hoje.getMonth() + 1
+            ).padStart(2, "0");
 
         const dia =
-            String(hoje.getDate()).padStart(2, "0");
+            String(
+                hoje.getDate()
+            ).padStart(2, "0");
 
         campoData.min =
             ano + "-" + mes + "-" + dia;
 
 
 
-        /* MESAS DO RESTAURANTE */
+        /* ==========================================
+           MESAS DO RESTAURANTE
+        ========================================== */
 
         const mesas = {
 
@@ -1344,7 +1341,9 @@
 
 
 
-        /* ATUALIZA AS MESAS */
+        /* ==========================================
+           ATUALIZA AS MESAS
+        ========================================== */
 
         function atualizarMesas() {
 
@@ -1358,8 +1357,6 @@
             mesa.innerHTML = "";
 
 
-            /* SEM AMBIENTE */
-
             if (!ambienteEscolhido) {
 
                 mesa.innerHTML =
@@ -1371,8 +1368,6 @@
             }
 
 
-            /* OPÇÃO INICIAL */
-
             const opcaoInicial =
                 document.createElement("option");
 
@@ -1381,45 +1376,42 @@
             opcaoInicial.textContent =
                 "Escolha a mesa";
 
-            mesa.appendChild(opcaoInicial);
+            mesa.appendChild(
+                opcaoInicial
+            );
 
 
-            /* MESAS DO AMBIENTE */
-
-            mesas[ambienteEscolhido].forEach(function (item) {
-
-
-                /*
-                 * MOSTRA A MESA SE:
-                 * NÃO ESCOLHEU PESSOAS AINDA
-                 * OU A MESA COMPORTA A QUANTIDADE
-                 */
-
-                if (
-                    !quantidade ||
-                    quantidade <= item.capacidade
-                ) {
-
-                    const opcao =
-                        document.createElement("option");
+            mesas[ambienteEscolhido]
+                .forEach(function (item) {
 
 
-                    opcao.value =
-                        item.nome;
+                    if (
+                        !quantidade ||
+                        quantidade <= item.capacidade
+                    ) {
+
+                        const opcao =
+                            document.createElement("option");
 
 
-                    opcao.textContent =
-                        item.nome +
-                        " - " +
-                        item.capacidade +
-                        " pessoas";
+                        opcao.value =
+                            item.nome;
 
 
-                    mesa.appendChild(opcao);
+                        opcao.textContent =
+                            item.nome +
+                            " - " +
+                            item.capacidade +
+                            " pessoas";
 
-                }
 
-            });
+                        mesa.appendChild(
+                            opcao
+                        );
+
+                    }
+
+                });
 
 
             atualizarResumo();
@@ -1428,7 +1420,9 @@
 
 
 
-        /* EVENTOS */
+        /* ==========================================
+           EVENTOS
+        ========================================== */
 
         ambiente.addEventListener(
             "change",
@@ -1466,8 +1460,16 @@
         );
 
 
+        telefone.addEventListener(
+            "input",
+            atualizarResumo
+        );
 
-        /* RESUMO DA RESERVA */
+
+
+        /* ==========================================
+           RESUMO
+        ========================================== */
 
         function atualizarResumo() {
 
@@ -1499,10 +1501,14 @@
             ) {
 
                 const dataFormatada =
-                    data.split("-").reverse().join("/");
+                    data
+                        .split("-")
+                        .reverse()
+                        .join("/");
 
 
                 resumo.textContent =
+
                     "Olá, " +
                     nomeCliente +
                     "! Reserva para " +
@@ -1514,8 +1520,7 @@
                     ", no ambiente " +
                     ambienteEscolhido +
                     ", " +
-                    mesaEscolhida +
-                    ".";
+                    mesaEscolhida + ".";
 
             } else {
 
@@ -1528,7 +1533,9 @@
 
 
 
-        /* FINALIZAR RESERVA */
+        /* ==========================================
+           FINALIZAR RESERVA
+        ========================================== */
 
         function finalizarReserva() {
 
@@ -1551,6 +1558,9 @@
             const nomeCliente =
                 nome.value.trim();
 
+            const telefoneCliente =
+                telefone.value.trim();
+
 
 
             /* VERIFICA NOME */
@@ -1567,6 +1577,22 @@
             }
 
 
+
+            /* VERIFICA TELEFONE */
+
+            if (!telefoneCliente) {
+
+                alert(
+                    "Digite o número de telefone do cliente."
+                );
+
+                telefone.focus();
+
+                return;
+            }
+
+
+
             /* VERIFICA DATA */
 
             if (!data) {
@@ -1579,6 +1605,7 @@
 
                 return;
             }
+
 
 
             /* VERIFICA HORÁRIO */
@@ -1595,6 +1622,7 @@
             }
 
 
+
             /* VERIFICA PESSOAS */
 
             if (!qtd) {
@@ -1609,6 +1637,7 @@
             }
 
 
+
             /* VERIFICA AMBIENTE */
 
             if (!ambienteEscolhido) {
@@ -1621,6 +1650,7 @@
 
                 return;
             }
+
 
 
             /* VERIFICA MESA */
@@ -1638,17 +1668,103 @@
 
 
 
-            /* FORMATA DATA */
+            /* ==========================================
+               FORMATA DATA
+            ========================================== */
 
             const dataFormatada =
-                data.split("-").reverse().join("/");
+                data
+                    .split("-")
+                    .reverse()
+                    .join("/");
 
 
 
-            /* MOSTRA CONFIRMAÇÃO */
+            /* ==========================================
+               CRIA DATA DA RESERVA
+            ========================================== */
+
+            const dataReserva =
+                new Date(
+                    data +
+                    "T" +
+                    hora +
+                    ":00"
+                );
+
+
+
+            /* ==========================================
+               5 DIAS ANTES
+            ========================================== */
+
+            const cincoDias =
+                5 *
+                24 *
+                60 *
+                60 *
+                1000;
+
+
+            const dataLembrete =
+                dataReserva.getTime()
+                -
+                cincoDias;
+
+
+
+            /* ==========================================
+               SALVA A RESERVA
+            ========================================== */
+
+            const reserva = {
+
+                nome:
+                    nomeCliente,
+
+                telefone:
+                    telefoneCliente,
+
+                data:
+                    dataFormatada,
+
+                hora:
+                    hora,
+
+                pessoas:
+                    qtd,
+
+                ambiente:
+                    ambienteEscolhido,
+
+                mesa:
+                    mesaEscolhida,
+
+                dataReserva:
+                    dataReserva.getTime(),
+
+                dataLembrete:
+                    dataLembrete
+
+            };
+
+
+            localStorage.setItem(
+                "reservaSaborQuintal",
+                JSON.stringify(reserva)
+            );
+
+
+
+            /* ==========================================
+               MOSTRA CONFIRMAÇÃO
+            ========================================== */
 
             const mensagem =
-                document.getElementById("mensagem");
+                document.getElementById(
+                    "mensagem"
+                );
+
 
             const textoConfirmacao =
                 document.getElementById(
@@ -1660,6 +1776,10 @@
 
                 "Cliente: <strong>" +
                 nomeCliente +
+                "</strong><br>" +
+
+                "Telefone: <strong>" +
+                telefoneCliente +
                 "</strong><br>" +
 
                 "Data: <strong>" +
@@ -1680,7 +1800,14 @@
 
                 "Mesa: <strong>" +
                 mesaEscolhida +
-                "</strong>";
+                "</strong><br><br>" +
+
+                "🔔 <strong>" +
+                "Lembrete programado!" +
+                "</strong><br>" +
+
+                "O lembrete será programado " +
+                "para 5 dias antes da reserva.";
 
 
             mensagem.style.display =
@@ -1688,13 +1815,162 @@
 
 
             mensagem.scrollIntoView({
+
                 behavior: "smooth",
+
                 block: "center"
+
             });
+
+
+
+            /* ==========================================
+               CRIA O LEMBRETE
+            ========================================== */
+
+            criarLembrete(
+                reserva
+            );
 
         }
 
+
+
+        /* ==========================================
+           CRIAR LEMBRETE
+        ========================================== */
+
+        function criarLembrete(reserva) {
+
+            const agora =
+                new Date().getTime();
+
+
+            const tempoRestante =
+                reserva.dataLembrete -
+                agora;
+
+
+            if (
+                tempoRestante > 0
+            ) {
+
+                setTimeout(
+
+                    function () {
+
+                        mostrarLembrete(
+                            reserva
+                        );
+
+                    },
+
+                    tempoRestante
+
+                );
+
+            }
+
+        }
+
+
+
+        /* ==========================================
+           MOSTRAR LEMBRETE
+        ========================================== */
+
+        function mostrarLembrete(reserva) {
+
+
+            const mensagemLembrete =
+
+                "🔔 LEMBRETE DE RESERVA\n\n" +
+
+                "Olá, " +
+                reserva.nome +
+                "!\n\n" +
+
+                "Sua reserva no " +
+                "Sabor do Quintal " +
+                "acontecerá daqui a 5 dias.\n\n" +
+
+                "Data: " +
+                reserva.data +
+                "\n" +
+
+                "Horário: " +
+                reserva.hora +
+                "\n" +
+
+                "Pessoas: " +
+                reserva.pessoas +
+                "\n" +
+
+                "Ambiente: " +
+                reserva.ambiente +
+                "\n" +
+
+                "Mesa: " +
+                reserva.mesa +
+                "\n\n" +
+
+                "Telefone cadastrado: " +
+                reserva.telefone;
+
+
+            alert(
+                mensagemLembrete
+            );
+
+        }
+
+
+
+        /* ==========================================
+           RECUPERA A RESERVA AO ABRIR O SITE
+        ========================================== */
+
+        window.addEventListener(
+            "load",
+            function () {
+
+
+                const reservaSalva =
+                    localStorage.getItem(
+                        "reservaSaborQuintal"
+                    );
+
+
+                if (reservaSalva) {
+
+
+                    const reserva =
+                        JSON.parse(
+                            reservaSalva
+                        );
+
+
+                    if (
+
+                        new Date().getTime()
+                        <
+                        reserva.dataReserva
+
+                    ) {
+
+                        criarLembrete(
+                            reserva
+                        );
+
+                    }
+
+                }
+
+            }
+        );
+
     </script>
+
 
 
     <!-- Bootstrap JS -->
