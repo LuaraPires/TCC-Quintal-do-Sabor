@@ -1,28 +1,40 @@
+
 <!doctype html>
 <html lang="pt-BR">
 
 <head>
 
-   <meta charset="utf-8">
+    <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="Página oficial do Sabor do Quintal, um restaurante de estilo rústico que oferece pratos caseiros e saborosos.
-    Conheça nosso cardápio, confira nossos pratos, faça sua reserva e encontre nossa localização.">
+
+    <meta name="description"
+        content="Página oficial do Sabor do Quintal, um restaurante de estilo rústico que oferece pratos caseiros e saborosos. Conheça nosso cardápio, confira nossos pratos, faça sua reserva e encontre nossa localização.">
+
     <meta name="keywords" content="Sabor do Quintal, restaurante, login">
+
     <meta name="author" content="Luara Pires">
+
     <link rel="icon" type="image/png" href="../faviconn.png">
+
     <title>Sabor do Quintal</title>
 
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <style>
-        /*CONFIGURAÇÕES GERAIS*/
+
+        /* CONFIGURAÇÕES GERAIS */
+
         * {
             margin: 0;
             padding: 0;
@@ -41,7 +53,9 @@
             flex-direction: column;
         }
 
-        /*HEADER*/
+
+        /* HEADER */
+
         header {
             background-color: #f4e7cf;
             width: 100%;
@@ -73,16 +87,17 @@
             object-fit: cover;
         }
 
+
         /* MENU */
-        
+
         .navbar-nav {
             display: flex;
             align-items: center;
             gap: 35px;
         }
 
-        .navbar-nav>li,
-        .navbar-nav>a {
+        .navbar-nav > li,
+        .navbar-nav > a {
             list-style: none;
             text-decoration: none;
             color: #111;
@@ -93,37 +108,41 @@
         }
 
         .nav-item a,
-        .navbar-nav>a {
+        .navbar-nav > a {
             color: #111;
             text-decoration: none;
         }
 
         .nav-item i,
-        .navbar-nav>a i {
+        .navbar-nav > a i {
             display: block;
             font-size: 22px;
             margin-bottom: 2px;
         }
 
         .nav-item span,
-        .navbar-nav>a span {
+        .navbar-nav > a span {
             font-family: Arial, sans-serif;
             font-size: 12px;
         }
 
         .nav-item:hover i,
         .nav-item:hover span,
-        .navbar-nav>a:hover i,
-        .navbar-nav>a:hover span {
+        .navbar-nav > a:hover i,
+        .navbar-nav > a:hover span {
             color: #6b3d22;
         }
-        
+
+
         /* MAIN */
+
         main {
             flex: 1;
         }
-        
+
+
         /* TÍTULO DO CARDÁPIO */
+
         .titulo-cardapio {
             text-align: center;
             font-family: Georgia, "Times New Roman", serif;
@@ -136,7 +155,14 @@
             padding: 0 0 55px;
             overflow: hidden;
         }
-         /* CARROSSEL */
+
+
+        /* CARROSSEL */
+
+        .galeria-cardapio {
+            /* ESPAÇO ENTRE O CARROSSEL E A SEÇÃO SOBRE */
+            margin-bottom: 30px;
+        }
 
         .carousel-wrapper {
             position: relative;
@@ -156,6 +182,7 @@
 
 
         /* IMAGENS DO CARROSSEL */
+
         .item-galeria {
             flex: 0 0 calc(25% - 21px);
             height: 220px;
@@ -178,7 +205,9 @@
             transform: scale(1.05);
         }
 
+
         /* SOBRE O RESTAURANTE */
+
         .sobre {
             width: 90%;
             max-width: 1250px;
@@ -207,10 +236,11 @@
         }
 
 
-        /*CARDS DOS PRATOS*/
+        /* CARDS DOS PRATOS */
+
         .pratos {
             width: 100%;
-            padding: 30px 00 50px;
+            padding: 30px 0 50px;
         }
 
         .pratos .card {
@@ -239,7 +269,7 @@
         }
 
 
-        /*FOOTER*/
+        /* FOOTER */
 
         footer {
             width: 100%;
@@ -267,9 +297,10 @@
         }
 
 
-        /*TABLET*/
+        /* TABLET */
 
         @media (max-width: 992px) {
+
             .item-galeria {
                 flex: 0 0 calc(33.333% - 19px);
                 height: 210px;
@@ -288,40 +319,45 @@
             }
         }
 
+
         /* CELULAR */
 
-        .navbar {
-            padding: 5px 15px;
-        }
+        @media (max-width: 768px) {
 
-        .navbar-brand {
-            font-size: 22px;
-        }
+            .navbar {
+                padding: 5px 15px;
+            }
 
-        .logo {
-            width: 55px;
-            height: 55px;
-        }
+            .navbar-brand {
+                font-size: 22px;
+            }
 
-        .navbar-nav {
-            gap: 10px;
-            margin-top: 15px;
-            flex-direction: row;
-            justify-content: center;
-        }
+            .logo {
+                width: 55px;
+                height: 55px;
+            }
 
-        .titulo-cardapio {
-            font-size: 24px;
-        }
+            .navbar-nav {
+                gap: 10px;
+                margin-top: 15px;
+                flex-direction: row;
+                justify-content: center;
+            }
 
-        /* Carrossel */
-        .carousel-wrapper {
-            padding: 0 35px;
-        }
+            .titulo-cardapio {
+                font-size: 24px;
+            }
 
-        .galeria {
-            gap: 15px;
 
+            /* CARROSSEL */
+
+            .carousel-wrapper {
+                padding: 0 35px;
+            }
+
+            .galeria {
+                gap: 15px;
+            }
 
             .item-galeria {
                 flex: 0 0 calc(50% - 8px);
@@ -329,7 +365,8 @@
             }
 
 
-            /* Sobre */
+            /* SOBRE */
+
             .sobre {
                 width: 90%;
                 flex-direction: column;
@@ -348,19 +385,21 @@
             }
 
 
-            /* Footer */
+            /* FOOTER */
+
             footer {
                 flex-direction: column;
                 gap: 5px;
                 text-align: center;
                 padding: 10px;
             }
-
         }
+
 
         /* CELULAR PEQUENO */
 
         @media (max-width: 500px) {
+
             .titulo-cardapio {
                 font-size: 22px;
                 margin-bottom: 15px;
@@ -379,6 +418,7 @@
                 font-size: 17px;
             }
         }
+
     </style>
 
 </head>
@@ -390,102 +430,192 @@
 
 
         <!-- HEADER -->
+
         <header>
+
             <nav class="navbar navbar-expand-lg">
+
                 <div class="container">
+
                     <!-- LOGO -->
+
                     <a class="navbar-brand d-flex align-items-center" href="#">
-                        <img src="../imagem/logo.png" class="rounded-circle logo me-2" alt="Logo Sabor do Quintal">
+
+                        <img src="../imagem/logo.png"
+                            class="rounded-circle logo me-2"
+                            alt="Logo Sabor do Quintal">
+
                         Sabor do Quintal
+
                     </a>
 
 
                     <!-- BOTÃO MOBILE -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+
+                    <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menu">
+
                         <span class="navbar-toggler-icon"></span>
+
                     </button>
 
 
                     <!-- MENU -->
+
                     <div class="collapse navbar-collapse justify-content-end" id="menu">
+
                         <ul class="navbar-nav">
+
                             <li class="nav-item">
+
                                 <a href="cardapio.html">
+
                                     <i class="bi bi-journal-text"></i>
+
                                     <span>Cardápio</span>
+
                                 </a>
+
                             </li>
 
+
                             <li class="nav-item">
+
                                 <a href="reserva.html">
+
                                     <i class="bi bi-calendar3"></i>
+
                                     <span>Reserva</span>
+
                                 </a>
+
                             </li>
 
+
                             <li class="nav-item">
+
                                 <a href="localizacao.html">
+
                                     <i class="bi bi-geo-alt"></i>
+
                                     <span>Localização</span>
+
                                 </a>
+
                             </li>
+
                         </ul>
+
                     </div>
+
                 </div>
+
             </nav>
+
         </header>
 
 
-        <!--MAIN -->
+        <!-- MAIN -->
+
         <main>
+
+
             <!-- TÍTULO -->
+
             <h2 class="titulo-cardapio">
+
                 confira o cardápio completo
+
             </h2>
+
 
             <!-- CARROSSEL -->
 
             <section class="galeria-cardapio">
+
                 <div class="carousel-wrapper">
+
                     <div class="galeria" id="galeria">
-                        <div class="item-galeria">
-                            <img src="../imagem/fileminhon.png" alt="Prato de carne">
-                        </div>
-                        <div class="item-galeria">
-                            <img src="../imagem/file.png" alt="Prato de frango">
-                        </div>
+
 
                         <div class="item-galeria">
-                            <img src="../imagem/lombo.png" alt="Prato de lombo">
+
+                            <img src="../imagem/fileminhon.png"
+                                alt="Prato de carne">
+
                         </div>
 
-                        <div class="item-galeria">
-                            <img src="../imagem/costelabovina.png" alt="Costela bovina">
-                        </div>
 
                         <div class="item-galeria">
-                            <img src="../imagem/lasanha.png" alt="Lasanha">
+
+                            <img src="../imagem/file.png"
+                                alt="Prato de frango">
+
                         </div>
 
-                        <div class="item-galeria">
-                            <img src="../imagem/ancho.png" alt="Prato especial">
-                        </div>
 
                         <div class="item-galeria">
-                            <img src="../imagem/Frango.png" alt="Frango especial">
+
+                            <img src="../imagem/lombo.png"
+                                alt="Prato de lombo">
+
                         </div>
 
+
                         <div class="item-galeria">
-                            <img src="../imagem/feijoada.png" alt="Lombo especial">
+
+                            <img src="../imagem/costelabovina.png"
+                                alt="Costela bovina">
+
                         </div>
+
+
+                        <div class="item-galeria">
+
+                            <img src="../imagem/lasanha.png"
+                                alt="Lasanha">
+
+                        </div>
+
+
+                        <div class="item-galeria">
+
+                            <img src="../imagem/ancho.png"
+                                alt="Prato especial">
+
+                        </div>
+
+
+                        <div class="item-galeria">
+
+                            <img src="../imagem/Frango.png"
+                                alt="Frango especial">
+
+                        </div>
+
+
+                        <div class="item-galeria">
+
+                            <img src="../imagem/feijoada.png"
+                                alt="Feijoada">
+
+                        </div>
+
                     </div>
+
                 </div>
+
             </section>
+
 
             <!-- SOBRE O RESTAURANTE -->
 
             <section class="sobre">
+
                 <div class="texto-sobre">
+
                     <p>
 
                         Desde 1984, o Quintal dos Sabores abre suas
@@ -498,176 +628,294 @@
                         paredes de pedra e a alma do fogo de chão.
 
                     </p>
+
                 </div>
-                <img src="../imagem/nhoque.png" class="imagem-restaurante"
+
+
+                <img src="../imagem/nhoque.png"
+                    class="imagem-restaurante"
                     alt="Interior do restaurante Sabor do Quintal">
+
             </section>
 
 
             <!-- PRATOS -->
+
             <section class="pratos">
+
                 <div class="container text-center">
+
                     <div class="row g-4">
+
+
                         <!-- COSTELA -->
+
                         <div class="col-md-6">
+
                             <div class="card mb-3">
+
                                 <div class="row g-0">
+
                                     <div class="col-md-4">
-                                        <img src="../imagem/costelabovina.png" class="img-fluid rounded-start"
+
+                                        <img src="../imagem/costelabovina.png"
+                                            class="img-fluid rounded-start"
                                             alt="Costela bovina">
+
                                     </div>
 
+
                                     <div class="col-md-8">
+
                                         <div class="card-body">
+
                                             <h5 class="card-title">
+
                                                 Costela Bovina
+
                                             </h5>
 
+
                                             <p class="card-text">
+
                                                 Um prato muito típico
                                                 do nosso restaurante.
+
                                             </p>
 
+
                                             <p class="card-text">
+
                                                 <small class="text-body-secondary">
+
                                                     Preparo em 30min
+
                                                 </small>
+
                                             </p>
+
                                         </div>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </div>
 
+
                         <!-- LASANHA -->
+
                         <div class="col-md-6">
+
                             <div class="card mb-3">
+
                                 <div class="row g-0">
+
                                     <div class="col-md-4">
-                                        <img src="../imagem/lasanha.png" class="img-fluid rounded-start" alt="Lasanha">
+
+                                        <img src="../imagem/lasanha.png"
+                                            class="img-fluid rounded-start"
+                                            alt="Lasanha">
+
                                     </div>
 
+
                                     <div class="col-md-8">
+
                                         <div class="card-body">
+
                                             <h5 class="card-title">
+
                                                 Lasanha
+
                                             </h5>
 
+
                                             <p class="card-text">
+
                                                 Um prato delicioso,
                                                 com um sabor maravilhoso
                                                 de tomate.
+
                                             </p>
 
+
                                             <p class="card-text">
+
                                                 <small class="text-body-secondary">
+
                                                     Preparo em 25min
+
                                                 </small>
+
                                             </p>
+
                                         </div>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                     </div>
+
                 </div>
+
             </section>
+
         </main>
 
 
         <!-- FOOTER -->
 
         <footer>
+
             <p>
                 📞 (11) 93275-8484
             </p>
+
+
             <p>
                 © 2026 Sabor do Quintal -
                 Todos os direitos reservados
             </p>
+
+
             <a href="mailto:sabordoquintal@email.com">
+
                 ✉ sabordoquintal@email.com
+
             </a>
+
         </footer>
+
     </div>
 
-    
 
 
-
-
-    <!--JAVASCRIPT DO CARROSSEL AUTOMÁTICO-->
+    <!-- JAVASCRIPT DO CARROSSEL AUTOMÁTICO -->
 
     <script>
+
         const galeria =
             document.getElementById("galeria");
+
         const itens =
             document.querySelectorAll(".item-galeria");
+
         let posicao = 0;
+
+
         /* QUANTIDADE DE IMAGENS VISÍVEIS */
+
         function quantidadeVisivel() {
+
             if (window.innerWidth <= 500) {
                 return 1;
             }
+
             if (window.innerWidth <= 768) {
                 return 2;
             }
+
             if (window.innerWidth <= 992) {
                 return 3;
             }
+
             return 4;
         }
 
 
-        /*  MOVER CARROSSEL */
+        /* MOVER CARROSSEL */
 
         function moverCarrossel() {
+
             const visiveis =
                 quantidadeVisivel();
+
             const limite =
                 itens.length - visiveis;
+
             posicao++;
-            /* Quando chegar ao final,
-               volta para o começo */
+
+
+            /* QUANDO CHEGAR AO FINAL,
+               VOLTA PARA O COMEÇO */
+
             if (posicao > limite) {
+
                 posicao = 0;
+
             }
+
+
             const item =
                 itens[0];
+
             const largura =
                 item.offsetWidth;
-            /* Espaçamento entre as imagens */
+
+
+            /* ESPAÇAMENTO ENTRE AS IMAGENS */
+
             let gap = 28;
+
             if (window.innerWidth <= 768) {
+
                 gap = 15;
+
             }
+
+
             const deslocamento =
                 posicao * (largura + gap);
+
+
             galeria.style.transform =
                 `translateX(-${deslocamento}px)`;
+
         }
 
 
         /* CARROSSEL AUTOMÁTICO */
+
         setInterval(
+
             function () {
+
                 moverCarrossel();
+
             },
+
             3000
+
         );
 
 
-        /*  RESPONSIVIDADE */
+        /* RESPONSIVIDADE */
+
         window.addEventListener(
+
             "resize",
+
             function () {
+
                 posicao = 0;
+
                 galeria.style.transform =
                     "translateX(0)";
+
             }
+
         );
+
     </script>
+
 </body>
 
 </html>
