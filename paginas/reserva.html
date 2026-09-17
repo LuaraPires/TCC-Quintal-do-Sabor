@@ -39,10 +39,12 @@
 
     <!-- Google Fonts -->
 
-    <link rel="preconnect"
+    <link
+        rel="preconnect"
         href="https://fonts.googleapis.com">
 
-    <link rel="preconnect"
+    <link
+        rel="preconnect"
         href="https://fonts.gstatic.com"
         crossorigin>
 
@@ -52,10 +54,6 @@
 
 
     <style>
-
-        /* ==========================================
-           RESET
-        ========================================== */
 
         * {
             margin: 0;
@@ -83,9 +81,9 @@
         }
 
 
-        /* ==========================================
+        /* ==============================
            HEADER
-        ========================================== */
+        ============================== */
 
         header {
             width: 100%;
@@ -101,11 +99,10 @@
 
             border-bottom: 1px solid #e3d5bc;
 
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
-
-        /* LOGO */
 
         .logo {
             position: absolute;
@@ -121,8 +118,6 @@
             border-radius: 50%;
         }
 
-
-        /* TÍTULO */
 
         .titulo {
             margin: 0;
@@ -141,9 +136,9 @@
         }
 
 
-        /* ==========================================
+        /* ==============================
            HOME
-        ========================================== */
+        ============================== */
 
         .home {
             position: absolute;
@@ -182,9 +177,9 @@
         }
 
 
-        /* ==========================================
-           CONTEÚDO
-        ========================================== */
+        /* ==============================
+           MAIN
+        ============================== */
 
         main {
             width: 100%;
@@ -199,9 +194,9 @@
         }
 
 
-        /* ==========================================
+        /* ==============================
            AMBIENTES
-        ========================================== */
+        ============================== */
 
         .ambientes {
             display: grid;
@@ -221,9 +216,9 @@
         }
 
 
-        /* ==========================================
-           CARROSSEL DOS AMBIENTES
-        ========================================== */
+        /* ==============================
+           CARROSSEL
+        ============================== */
 
         .carousel-ambiente {
             width: 100%;
@@ -250,8 +245,6 @@
         }
 
 
-        /* IMPORTANTE PARA A MENSAGEM FICAR SOBRE A FOTO */
-
         .carousel-ambiente .carousel-item {
             position: relative;
         }
@@ -272,9 +265,9 @@
         }
 
 
-        /* ==========================================
-           MENSAGEM DE CADA FOTO
-        ========================================== */
+        /* ==============================
+           MENSAGEM CARROSSEL
+        ============================== */
 
         .mensagem-carrossel {
             position: absolute;
@@ -289,7 +282,8 @@
 
             padding: 10px 15px;
 
-            background-color: rgba(45, 36, 30, 0.82);
+            background-color:
+                rgba(45, 36, 30, 0.82);
 
             color: #fff;
 
@@ -309,9 +303,9 @@
         }
 
 
-        /* ==========================================
-           CONTROLES DO CARROSSEL
-        ========================================== */
+        /* ==============================
+           CONTROLES
+        ============================== */
 
         .carousel-ambiente .carousel-control-prev,
         .carousel-ambiente .carousel-control-next {
@@ -329,7 +323,8 @@
 
             border-radius: 50%;
 
-            background-color: rgba(45, 36, 30, 0.75);
+            background-color:
+                rgba(45, 36, 30, 0.75);
 
             background-size: 55%;
         }
@@ -362,9 +357,9 @@
         }
 
 
-        /* ==========================================
-           DESCRIÇÃO DOS AMBIENTES
-        ========================================== */
+        /* ==============================
+           DESCRIÇÃO
+        ============================== */
 
         .descricao {
             min-height: 152px;
@@ -395,31 +390,25 @@
 
             box-shadow:
                 0 4px 10px rgba(0, 0, 0, 0.10);
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
         }
 
 
-        .ambiente:hover .descricao {
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 7px 15px rgba(0, 0, 0, 0.14);
+        .descricao p {
+            margin: 0;
         }
 
 
-        /* ==========================================
-           ÁREA DA RESERVA
-        ========================================== */
+        /* ==============================
+           RESERVA
+        ============================== */
 
         .reserva {
             margin-top: 55px;
 
             padding: 25px;
 
-            background-color: rgba(248, 233, 205, 0.55);
+            background-color:
+                rgba(248, 233, 205, 0.55);
 
             border-radius: 25px;
 
@@ -428,7 +417,8 @@
 
             display: grid;
 
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns:
+                1fr 1fr 1fr;
 
             gap: 25px;
 
@@ -436,9 +426,9 @@
         }
 
 
-        /* ==========================================
-           TÍTULOS DOS CAMPOS
-        ========================================== */
+        /* ==============================
+           TÍTULOS
+        ============================== */
 
         .titulo-reserva {
             width: 100%;
@@ -455,7 +445,8 @@
 
             background-color: #df6a4b;
 
-            border-radius: 8px 8px 0 0;
+            border-radius:
+                8px 8px 0 0;
 
             font-size: 11px;
 
@@ -463,13 +454,14 @@
 
             color: #000;
 
-            box-shadow: 2px 3px 0 #777;
+            box-shadow:
+                2px 3px 0 #777;
         }
 
 
-        /* ==========================================
+        /* ==============================
            CAMPOS
-        ========================================== */
+        ============================== */
 
         .campo {
             width: 100%;
@@ -496,13 +488,6 @@
 
             box-shadow:
                 0 2px 4px rgba(0, 0, 0, 0.12);
-
-            transition: 0.2s;
-        }
-
-
-        .campo:hover {
-            background-color: #d45d3e;
         }
 
 
@@ -512,19 +497,14 @@
         }
 
 
-        input[type="date"].campo {
-            padding: 0 10px;
-        }
-
-
-        /* ==========================================
-           FORMULÁRIO
-        ========================================== */
+        /* ==============================
+           FORMULÁRIO DO CLIENTE
+        ============================== */
 
         .formulario {
             width: 100%;
 
-            min-height: 200px;
+            min-height: 230px;
 
             padding: 14px;
 
@@ -534,7 +514,7 @@
 
             justify-content: space-between;
 
-            gap: 10px;
+            gap: 8px;
 
             background-color: #e1bc87;
 
@@ -544,10 +524,6 @@
                 0 3px 8px rgba(0, 0, 0, 0.08);
         }
 
-
-        /* ==========================================
-           NOME E TELEFONE
-        ========================================== */
 
         .nome {
             width: 100%;
@@ -573,9 +549,6 @@
             font-style: italic;
 
             outline: none;
-
-            box-shadow:
-                inset 0 1px 3px rgba(0, 0, 0, 0.08);
         }
 
 
@@ -592,9 +565,16 @@
         }
 
 
-        /* ==========================================
-           RESUMO
-        ========================================== */
+        .aviso {
+            font-family: Georgia, serif;
+
+            font-size: 10px;
+
+            color: #3f3328;
+
+            margin-left: 4px;
+        }
+
 
         .resumo {
             font-family: Georgia, serif;
@@ -603,15 +583,15 @@
 
             line-height: 1.5;
 
-            margin-top: 8px;
+            margin-top: 5px;
 
             color: #171717;
         }
 
 
-        /* ==========================================
+        /* ==============================
            BOTÃO
-        ========================================== */
+        ============================== */
 
         .finalizar {
             width: 153px;
@@ -634,7 +614,8 @@
 
             color: #000;
 
-            font-family: "DM Serif Display", serif;
+            font-family:
+                "DM Serif Display", serif;
 
             font-size: 14px;
 
@@ -652,15 +633,12 @@
             background-color: #c85639;
 
             transform: translateY(-1px);
-
-            box-shadow:
-                0 3px 6px rgba(0, 0, 0, 0.18);
         }
 
 
-        /* ==========================================
+        /* ==============================
            MENSAGEM
-        ========================================== */
+        ============================== */
 
         .mensagem {
             display: none;
@@ -678,9 +656,6 @@
             font-family: Georgia, serif;
 
             font-size: 14px;
-
-            box-shadow:
-                0 3px 8px rgba(0, 0, 0, 0.10);
         }
 
 
@@ -693,9 +668,9 @@
         }
 
 
-        /* ==========================================
+        /* ==============================
            FOOTER
-        ========================================== */
+        ============================== */
 
         footer {
             width: 100%;
@@ -704,7 +679,8 @@
 
             display: grid;
 
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns:
+                1fr 1fr 1fr;
 
             align-items: center;
 
@@ -712,7 +688,8 @@
 
             background-color: #f8e9cd;
 
-            border-top: 1px solid #e3d5bc;
+            border-top:
+                1px solid #e3d5bc;
 
             font-size: 8px;
 
@@ -725,8 +702,6 @@
 
             align-items: center;
 
-            justify-content: flex-start;
-
             gap: 7px;
         }
 
@@ -738,8 +713,6 @@
 
         .footer-centro {
             display: flex;
-
-            align-items: center;
 
             justify-content: center;
 
@@ -760,23 +733,9 @@
         }
 
 
-        .config {
-            font-size: 17px;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-        }
-
-
-        .config:hover {
-            transform: rotate(30deg);
-        }
-
-
-        /* ==========================================
+        /* ==============================
            TABLET
-        ========================================== */
+        ============================== */
 
         @media (max-width: 900px) {
 
@@ -786,7 +745,8 @@
 
 
             .reserva {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns:
+                    1fr 1fr;
             }
 
 
@@ -797,9 +757,9 @@
         }
 
 
-        /* ==========================================
+        /* ==============================
            CELULAR
-        ========================================== */
+        ============================== */
 
         @media (max-width: 600px) {
 
@@ -826,29 +786,14 @@
 
             .home {
                 right: 15px;
-
-                font-size: 8px;
-            }
-
-
-            .home i {
-                font-size: 21px;
             }
 
 
             main {
-                padding: 20px 15px 30px;
+                padding:
+                    20px 15px 30px;
             }
 
-
-            .ambientes {
-                grid-template-columns: 1fr;
-
-                gap: 30px;
-            }
-
-
-            /* CARROSSEL NO CELULAR */
 
             .carousel-ambiente {
                 height: 230px;
@@ -859,16 +804,6 @@
             }
 
 
-            .carousel-ambiente .carousel-control-prev-icon,
-            .carousel-ambiente .carousel-control-next-icon {
-                width: 30px;
-
-                height: 30px;
-            }
-
-
-            /* MENSAGEM DO CARROSSEL NO CELULAR */
-
             .mensagem-carrossel {
                 bottom: 12px;
 
@@ -877,12 +812,8 @@
                 padding: 8px 10px;
 
                 font-size: 11px;
-
-                border-radius: 10px;
             }
 
-
-            /* DESCRIÇÃO NO CELULAR */
 
             .descricao {
                 margin: 12px 5px 0;
@@ -893,18 +824,9 @@
 
                 font-size: 12px;
 
-                line-height: 1.45;
-
                 border-radius: 22px;
             }
 
-
-            .ambiente:hover .descricao {
-                transform: none;
-            }
-
-
-            /* RESERVA */
 
             .reserva {
                 grid-template-columns: 1fr;
@@ -920,7 +842,7 @@
             .formulario {
                 grid-column: auto;
 
-                min-height: 200px;
+                min-height: 230px;
             }
 
 
@@ -928,8 +850,6 @@
                 width: 100%;
             }
 
-
-            /* FOOTER */
 
             footer {
                 min-height: 80px;
@@ -948,48 +868,6 @@
                 justify-content: center;
             }
 
-
-            .footer-centro {
-                order: 2;
-            }
-
-
-            .footer-direita {
-                order: 3;
-            }
-
-        }
-
-
-        /* ==========================================
-           CELULAR PEQUENO
-        ========================================== */
-
-        @media (max-width: 400px) {
-
-            .titulo {
-                font-size: 20px;
-            }
-
-
-            .logo {
-                width: 48px;
-
-                height: 48px;
-
-                top: 13px;
-            }
-
-
-            .home {
-                right: 10px;
-            }
-
-
-            .carousel-ambiente {
-                height: 210px;
-            }
-
         }
 
     </style>
@@ -1000,9 +878,9 @@
 <body>
 
 
-    <!-- ==========================================
+    <!-- ==============================
          HEADER
-    ========================================== -->
+    ============================== -->
 
     <header>
 
@@ -1030,32 +908,29 @@
     </header>
 
 
-    <!-- ==========================================
-         CONTEÚDO PRINCIPAL
-    ========================================== -->
+    <!-- ==============================
+         CONTEÚDO
+    ============================== -->
 
     <main>
 
 
-        <!-- ==========================================
+        <!-- ==============================
              AMBIENTES
-        ========================================== -->
+        ============================== -->
 
         <section class="ambientes">
 
 
-            <!-- ==========================================
-                 AMBIENTE INTERNO
-            ========================================== -->
+            <!-- AMBIENTE INTERNO -->
 
             <article class="ambiente">
 
-                <div id="carouselInterno"
+                <div
+                    id="carouselInterno"
                     class="carousel slide carousel-ambiente"
                     data-bs-ride="carousel">
 
-
-                    <!-- INDICADORES -->
 
                     <div class="carousel-indicators">
 
@@ -1063,44 +938,32 @@
                             type="button"
                             data-bs-target="#carouselInterno"
                             data-bs-slide-to="0"
-                            class="active"
-                            aria-current="true"
-                            aria-label="Foto 1">
+                            class="active">
                         </button>
-
 
                         <button
                             type="button"
                             data-bs-target="#carouselInterno"
-                            data-bs-slide-to="1"
-                            aria-label="Foto 2">
+                            data-bs-slide-to="1">
                         </button>
-
 
                         <button
                             type="button"
                             data-bs-target="#carouselInterno"
-                            data-bs-slide-to="2"
-                            aria-label="Foto 3">
+                            data-bs-slide-to="2">
                         </button>
-
 
                         <button
                             type="button"
                             data-bs-target="#carouselInterno"
-                            data-bs-slide-to="3"
-                            aria-label="Foto 4">
+                            data-bs-slide-to="3">
                         </button>
 
                     </div>
 
 
-                    <!-- FOTOS -->
-
                     <div class="carousel-inner">
 
-
-                        <!-- FOTO INTERNA 1 -->
 
                         <div class="carousel-item active">
 
@@ -1111,14 +974,14 @@
 
                             <div class="mensagem-carrossel">
 
-                                Mesa para 2 pessoas — perfeita para um momento tranquilo.
+                                Mesa para 2 pessoas —
+                                perfeita para um momento
+                                tranquilo e especial.
 
                             </div>
 
                         </div>
 
-
-                        <!-- FOTO INTERNA 2 -->
 
                         <div class="carousel-item">
 
@@ -1129,14 +992,14 @@
 
                             <div class="mensagem-carrossel">
 
-                                Mesa para 4 pessoas — ideal para família e amigos.
+                                Mesa para 4 pessoas —
+                                ideal para aproveitar bons
+                                momentos com a família.
 
                             </div>
 
                         </div>
 
-
-                        <!-- FOTO INTERNA 3 -->
 
                         <div class="carousel-item">
 
@@ -1147,14 +1010,14 @@
 
                             <div class="mensagem-carrossel">
 
-                                Mesa para grupos — mais espaço para aproveitar juntos.
+                                Mesa para grupos —
+                                mais espaço para reunir
+                                amigos e familiares.
 
                             </div>
 
                         </div>
 
-
-                        <!-- FOTO INTERNA 4 -->
 
                         <div class="carousel-item">
 
@@ -1165,7 +1028,9 @@
 
                             <div class="mensagem-carrossel">
 
-                                Mesa com sofá — mais conforto para sua experiência.
+                                Mesa com sofá —
+                                conforto para aproveitar
+                                sua refeição.
 
                             </div>
 
@@ -1174,8 +1039,6 @@
                     </div>
 
 
-                    <!-- BOTÃO ANTERIOR -->
-
                     <button
                         class="carousel-control-prev"
                         type="button"
@@ -1183,18 +1046,11 @@
                         data-bs-slide="prev">
 
                         <span
-                            class="carousel-control-prev-icon"
-                            aria-hidden="true">
-                        </span>
-
-                        <span class="visually-hidden">
-                            Anterior
+                            class="carousel-control-prev-icon">
                         </span>
 
                     </button>
 
-
-                    <!-- BOTÃO PRÓXIMO -->
 
                     <button
                         class="carousel-control-next"
@@ -1203,12 +1059,7 @@
                         data-bs-slide="next">
 
                         <span
-                            class="carousel-control-next-icon"
-                            aria-hidden="true">
-                        </span>
-
-                        <span class="visually-hidden">
-                            Próxima
+                            class="carousel-control-next-icon">
                         </span>
 
                     </button>
@@ -1216,18 +1067,17 @@
                 </div>
 
 
-                <!-- DESCRIÇÃO -->
-
                 <div class="descricao">
 
                     <p>
 
-                        Ambientes aconchegantes e bem planejados para todos
-                        os momentos: desde mesas intimistas para duas pessoas,
-                        ideais para encontros tranquilos, até opções mais amplas
-                        para grupos e reuniões em família. Também contamos com
-                        mesas confortáveis para quatro pessoas e espaços com
-                        sofá, oferecendo ainda mais comodidade.
+                        Ambientes aconchegantes e bem planejados
+                        para todos os momentos: desde mesas
+                        intimistas para duas pessoas, ideais para
+                        encontros tranquilos, até opções mais
+                        amplas para grupos e reuniões em família.
+                        Também contamos com mesas confortáveis
+                        para quatro pessoas e espaços com sofá.
 
                     </p>
 
@@ -1236,18 +1086,15 @@
             </article>
 
 
-            <!-- ==========================================
-                 AMBIENTE EXTERNO
-            ========================================== -->
+            <!-- AMBIENTE EXTERNO -->
 
             <article class="ambiente">
 
-                <div id="carouselExterno"
+                <div
+                    id="carouselExterno"
                     class="carousel slide carousel-ambiente"
                     data-bs-ride="carousel">
 
-
-                    <!-- INDICADORES -->
 
                     <div class="carousel-indicators">
 
@@ -1255,36 +1102,32 @@
                             type="button"
                             data-bs-target="#carouselExterno"
                             data-bs-slide-to="0"
-                            class="active"
-                            aria-current="true"
-                            aria-label="Foto 1">
+                            class="active">
                         </button>
-
 
                         <button
                             type="button"
                             data-bs-target="#carouselExterno"
-                            data-bs-slide-to="1"
-                            aria-label="Foto 2">
+                            data-bs-slide-to="1">
                         </button>
-
 
                         <button
                             type="button"
                             data-bs-target="#carouselExterno"
-                            data-bs-slide-to="2"
-                            aria-label="Foto 3">
+                            data-bs-slide-to="2">
+                        </button>
+
+                        <button
+                            type="button"
+                            data-bs-target="#carouselExterno"
+                            data-bs-slide-to="3">
                         </button>
 
                     </div>
 
 
-                    <!-- FOTOS -->
-
                     <div class="carousel-inner">
 
-
-                        <!-- FOTO EXTERNA 1 -->
 
                         <div class="carousel-item active">
 
@@ -1295,43 +1138,63 @@
 
                             <div class="mensagem-carrossel">
 
-                                Mesa para 2 pessoas — aproveite a natureza ao redor.
+                                Mesa para 2 pessoas —
+                                aproveite uma refeição
+                                cercado pela natureza.
 
                             </div>
 
                         </div>
 
 
-                        <!-- FOTO EXTERNA 2 -->
-
                         <div class="carousel-item">
 
                             <img
-                                src="../imagem/mesa_externa2.png"
+                                src="../imagem/mesa 04 ex.png"
                                 class="foto"
-                                alt="Mesa externa">
+                                alt="Mesa externa para 4 pessoas">
 
                             <div class="mensagem-carrossel">
 
-                                Um espaço agradável para aproveitar sua refeição.
+                                Mesa para 4 pessoas —
+                                espaço para compartilhar
+                                bons momentos.
 
                             </div>
 
                         </div>
 
 
-                        <!-- FOTO EXTERNA 3 -->
-
                         <div class="carousel-item">
 
                             <img
-                                src="../imagem/mesa_externa3.png"
+                                src="../imagem/mesa 06 ex.png"
                                 class="foto"
                                 alt="Mesa externa para grupos">
 
                             <div class="mensagem-carrossel">
 
-                                Espaço para família e amigos com vista para o rio.
+                                Mesa para grupos —
+                                reúna amigos e familiares
+                                ao ar livre.
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="carousel-item">
+
+                            <img
+                                src="../imagem/mesa sofa ex.png"
+                                class="foto"
+                                alt="Mesa externa com sofá">
+
+                            <div class="mensagem-carrossel">
+
+                                Mesa com sofá —
+                                mais conforto para aproveitar
+                                a natureza.
 
                             </div>
 
@@ -1340,8 +1203,6 @@
                     </div>
 
 
-                    <!-- BOTÃO ANTERIOR -->
-
                     <button
                         class="carousel-control-prev"
                         type="button"
@@ -1349,18 +1210,11 @@
                         data-bs-slide="prev">
 
                         <span
-                            class="carousel-control-prev-icon"
-                            aria-hidden="true">
-                        </span>
-
-                        <span class="visually-hidden">
-                            Anterior
+                            class="carousel-control-prev-icon">
                         </span>
 
                     </button>
 
-
-                    <!-- BOTÃO PRÓXIMO -->
 
                     <button
                         class="carousel-control-next"
@@ -1369,12 +1223,7 @@
                         data-bs-slide="next">
 
                         <span
-                            class="carousel-control-next-icon"
-                            aria-hidden="true">
-                        </span>
-
-                        <span class="visually-hidden">
-                            Próxima
+                            class="carousel-control-next-icon">
                         </span>
 
                     </button>
@@ -1382,18 +1231,16 @@
                 </div>
 
 
-                <!-- DESCRIÇÃO -->
-
                 <div class="descricao">
 
                     <p>
 
-                        Em um cenário ao ar livre com vista para o rio,
-                        o ambiente combina natureza, charme e aconchego.
-                        Temos opções de mesas para duas pessoas,
-                        espaços para grupos e encontros em família,
-                        além de áreas com sofá para proporcionar
-                        mais conforto durante sua experiência.
+                        Em um cenário ao ar livre com vista para
+                        o rio, o ambiente combina natureza,
+                        charme e aconchego. Temos opções de mesas
+                        para duas pessoas, espaços para grupos
+                        e encontros em família, além de áreas
+                        com sofá para proporcionar mais conforto.
 
                     </p>
 
@@ -1404,14 +1251,14 @@
         </section>
 
 
-        <!-- ==========================================
+        <!-- ==============================
              RESERVA
-        ========================================== -->
+        ============================== -->
 
         <section class="reserva">
 
 
-            <!-- DIA -->
+            <!-- DATA -->
 
             <div>
 
@@ -1454,27 +1301,16 @@
                     </option>
 
                     <option value="10:00">10:00</option>
-
                     <option value="11:00">11:00</option>
-
                     <option value="12:00">12:00</option>
-
                     <option value="13:00">13:00</option>
-
                     <option value="14:00">14:00</option>
-
                     <option value="15:00">15:00</option>
-
                     <option value="16:00">16:00</option>
-
                     <option value="17:00">17:00</option>
-
                     <option value="18:00">18:00</option>
-
                     <option value="19:00">19:00</option>
-
                     <option value="20:00">20:00</option>
-
                     <option value="21:00">21:00</option>
 
                 </select>
@@ -1503,37 +1339,14 @@
                         Quantas pessoas?
                     </option>
 
-                    <option value="1">
-                        1 pessoa
-                    </option>
-
-                    <option value="2">
-                        2 pessoas
-                    </option>
-
-                    <option value="3">
-                        3 pessoas
-                    </option>
-
-                    <option value="4">
-                        4 pessoas
-                    </option>
-
-                    <option value="5">
-                        5 pessoas
-                    </option>
-
-                    <option value="6">
-                        6 pessoas
-                    </option>
-
-                    <option value="7">
-                        7 pessoas
-                    </option>
-
-                    <option value="8">
-                        8 pessoas
-                    </option>
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
 
                 </select>
 
@@ -1600,10 +1413,14 @@
             </div>
 
 
-            <!-- FORMULÁRIO -->
+            <!-- ==============================
+                 DADOS DO CLIENTE
+            ============================== -->
 
             <div class="formulario">
 
+
+                <!-- NOME PUXADO DO LOGIN -->
 
                 <input
                     type="text"
@@ -1612,12 +1429,37 @@
                     placeholder="Nome do cliente">
 
 
+                <div class="aviso">
+
+                    <i class="bi bi-pencil"></i>
+
+                    Nome preenchido pelo login.
+                    Você pode alterar se estiver errado.
+
+                </div>
+
+
+                <!-- TELEFONE PUXADO DO LOGIN -->
+
                 <input
                     type="tel"
                     id="telefone"
                     class="nome"
-                    placeholder="Telefone do cliente">
+                    placeholder="Telefone do cliente"
+                    maxlength="15">
 
+
+                <div class="aviso">
+
+                    <i class="bi bi-pencil"></i>
+
+                    Telefone preenchido pelo login.
+                    Você pode alterar se estiver errado.
+
+                </div>
+
+
+                <!-- RESUMO -->
 
                 <div
                     class="resumo"
@@ -1627,6 +1469,8 @@
 
                 </div>
 
+
+                <!-- FINALIZAR -->
 
                 <button
                     type="button"
@@ -1642,9 +1486,9 @@
         </section>
 
 
-        <!-- ==========================================
-             MENSAGEM DE CONFIRMAÇÃO
-        ========================================== -->
+        <!-- ==============================
+             MENSAGEM DE SUCESSO
+        ============================== -->
 
         <div
             id="mensagem"
@@ -1663,12 +1507,11 @@
     </main>
 
 
-    <!-- ==========================================
+    <!-- ==============================
          FOOTER
-    ========================================== -->
+    ============================== -->
 
     <footer>
-
 
         <div class="footer-esquerda">
 
@@ -1696,22 +1539,23 @@
                 sabordoquintal@gmail.com
             </span>
 
-            <i class="bi bi-gear config"></i>
-
         </div>
 
     </footer>
 
 
-    <!-- ==========================================
-         JAVASCRIPT
-    ========================================== -->
+    <!-- Bootstrap JS -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
 
     <script>
 
-        /* ==========================================
+        /* =====================================================
            CAMPOS
-        ========================================== */
+        ===================================================== */
 
         const campoData =
             document.getElementById("data");
@@ -1738,11 +1582,92 @@
             document.getElementById("resumo");
 
 
-        /* ==========================================
-           DATA MÍNIMA = DATA ATUAL
-        ========================================== */
+        /* =====================================================
+           PEGAR DADOS DO LOGIN
+        ===================================================== */
 
-        const hoje = new Date();
+        function pegarDadosLogin() {
+
+            return {
+
+                logado:
+                    localStorage.getItem(
+                        "usuarioLogado"
+                    ) === "true",
+
+                nome:
+                    localStorage.getItem(
+                        "nomeUsuario"
+                    ) || "",
+
+                email:
+                    localStorage.getItem(
+                        "emailUsuario"
+                    ) || "",
+
+                telefone:
+                    localStorage.getItem(
+                        "telefoneUsuario"
+                    ) || ""
+
+            };
+
+        }
+
+
+        /* =====================================================
+           VERIFICAR LOGIN
+        ===================================================== */
+
+        const usuario =
+            pegarDadosLogin();
+
+
+        if (
+            !usuario.logado ||
+            !usuario.nome
+        ) {
+
+            alert(
+                "Você precisa fazer login para realizar uma reserva."
+            );
+
+            window.location.href =
+                "login.html";
+
+        }
+
+
+        /* =====================================================
+           PUXAR NOME DO LOGIN
+        ===================================================== */
+
+        if (usuario.nome) {
+
+            nome.value =
+                usuario.nome;
+
+        }
+
+
+        /* =====================================================
+           PUXAR TELEFONE DO LOGIN
+        ===================================================== */
+
+        if (usuario.telefone) {
+
+            telefone.value =
+                usuario.telefone;
+
+        }
+
+
+        /* =====================================================
+           DATA MÍNIMA
+        ===================================================== */
+
+        const hoje =
+            new Date();
 
         const ano =
             hoje.getFullYear();
@@ -1757,13 +1682,18 @@
                 hoje.getDate()
             ).padStart(2, "0");
 
+
         campoData.min =
-            ano + "-" + mes + "-" + dia;
+            ano +
+            "-" +
+            mes +
+            "-" +
+            dia;
 
 
-        /* ==========================================
+        /* =====================================================
            MESAS
-        ========================================== */
+        ===================================================== */
 
         const mesas = {
 
@@ -1790,7 +1720,6 @@
                 }
 
             ],
-
 
             Externo: [
 
@@ -1819,9 +1748,9 @@
         };
 
 
-        /* ==========================================
-           ATUALIZA MESAS
-        ========================================== */
+        /* =====================================================
+           ATUALIZAR MESAS
+        ===================================================== */
 
         function atualizarMesas() {
 
@@ -1829,7 +1758,9 @@
                 ambiente.value;
 
             const quantidade =
-                Number(pessoas.value);
+                Number(
+                    pessoas.value
+                );
 
 
             mesa.innerHTML = "";
@@ -1843,16 +1774,21 @@
                 atualizarResumo();
 
                 return;
+
             }
 
 
             const opcaoInicial =
-                document.createElement("option");
+                document.createElement(
+                    "option"
+                );
+
 
             opcaoInicial.value = "";
 
             opcaoInicial.textContent =
                 "Escolha a mesa";
+
 
             mesa.appendChild(
                 opcaoInicial
@@ -1860,32 +1796,39 @@
 
 
             mesas[ambienteEscolhido]
-                .forEach(function(item) {
+                .forEach(
+                    function(item) {
 
-                    if (
-                        !quantidade ||
-                        quantidade <= item.capacidade
-                    ) {
+                        if (
+                            !quantidade ||
+                            quantidade <= item.capacidade
+                        ) {
 
-                        const opcao =
-                            document.createElement("option");
+                            const opcao =
+                                document.createElement(
+                                    "option"
+                                );
 
-                        opcao.value =
-                            item.nome;
 
-                        opcao.textContent =
-                            item.nome +
-                            " - " +
-                            item.capacidade +
-                            " pessoas";
+                            opcao.value =
+                                item.nome;
 
-                        mesa.appendChild(
-                            opcao
-                        );
+
+                            opcao.textContent =
+                                item.nome +
+                                " - " +
+                                item.capacidade +
+                                " pessoas";
+
+
+                            mesa.appendChild(
+                                opcao
+                            );
+
+                        }
 
                     }
-
-                });
+                );
 
 
             atualizarResumo();
@@ -1893,9 +1836,61 @@
         }
 
 
-        /* ==========================================
+        /* =====================================================
+           ATUALIZAR RESUMO
+        ===================================================== */
+
+        function atualizarResumo() {
+
+            const nomeCliente =
+                nome.value.trim() ||
+                "cliente";
+
+
+            if (
+                campoData.value &&
+                horario.value &&
+                pessoas.value &&
+                ambiente.value &&
+                mesa.value
+            ) {
+
+                const dataFormatada =
+                    campoData.value
+                        .split("-")
+                        .reverse()
+                        .join("/");
+
+
+                resumo.textContent =
+
+                    "Olá, " +
+                    nomeCliente +
+                    "! Reserva para " +
+                    pessoas.value +
+                    " pessoa(s), no dia " +
+                    dataFormatada +
+                    ", às " +
+                    horario.value +
+                    ", no ambiente " +
+                    ambiente.value +
+                    ", " +
+                    mesa.value +
+                    ".";
+
+            } else {
+
+                resumo.textContent =
+                    "Preencha os dados da reserva.";
+
+            }
+
+        }
+
+
+        /* =====================================================
            EVENTOS
-        ========================================== */
+        ===================================================== */
 
         ambiente.addEventListener(
             "change",
@@ -1939,130 +1934,76 @@
         );
 
 
-        /* ==========================================
-           RESUMO
-        ========================================== */
-
-        function atualizarResumo() {
-
-            const nomeCliente =
-                nome.value || "cliente";
-
-            const data =
-                campoData.value;
-
-            const hora =
-                horario.value;
-
-            const qtd =
-                pessoas.value;
-
-            const ambienteEscolhido =
-                ambiente.value;
-
-            const mesaEscolhida =
-                mesa.value;
-
-
-            if (
-                data &&
-                hora &&
-                qtd &&
-                ambienteEscolhido &&
-                mesaEscolhida
-            ) {
-
-                const dataFormatada =
-                    data
-                        .split("-")
-                        .reverse()
-                        .join("/");
-
-
-                resumo.textContent =
-
-                    "Olá, " +
-                    nomeCliente +
-                    "! Reserva para " +
-                    qtd +
-                    " pessoa(s), no dia " +
-                    dataFormatada +
-                    ", às " +
-                    hora +
-                    ", no ambiente " +
-                    ambienteEscolhido +
-                    ", " +
-                    mesaEscolhida + ".";
-
-            } else {
-
-                resumo.textContent =
-                    "Preencha os dados da reserva.";
-
-            }
-
-        }
-
-
-        /* ==========================================
+        /* =====================================================
            FINALIZAR RESERVA
-        ========================================== */
+        ===================================================== */
 
         function finalizarReserva() {
 
-            const data =
-                campoData.value;
+            const usuarioAtual =
+                pegarDadosLogin();
 
-            const hora =
-                horario.value;
 
-            const qtd =
-                pessoas.value;
+            /* VERIFICAR LOGIN */
 
-            const ambienteEscolhido =
-                ambiente.value;
+            if (
+                !usuarioAtual.logado ||
+                !usuarioAtual.nome
+            ) {
 
-            const mesaEscolhida =
-                mesa.value;
+                alert(
+                    "Sua sessão expirou. Faça login novamente."
+                );
+
+                window.location.href =
+                    "login.html";
+
+                return;
+
+            }
+
+
+            /* PEGAR NOME ALTERADO */
 
             const nomeCliente =
                 nome.value.trim();
+
+
+            /* PEGAR TELEFONE ALTERADO */
 
             const telefoneCliente =
                 telefone.value.trim();
 
 
-            /* VERIFICA NOME */
+            /* VALIDAÇÕES */
 
             if (!nomeCliente) {
 
                 alert(
-                    "Digite o nome do cliente."
+                    "Informe o nome do cliente."
                 );
 
                 nome.focus();
 
                 return;
+
             }
 
-
-            /* VERIFICA TELEFONE */
 
             if (!telefoneCliente) {
 
                 alert(
-                    "Digite o número de telefone do cliente."
+                    "Informe o telefone do cliente."
                 );
 
                 telefone.focus();
 
                 return;
+
             }
 
 
-            /* VERIFICA DATA */
-
-            if (!data) {
+            if (!campoData.value) {
 
                 alert(
                     "Escolha o dia da reserva."
@@ -2071,26 +2012,24 @@
                 campoData.focus();
 
                 return;
+
             }
 
 
-            /* VERIFICA HORÁRIO */
-
-            if (!hora) {
+            if (!horario.value) {
 
                 alert(
-                    "Escolha o horário da reserva."
+                    "Escolha o horário."
                 );
 
                 horario.focus();
 
                 return;
+
             }
 
 
-            /* VERIFICA PESSOAS */
-
-            if (!qtd) {
+            if (!pessoas.value) {
 
                 alert(
                     "Escolha a quantidade de pessoas."
@@ -2099,76 +2038,99 @@
                 pessoas.focus();
 
                 return;
+
             }
 
 
-            /* VERIFICA AMBIENTE */
-
-            if (!ambienteEscolhido) {
+            if (!ambiente.value) {
 
                 alert(
-                    "Escolha se deseja ficar no ambiente interno ou externo."
+                    "Escolha o ambiente."
                 );
 
                 ambiente.focus();
 
                 return;
+
             }
 
 
-            /* VERIFICA MESA */
-
-            if (!mesaEscolhida) {
+            if (!mesa.value) {
 
                 alert(
-                    "Escolha uma mesa disponível."
+                    "Escolha uma mesa."
                 );
 
                 mesa.focus();
 
                 return;
+
             }
 
 
-            /* FORMATA DATA */
+            /* =================================================
+               IDENTIFICADOR DA CONTA
+
+               Continua usando o e-mail/nome original
+               do login.
+
+               Assim, alterar o nome da reserva NÃO
+               altera a identificação da conta.
+            ================================================= */
+
+            let identificadorUsuario = "";
+
+
+            if (usuarioAtual.email) {
+
+                identificadorUsuario =
+                    "email:" +
+                    usuarioAtual.email
+                        .trim()
+                        .toLowerCase();
+
+            } else {
+
+                identificadorUsuario =
+                    "nome:" +
+                    usuarioAtual.nome
+                        .trim()
+                        .toLowerCase();
+
+            }
+
+
+            /* DATA FORMATADA */
 
             const dataFormatada =
-                data
+                campoData.value
                     .split("-")
                     .reverse()
                     .join("/");
 
 
-            /* CRIA DATA DA RESERVA */
-
-            const dataReserva =
-                new Date(
-                    data +
-                    "T" +
-                    hora +
-                    ":00"
-                );
-
-
-            /* 5 DIAS ANTES */
-
-            const cincoDias =
-                5 *
-                24 *
-                60 *
-                60 *
-                1000;
-
-
-            const dataLembrete =
-                dataReserva.getTime()
-                -
-                cincoDias;
-
-
-            /* SALVA A RESERVA */
+            /* =================================================
+               SALVAR RESERVA
+            ================================================= */
 
             const reserva = {
+
+                /* Conta que fez a reserva */
+
+                identificadorUsuario:
+                    identificadorUsuario,
+
+
+                /* Dados originais do login */
+
+                nomeUsuario:
+                    usuarioAtual.nome,
+
+                emailUsuario:
+                    usuarioAtual.email,
+
+
+                /* Dados usados na reserva */
 
                 nome:
                     nomeCliente,
@@ -2176,29 +2138,53 @@
                 telefone:
                     telefoneCliente,
 
+
                 data:
                     dataFormatada,
 
                 hora:
-                    hora,
+                    horario.value,
 
                 pessoas:
-                    qtd,
+                    pessoas.value,
 
                 ambiente:
-                    ambienteEscolhido,
+                    ambiente.value,
 
                 mesa:
-                    mesaEscolhida,
+                    mesa.value,
+
 
                 dataReserva:
-                    dataReserva.getTime(),
+                    new Date(
+                        campoData.value +
+                        "T" +
+                        horario.value +
+                        ":00"
+                    ).getTime(),
 
                 dataLembrete:
-                    dataLembrete
+                    new Date(
+                        campoData.value +
+                        "T" +
+                        horario.value +
+                        ":00"
+                    ).getTime()
+                    -
+                    (
+                        5 *
+                        24 *
+                        60 *
+                        60 *
+                        1000
+                    )
 
             };
 
+
+            /* =================================================
+               SALVAR NO LOCALSTORAGE
+            ================================================= */
 
             localStorage.setItem(
                 "reservaSaborQuintal",
@@ -2206,21 +2192,13 @@
             );
 
 
-            /* MOSTRA CONFIRMAÇÃO */
+            /* =================================================
+               MOSTRAR CONFIRMAÇÃO
+            ================================================= */
 
-            const mensagem =
-                document.getElementById(
-                    "mensagem"
-                );
-
-
-            const textoConfirmacao =
-                document.getElementById(
-                    "textoConfirmacao"
-                );
-
-
-            textoConfirmacao.innerHTML =
+            document.getElementById(
+                "textoConfirmacao"
+            ).innerHTML =
 
                 "Cliente: <strong>" +
                 nomeCliente +
@@ -2235,34 +2213,31 @@
                 "</strong><br>" +
 
                 "Horário: <strong>" +
-                hora +
+                horario.value +
                 "</strong><br>" +
 
                 "Pessoas: <strong>" +
-                qtd +
+                pessoas.value +
                 "</strong><br>" +
 
                 "Ambiente: <strong>" +
-                ambienteEscolhido +
+                ambiente.value +
                 "</strong><br>" +
 
                 "Mesa: <strong>" +
-                mesaEscolhida +
-                "</strong><br><br>" +
-
-                "🔔 <strong>" +
-                "Lembrete programado!" +
-                "</strong><br>" +
-
-                "O lembrete será programado " +
-                "para 5 dias antes da reserva.";
+                mesa.value +
+                "</strong>";
 
 
-            mensagem.style.display =
+            document.getElementById(
+                "mensagem"
+            ).style.display =
                 "block";
 
 
-            mensagem.scrollIntoView({
+            document.getElementById(
+                "mensagem"
+            ).scrollIntoView({
 
                 behavior: "smooth",
 
@@ -2270,151 +2245,8 @@
 
             });
 
-
-            /* CRIA LEMBRETE */
-
-            criarLembrete(
-                reserva
-            );
-
         }
 
-
-        /* ==========================================
-           CRIAR LEMBRETE
-        ========================================== */
-
-        function criarLembrete(reserva) {
-
-            const agora =
-                new Date().getTime();
-
-
-            const tempoRestante =
-                reserva.dataLembrete -
-                agora;
-
-
-            if (
-                tempoRestante > 0
-            ) {
-
-                setTimeout(
-
-                    function() {
-
-                        mostrarLembrete(
-                            reserva
-                        );
-
-                    },
-
-                    tempoRestante
-
-                );
-
-            }
-
-        }
-
-
-        /* ==========================================
-           MOSTRAR LEMBRETE
-        ========================================== */
-
-        function mostrarLembrete(reserva) {
-
-            const mensagemLembrete =
-
-                "🔔 LEMBRETE DE RESERVA\n\n" +
-
-                "Olá, " +
-                reserva.nome +
-                "!\n\n" +
-
-                "Sua reserva no " +
-                "Sabor do Quintal " +
-                "acontecerá daqui a 5 dias.\n\n" +
-
-                "Data: " +
-                reserva.data +
-                "\n" +
-
-                "Horário: " +
-                reserva.hora +
-                "\n" +
-
-                "Pessoas: " +
-                reserva.pessoas +
-                "\n" +
-
-                "Ambiente: " +
-                reserva.ambiente +
-                "\n" +
-
-                "Mesa: " +
-                reserva.mesa +
-                "\n\n" +
-
-                "Telefone cadastrado: " +
-                reserva.telefone;
-
-
-            alert(
-                mensagemLembrete
-            );
-
-        }
-
-
-        /* ==========================================
-           RECUPERA RESERVA AO ABRIR
-        ========================================== */
-
-        window.addEventListener(
-            "load",
-            function() {
-
-                const reservaSalva =
-                    localStorage.getItem(
-                        "reservaSaborQuintal"
-                    );
-
-
-                if (reservaSalva) {
-
-                    const reserva =
-                        JSON.parse(
-                            reservaSalva
-                        );
-
-
-                    if (
-
-                        new Date().getTime()
-                        <
-                        reserva.dataReserva
-
-                    ) {
-
-                        criarLembrete(
-                            reserva
-                        );
-
-                    }
-
-                }
-
-            }
-        );
-
-    </script>
-
-
-    <!-- Bootstrap JS -->
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
     </script>
 
 
