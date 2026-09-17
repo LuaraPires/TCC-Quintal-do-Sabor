@@ -1,24 +1,29 @@
+
 <!doctype html>
 <html lang="pt-BR">
 
 <head>
 
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Página oficial do Sabor do Quintal, um restaurante de estilo rústico que oferece pratos caseiros e saborosos.
-    Conheça nosso cardápio, confira nossos pratos, faça sua reserva e encontre nossa localização.">
+
+    <meta name="description"
+        content="Página oficial do Sabor do Quintal, um restaurante de estilo rústico que oferece pratos caseiros e saborosos. Conheça nosso cardápio, confira nossos pratos, faça sua reserva e encontre nossa localização.">
+
     <meta name="keywords" content="Sabor do Quintal, restaurante, login">
+
     <meta name="author" content="Luara Pires">
+
     <link rel="icon" type="image/png" href="../faviconn.png">
+
     <title>Sabor do Quintal</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
+
     <style>
-        /* ==============================
-           PALETA DE CORES
-        ============================== */
 
         :root {
             --cinza-fundo: #D5D1CD;
@@ -31,17 +36,19 @@
         }
 
 
-        /* ==============================
-           CONFIGURAÇÃO GERAL
-        ============================== */
-
         html,
         body {
+
             margin: 0;
+
             min-height: 100vh;
+
             background-color: var(--cinza-fundo);
+
             color: var(--preto);
+
             font-family: Arial, Helvetica, sans-serif;
+
         }
 
 
@@ -50,23 +57,32 @@
         ============================== */
 
         header {
+
             background-color: var(--bege);
+
             height: 90px;
+
             border-bottom: 2px solid #299EF8;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
         }
 
 
-        /* LOGO */
-
         header img {
+
             width: 80px;
+
             height: 80px;
+
             object-fit: cover;
+
             border: 2px solid var(--terracota);
+
         }
 
 
@@ -75,13 +91,17 @@
         ============================== */
 
         main {
+
             min-height: calc(100vh - 138px);
 
             display: flex;
+
             align-items: center;
 
             padding-top: 35px;
+
             padding-bottom: 35px;
+
         }
 
 
@@ -90,27 +110,46 @@
         ============================== */
 
         .login-text {
+
             padding: 20px;
+
         }
+
 
         .login-text h1 {
+
             font-family: Georgia, 'Times New Roman', serif;
+
             font-style: italic;
+
             font-weight: 900;
+
             font-size: 38px;
+
             line-height: 1.25;
+
             color: var(--preto);
+
         }
+
 
         .login-text h1 span {
+
             display: block;
+
         }
 
+
         .login-text p {
+
             font-size: 17px;
+
             line-height: 1.5;
+
             max-width: 480px;
+
             margin-top: 20px;
+
         }
 
 
@@ -119,6 +158,7 @@
         ============================== */
 
         .login-container {
+
             background-color: var(--terracota);
 
             border-radius: 12px;
@@ -126,11 +166,13 @@
             padding: 25px;
 
             width: 100%;
+
             max-width: 390px;
 
             margin: auto;
 
             box-shadow: 10px 12px 0 var(--bege-sombra);
+
         }
 
 
@@ -139,17 +181,19 @@
         ============================== */
 
         .login-title {
+
             font-family: Georgia, 'Times New Roman', serif;
 
             font-weight: 900;
+
             font-style: italic;
 
             font-size: 28px;
 
             margin-bottom: 25px;
 
-            /* Texto Entrar preto */
             color: #000000;
+
         }
 
 
@@ -158,14 +202,17 @@
         ============================== */
 
         .form-label {
+
             font-family: Georgia, 'Times New Roman', serif;
 
             font-style: italic;
+
             font-weight: bold;
 
             font-size: 12px;
 
             margin-bottom: 4px;
+
         }
 
 
@@ -174,9 +221,11 @@
         ============================== */
 
         .form-control {
+
             height: 42px;
 
             border: none;
+
             border-radius: 8px;
 
             background-color: var(--branco);
@@ -186,21 +235,27 @@
             font-size: 14px;
 
             margin-bottom: 4px;
+
         }
 
 
         .form-control:focus {
+
             background-color: var(--branco);
 
             border: 2px solid var(--coral);
 
             box-shadow: 0 0 0 0.15rem rgba(249, 132, 98, 0.35);
+
         }
 
 
         .form-control::placeholder {
+
             color: #777;
+
             opacity: 0.7;
+
         }
 
 
@@ -209,22 +264,28 @@
         ============================== */
 
         .esqueceu-senha {
+
             color: #59382E;
 
             font-family: Georgia, 'Times New Roman', serif;
 
             font-style: italic;
+
             font-weight: bold;
 
             font-size: 14px;
 
             text-decoration: none;
+
         }
 
 
         .esqueceu-senha:hover {
+
             color: var(--preto);
+
             text-decoration: underline;
+
         }
 
 
@@ -236,7 +297,6 @@
 
             background-color: rgb(248, 118, 79);
 
-            /* TEXTO PRETO */
             color: #000000 !important;
 
             height: 54px;
@@ -254,6 +314,7 @@
             font-size: 20px;
 
             transition: 0.2s;
+
         }
 
 
@@ -264,12 +325,14 @@
             color: #000000 !important;
 
             transform: translateY(-2px);
+
         }
 
 
         .btn-entrar:active {
 
             transform: translateY(1px);
+
         }
 
 
@@ -278,25 +341,31 @@
         ============================== */
 
         .modal-header {
+
             background-color: var(--terracota);
 
             color: #000000;
 
             border-bottom: none;
+
         }
 
 
         .modal-title {
+
             font-family: Georgia, 'Times New Roman', serif;
 
             font-style: italic;
 
             font-weight: bold;
+
         }
 
 
         .modal-body {
+
             background-color: var(--bege);
+
         }
 
 
@@ -313,6 +382,7 @@
             border-radius: 8px;
 
             padding: 10px 20px;
+
         }
 
 
@@ -321,6 +391,7 @@
             background-color: var(--terracota);
 
             color: #000000;
+
         }
 
 
@@ -345,11 +416,14 @@
             font-family: Georgia, 'Times New Roman', serif;
 
             font-size: 11px;
+
         }
 
 
         footer p {
+
             margin: 0;
+
         }
 
 
@@ -360,11 +434,14 @@
             text-decoration: none;
 
             font-size: 10px;
+
         }
 
 
         footer a:hover {
+
             text-decoration: underline;
+
         }
 
 
@@ -377,32 +454,39 @@
             main {
 
                 padding-top: 50px;
+
                 padding-bottom: 50px;
+
             }
 
 
             .login-text {
 
                 text-align: center;
+
             }
 
 
             .login-text h1 {
 
                 font-size: 34px;
+
             }
 
 
             .login-text p {
 
                 margin-left: auto;
+
                 margin-right: auto;
+
             }
 
 
             .login-container {
 
                 max-width: 400px;
+
             }
 
 
@@ -415,6 +499,7 @@
                 padding: 12px;
 
                 text-align: center;
+
             }
 
         }
@@ -429,31 +514,37 @@
             header {
 
                 height: 65px;
+
             }
 
 
             header img {
 
                 width: 65px;
+
                 height: 65px;
+
             }
 
 
             main {
 
                 padding: 35px 15px;
+
             }
 
 
             .login-text h1 {
 
                 font-size: 30px;
+
             }
 
 
             .login-text p {
 
                 font-size: 15px;
+
             }
 
 
@@ -462,15 +553,18 @@
                 padding: 22px;
 
                 box-shadow: 7px 8px 0 var(--bege-sombra);
+
             }
 
 
             .btn-entrar {
 
                 height: 50px;
+
             }
 
         }
+
     </style>
 
 </head>
@@ -487,7 +581,9 @@
 
         <div class="container text-center">
 
-            <img src="../imagem/logo.png" class="rounded-circle" alt="Logo Sabor do Quintal">
+            <img src="../imagem/logo.png"
+                class="rounded-circle"
+                alt="Logo Sabor do Quintal">
 
         </div>
 
@@ -537,13 +633,15 @@
 
                     <!-- FORMULÁRIO -->
 
-                    <form id="formLogin" action="pagina_principal.html" method="get">
+                    <form id="formLogin">
 
 
                         <!-- TÍTULO -->
 
                         <h2 class="login-title text-center">
+
                             Entrar
+
                         </h2>
 
 
@@ -551,19 +649,28 @@
 
                         <div class="mb-3">
 
-                            <label for="nome" class="form-label">
+                            <label for="nome"
+                                class="form-label">
 
                                 Nome:
 
                             </label>
 
 
-                            <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite seu nome"
-                                autocomplete="name" required minlength="3">
+                            <input type="text"
+                                id="nome"
+                                name="nome"
+                                class="form-control"
+                                placeholder="Digite seu nome"
+                                autocomplete="name"
+                                required
+                                minlength="3">
 
 
                             <div class="invalid-feedback">
+
                                 Digite seu nome.
+
                             </div>
 
                         </div>
@@ -573,19 +680,27 @@
 
                         <div class="mb-3">
 
-                            <label for="email" class="form-label">
+                            <label for="email"
+                                class="form-label">
 
                                 E-mail:
 
                             </label>
 
 
-                            <input type="email" id="email" name="email" class="form-control"
-                                placeholder="Digite seu e-mail" autocomplete="email" required>
+                            <input type="email"
+                                id="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="Digite seu e-mail"
+                                autocomplete="email"
+                                required>
 
 
                             <div class="invalid-feedback">
+
                                 Digite um e-mail válido.
+
                             </div>
 
                         </div>
@@ -595,19 +710,30 @@
 
                         <div class="mb-3">
 
-                            <label for="telefone" class="form-label">
+                            <label for="telefone"
+                                class="form-label">
 
                                 Telefone:
 
                             </label>
 
 
-                            <input type="tel" id="telefone" name="telefone" class="form-control"
-                                placeholder="(00) 00000-0000" autocomplete="tel" required pattern="[0-9()\s-]{10,15}">
+                            <input type="tel"
+                                id="telefone"
+                                name="telefone"
+                                class="form-control"
+                                placeholder="(00) 00000-0000"
+                                autocomplete="tel"
+                                inputmode="numeric"
+                                maxlength="15"
+                                required>
 
 
                             <div class="invalid-feedback">
-                                Digite seu telefone.
+
+                                Digite um telefone válido com
+                                10 ou 11 números.
+
                             </div>
 
                         </div>
@@ -617,19 +743,29 @@
 
                         <div class="mb-2">
 
-                            <label for="senha" class="form-label">
+                            <label for="senha"
+                                class="form-label">
 
                                 Senha:
 
                             </label>
 
 
-                            <input type="password" id="senha" name="senha" class="form-control"
-                                placeholder="Digite sua senha" autocomplete="current-password" required minlength="6">
+                            <input type="password"
+                                id="senha"
+                                name="senha"
+                                class="form-control"
+                                placeholder="Digite sua senha"
+                                autocomplete="current-password"
+                                required
+                                minlength="6">
 
 
                             <div class="invalid-feedback">
-                                A senha deve ter pelo menos 6 caracteres.
+
+                                A senha deve ter pelo menos
+                                6 caracteres.
+
                             </div>
 
                         </div>
@@ -639,7 +775,10 @@
 
                         <div class="text-end mb-4">
 
-                            <a href="#" class="esqueceu-senha" data-bs-toggle="modal" data-bs-target="#modalSenha">
+                            <a href="#"
+                                class="esqueceu-senha"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalSenha">
 
                                 Esqueceu a senha?
 
@@ -650,7 +789,8 @@
 
                         <!-- BOTÃO ENTRAR -->
 
-                        <button type="submit" class="btn btn-entrar w-100">
+                        <button type="submit"
+                            class="btn btn-entrar w-100">
 
                             Entrar
 
@@ -672,10 +812,15 @@
          MODAL RECUPERAR SENHA
     ============================== -->
 
-    <div class="modal fade" id="modalSenha" tabindex="-1" aria-labelledby="modalSenhaLabel" aria-hidden="true">
+    <div class="modal fade"
+        id="modalSenha"
+        tabindex="-1"
+        aria-labelledby="modalSenhaLabel"
+        aria-hidden="true">
 
 
         <div class="modal-dialog modal-dialog-centered">
+
 
             <div class="modal-content">
 
@@ -684,14 +829,19 @@
 
                 <div class="modal-header">
 
-                    <h5 class="modal-title" id="modalSenhaLabel">
+                    <h5 class="modal-title"
+                        id="modalSenhaLabel">
 
                         Recuperar senha
 
                     </h5>
 
 
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">
+                    <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+
                     </button>
 
                 </div>
@@ -711,26 +861,33 @@
 
                     <form id="formRecuperar">
 
-                        <label for="emailRecuperar" class="form-label">
+
+                        <label for="emailRecuperar"
+                            class="form-label">
 
                             E-mail:
 
                         </label>
 
 
-                        <input type="email" id="emailRecuperar" class="form-control" placeholder="Digite seu e-mail"
+                        <input type="email"
+                            id="emailRecuperar"
+                            class="form-control"
+                            placeholder="Digite seu e-mail"
                             required>
 
 
                         <div class="d-grid mt-3">
 
-                            <button type="submit" class="btn btn-recuperar">
+                            <button type="submit"
+                                class="btn btn-recuperar">
 
                                 Recuperar senha
 
                             </button>
 
                         </div>
+
 
                     </form>
 
@@ -749,14 +906,19 @@
 
     <footer>
 
+
         <p>
+
             📞 (11) 93275-8484
+
         </p>
 
 
         <p>
+
             © 2026 Sabor do Quintal -
             Todos os direitos reservados
+
         </p>
 
 
@@ -765,6 +927,7 @@
             ✉ sabordoquintal@email.com
 
         </a>
+
 
     </footer>
 
@@ -778,57 +941,375 @@
 
 
     <!-- ==============================
-         VALIDAÇÃO DO LOGIN
+         SISTEMA DE LOGIN
     ============================== -->
 
     <script>
 
-        const formLogin = document.getElementById("formLogin");
 
-        formLogin.addEventListener("submit", function (event) {
+        const formLogin =
+            document.getElementById("formLogin");
 
-            // Verifica se todos os campos estão preenchidos corretamente
-            if (!formLogin.checkValidity()) {
+
+        const campoNome =
+            document.getElementById("nome");
+
+
+        const campoEmail =
+            document.getElementById("email");
+
+
+        const campoTelefone =
+            document.getElementById("telefone");
+
+
+        // ==========================================
+        // TELEFONE - SOMENTE NÚMEROS
+        // ==========================================
+
+        campoTelefone.addEventListener("input", function () {
+
+            let numero =
+                this.value.replace(/\D/g, "");
+
+
+            // Limita a 11 números
+
+            numero =
+                numero.substring(0, 11);
+
+
+            // ==========================================
+            // FORMATAÇÃO
+            // ==========================================
+
+            if (numero.length <= 10) {
+
+
+                if (numero.length > 6) {
+
+                    this.value =
+                        "(" +
+                        numero.substring(0, 2) +
+                        ") " +
+                        numero.substring(2, 6) +
+                        "-" +
+                        numero.substring(6);
+
+
+                } else if (numero.length > 2) {
+
+                    this.value =
+                        "(" +
+                        numero.substring(0, 2) +
+                        ") " +
+                        numero.substring(2);
+
+
+                } else {
+
+                    this.value = numero;
+
+                }
+
+
+            } else {
+
+
+                this.value =
+                    "(" +
+                    numero.substring(0, 2) +
+                    ") " +
+                    numero.substring(2, 7) +
+                    "-" +
+                    numero.substring(7, 11);
+
+            }
+
+        });
+
+
+        // ==========================================
+        // VERIFICA CONTA EXISTENTE
+        // ==========================================
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                const usuarioLogado =
+                    localStorage.getItem(
+                        "usuarioLogado"
+                    );
+
+
+                const nomeSalvo =
+                    localStorage.getItem(
+                        "nomeUsuario"
+                    );
+
+
+                const emailSalvo =
+                    localStorage.getItem(
+                        "emailUsuario"
+                    );
+
+
+                const telefoneSalvo =
+                    localStorage.getItem(
+                        "telefoneUsuario"
+                    );
+
+
+                // ==========================================
+                // JÁ EXISTE UMA CONTA LOGADA
+                // ==========================================
+
+                if (usuarioLogado === "true") {
+
+
+                    const manterConta =
+                        confirm(
+
+                            "Você já está conectado a uma conta.\n\n" +
+
+                            "Nome: " +
+                            (nomeSalvo || "") +
+                            "\n" +
+
+                            "E-mail: " +
+                            (emailSalvo || "") +
+                            "\n" +
+
+                            "Telefone: " +
+                            (telefoneSalvo || "") +
+                            "\n\n" +
+
+                            "OK = Continuar com esta conta\n" +
+
+                            "Cancelar = Trocar de conta"
+
+                        );
+
+
+                    // ==========================================
+                    // MANTER CONTA
+                    // ==========================================
+
+                    if (manterConta) {
+
+
+                        window.location.href =
+                            "pagina_principal.html";
+
+
+                        return;
+
+                    }
+
+
+                    // ==========================================
+                    // TROCAR DE CONTA
+                    // ==========================================
+
+                    // A conta antiga deixa de estar logada.
+
+                    localStorage.setItem(
+                        "usuarioLogado",
+                        "false"
+                    );
+
+
+                    // Limpa os campos para a nova conta.
+
+                    campoNome.value = "";
+
+                    campoEmail.value = "";
+
+                    campoTelefone.value = "";
+
+
+                    // Remove possíveis mensagens
+                    // de validação.
+
+                    formLogin.classList.remove(
+                        "was-validated"
+                    );
+
+
+                    campoNome.focus();
+
+                }
+
+            }
+        );
+
+
+        // ==========================================
+        // ENTRAR / TROCAR DE CONTA
+        // ==========================================
+
+        formLogin.addEventListener(
+            "submit",
+            function (event) {
+
 
                 event.preventDefault();
 
-                event.stopPropagation();
 
-            }
+                // ==========================================
+                // VERIFICA FORMULÁRIO
+                // ==========================================
 
-            formLogin.classList.add("was-validated");
-
-        });
-
-
-        // ==============================
-        // RECUPERAÇÃO DE SENHA
-        // ==============================
-
-        const formRecuperar =
-            document.getElementById("formRecuperar");
+                if (!formLogin.checkValidity()) {
 
 
-        formRecuperar.addEventListener("submit", function (event) {
-
-            event.preventDefault();
+                    event.stopPropagation();
 
 
-            const email =
-                document.getElementById("emailRecuperar").value;
+                    formLogin.classList.add(
+                        "was-validated"
+                    );
 
 
-            if (email.trim() !== "") {
+                    return;
 
-                alert(
-                    "Se este e-mail estiver cadastrado, você receberá as instruções para recuperar sua senha."
+                }
+
+
+                // ==========================================
+                // PEGA OS DADOS
+                // ==========================================
+
+                const nome =
+                    campoNome.value.trim();
+
+
+                const email =
+                    campoEmail.value.trim();
+
+
+                const telefone =
+                    campoTelefone.value.replace(
+                        /\D/g,
+                        ""
+                    );
+
+
+                // ==========================================
+                // VALIDA TELEFONE
+                // ==========================================
+
+                if (
+                    telefone.length !== 10 &&
+                    telefone.length !== 11
+                ) {
+
+
+                    campoTelefone.setCustomValidity(
+                        "Digite um telefone válido."
+                    );
+
+
+                    formLogin.classList.add(
+                        "was-validated"
+                    );
+
+
+                    campoTelefone.focus();
+
+
+                    return;
+
+
+                } else {
+
+
+                    campoTelefone.setCustomValidity(
+                        ""
+                    );
+
+                }
+
+
+                // ==========================================
+                // SALVA A CONTA ATUAL
+                // ==========================================
+
+                localStorage.setItem(
+                    "usuarioLogado",
+                    "true"
                 );
 
-                formRecuperar.reset();
+
+                localStorage.setItem(
+                    "nomeUsuario",
+                    nome
+                );
+
+
+                localStorage.setItem(
+                    "emailUsuario",
+                    email
+                );
+
+
+                localStorage.setItem(
+                    "telefoneUsuario",
+                    telefone
+                );
+
+
+                // ==========================================
+                // ENTRA NA PÁGINA PRINCIPAL
+                // ==========================================
+
+                window.location.href =
+                    "pagina_principal.html";
 
             }
+        );
 
-        });
+
+        // ==========================================
+        // RECUPERAÇÃO DE SENHA
+        // ==========================================
+
+        const formRecuperar =
+            document.getElementById(
+                "formRecuperar"
+            );
+
+
+        formRecuperar.addEventListener(
+            "submit",
+            function (event) {
+
+
+                event.preventDefault();
+
+
+                const email =
+                    document.getElementById(
+                        "emailRecuperar"
+                    ).value;
+
+
+                if (email.trim() !== "") {
+
+
+                    alert(
+                        "Se este e-mail estiver cadastrado, você receberá as instruções para recuperar sua senha."
+                    );
+
+
+                    formRecuperar.reset();
+
+                }
+
+            }
+        );
 
     </script>
 
