@@ -21,7 +21,8 @@
 
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet"
@@ -141,7 +142,7 @@
         }
 
 
-        /* TÍTULO DO CARDÁPIO */
+        /* TÍTULO */
 
         .titulo-cardapio {
             text-align: center;
@@ -160,7 +161,6 @@
         /* CARROSSEL */
 
         .galeria-cardapio {
-            /* ESPAÇO ENTRE O CARROSSEL E A SEÇÃO SOBRE */
             margin-bottom: 30px;
         }
 
@@ -206,7 +206,7 @@
         }
 
 
-        /* SOBRE O RESTAURANTE */
+        /* SOBRE */
 
         .sobre {
             width: 90%;
@@ -297,6 +297,281 @@
         }
 
 
+        /* ==================================================
+           TELA DO PERFIL
+           ================================================== */
+
+        .tela-perfil {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100vh;
+
+            background-color: rgba(0, 0, 0, 0.55);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            z-index: 9999;
+
+            padding: 20px;
+        }
+
+        .tela-perfil.ativa {
+            display: flex;
+        }
+
+
+        /* CARD DO PERFIL */
+
+        .perfil-card {
+
+            width: 100%;
+            max-width: 480px;
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            background-color: #f4e7cf;
+
+            border-radius: 30px;
+
+            padding: 35px;
+
+            text-align: center;
+
+            position: relative;
+
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+
+        }
+
+
+        /* BOTÃO FECHAR */
+
+        .perfil-fechar {
+
+            position: absolute;
+
+            top: 12px;
+            right: 18px;
+
+            border: none;
+
+            background: transparent;
+
+            font-size: 32px;
+
+            color: #111;
+
+            cursor: pointer;
+
+            line-height: 1;
+        }
+
+        .perfil-fechar:hover {
+            color: #6b3d22;
+        }
+
+
+        /* FOTO DO PERFIL */
+
+        .foto-perfil-container {
+
+            position: relative;
+
+            width: 125px;
+            height: 125px;
+
+            margin: 0 auto 15px;
+        }
+
+        .foto-perfil {
+
+            width: 125px;
+            height: 125px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 5px solid #d3d0ce;
+
+            background-color: #d3d0ce;
+        }
+
+
+        /* BOTÃO DA CÂMERA */
+
+        .botao-foto {
+
+            position: absolute;
+
+            right: 0;
+            bottom: 0;
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            border: 3px solid #f4e7cf;
+
+            background-color: #6b3d22;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+
+            font-size: 18px;
+        }
+
+        .botao-foto:hover {
+            background-color: #4f2c18;
+        }
+
+
+        /* INPUT ESCONDIDO */
+
+        #inputFoto {
+            display: none;
+        }
+
+
+        /* TÍTULO DO PERFIL */
+
+        .perfil-titulo {
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+            font-style: italic;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* DADOS */
+
+        .dados-perfil {
+
+            background-color: #ead9bd;
+
+            border-radius: 18px;
+
+            padding: 18px;
+
+            margin-bottom: 20px;
+
+            text-align: left;
+        }
+
+        .dado {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 12px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 15px;
+
+            word-break: break-word;
+        }
+
+        .dado:last-child {
+            margin-bottom: 0;
+        }
+
+        .dado i {
+
+            font-size: 20px;
+
+            color: #6b3d22;
+
+            min-width: 25px;
+        }
+
+
+        /* OPÇÕES */
+
+        .perfil-opcoes {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        .perfil-opcao {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 15px;
+
+            background-color: #d8c3a5;
+
+            color: #111;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            display: block;
+
+            transition: 0.2s;
+        }
+
+        .perfil-opcao:hover {
+
+            background-color: #c9ad89;
+
+            color: #111;
+        }
+
+
+        /* SAIR */
+
+        .perfil-sair {
+
+            background-color: #df6a4b;
+
+            margin-top: 5px;
+        }
+
+        .perfil-sair:hover {
+            background-color: #c95538;
+        }
+
+
         /* TABLET */
 
         @media (max-width: 992px) {
@@ -338,9 +613,13 @@
             }
 
             .navbar-nav {
+
                 gap: 10px;
+
                 margin-top: 15px;
+
                 flex-direction: row;
+
                 justify-content: center;
             }
 
@@ -368,19 +647,27 @@
             /* SOBRE */
 
             .sobre {
+
                 width: 90%;
+
                 flex-direction: column;
+
                 gap: 25px;
+
                 margin-bottom: 35px;
             }
 
             .texto-sobre p {
+
                 font-size: 18px;
+
                 line-height: 1.1;
             }
 
             .imagem-restaurante {
+
                 width: 100%;
+
                 height: 220px;
             }
 
@@ -388,10 +675,24 @@
             /* FOOTER */
 
             footer {
+
                 flex-direction: column;
+
                 gap: 5px;
+
                 text-align: center;
+
                 padding: 10px;
+            }
+
+
+            /* PERFIL */
+
+            .perfil-card {
+
+                width: 95%;
+
+                padding: 30px 20px;
             }
         }
 
@@ -401,12 +702,16 @@
         @media (max-width: 500px) {
 
             .titulo-cardapio {
+
                 font-size: 22px;
+
                 margin-bottom: 15px;
             }
 
             .item-galeria {
+
                 flex: 0 0 100%;
+
                 height: 230px;
             }
 
@@ -417,6 +722,7 @@
             .texto-sobre p {
                 font-size: 17px;
             }
+
         }
 
     </style>
@@ -429,7 +735,9 @@
     <div class="site">
 
 
-        <!-- HEADER -->
+        <!-- ==================================================
+             HEADER
+             ================================================== -->
 
         <header>
 
@@ -437,9 +745,11 @@
 
                 <div class="container">
 
+
                     <!-- LOGO -->
 
-                    <a class="navbar-brand d-flex align-items-center" href="#">
+                    <a class="navbar-brand d-flex align-items-center"
+                        href="pagina_principal.html">
 
                         <img src="../imagem/logo.png"
                             class="rounded-circle logo me-2"
@@ -464,9 +774,13 @@
 
                     <!-- MENU -->
 
-                    <div class="collapse navbar-collapse justify-content-end" id="menu">
+                    <div class="collapse navbar-collapse justify-content-end"
+                        id="menu">
 
                         <ul class="navbar-nav">
+
+
+                            <!-- CARDÁPIO -->
 
                             <li class="nav-item">
 
@@ -481,6 +795,8 @@
                             </li>
 
 
+                            <!-- RESERVA -->
+
                             <li class="nav-item">
 
                                 <a href="reserva.html">
@@ -494,6 +810,8 @@
                             </li>
 
 
+                            <!-- LOCALIZAÇÃO -->
+
                             <li class="nav-item">
 
                                 <a href="localizacao.html">
@@ -501,6 +819,22 @@
                                     <i class="bi bi-geo-alt"></i>
 
                                     <span>Localização</span>
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- PERFIL -->
+
+                            <li class="nav-item">
+
+                                <a href="#"
+                                    onclick="abrirPerfil(); return false;">
+
+                                    <i class="bi bi-person-circle"></i>
+
+                                    <span>Perfil</span>
 
                                 </a>
 
@@ -517,7 +851,9 @@
         </header>
 
 
-        <!-- MAIN -->
+        <!-- ==================================================
+             MAIN
+             ================================================== -->
 
         <main>
 
@@ -610,7 +946,7 @@
             </section>
 
 
-            <!-- SOBRE O RESTAURANTE -->
+            <!-- SOBRE -->
 
             <section class="sobre">
 
@@ -771,7 +1107,9 @@
         </main>
 
 
-        <!-- FOOTER -->
+        <!-- ==================================================
+             FOOTER
+             ================================================== -->
 
         <footer>
 
@@ -779,12 +1117,10 @@
                 📞 (11) 93275-8484
             </p>
 
-
             <p>
                 © 2026 Sabor do Quintal -
                 Todos os direitos reservados
             </p>
-
 
             <a href="mailto:sabordoquintal@email.com">
 
@@ -797,10 +1133,156 @@
     </div>
 
 
+    <!-- ==================================================
+         TELA DE PERFIL
+         ================================================== -->
 
-    <!-- JAVASCRIPT DO CARROSSEL AUTOMÁTICO -->
+    <div class="tela-perfil" id="telaPerfil">
+
+        <div class="perfil-card">
+
+
+            <!-- FECHAR -->
+
+            <button class="perfil-fechar"
+                onclick="fecharPerfil()"
+                aria-label="Fechar perfil">
+
+                &times;
+
+            </button>
+
+
+            <!-- FOTO -->
+
+            <div class="foto-perfil-container">
+
+                <img id="fotoPerfil"
+                    src="../imagem/logo.png"
+                    class="foto-perfil"
+                    alt="Foto de perfil">
+
+                <!-- BOTÃO PARA ESCOLHER FOTO -->
+
+                <label for="inputFoto"
+                    class="botao-foto"
+                    title="Alterar foto">
+
+                    <i class="bi bi-camera-fill"></i>
+
+                </label>
+
+                <input type="file"
+                    id="inputFoto"
+                    accept="image/*">
+
+            </div>
+
+
+            <!-- NOME -->
+
+            <h2 class="perfil-titulo"
+                id="perfilNome">
+
+                Usuário
+
+            </h2>
+
+
+            <!-- DADOS -->
+
+            <div class="dados-perfil">
+
+
+                <div class="dado">
+
+                    <i class="bi bi-envelope-fill"></i>
+
+                    <span>
+
+                        <strong>E-mail:</strong>
+
+                        <span id="perfilEmail">
+                            Não informado
+                        </span>
+
+                    </span>
+
+                </div>
+
+
+                <div class="dado">
+
+                    <i class="bi bi-telephone-fill"></i>
+
+                    <span>
+
+                        <strong>Telefone:</strong>
+
+                        <span id="perfilTelefone">
+                            Não informado
+                        </span>
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- OPÇÕES -->
+
+            <div class="perfil-opcoes">
+
+
+                <a href="reserva.html"
+                    class="perfil-opcao">
+
+                    <i class="bi bi-calendar-check"></i>
+
+                    Minhas reservas
+
+                </a>
+
+
+                <a href="cardapio.html"
+                    class="perfil-opcao">
+
+                    <i class="bi bi-journal-text"></i>
+
+                    Cardápio
+
+                </a>
+
+
+                <button class="perfil-opcao perfil-sair"
+                    onclick="sairDaConta()">
+
+                    <i class="bi bi-box-arrow-right"></i>
+
+                    Sair da conta
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+         ================================================== -->
 
     <script>
+
+
+        /* ==================================================
+           CARROSSEL
+           ================================================== */
 
         const galeria =
             document.getElementById("galeria");
@@ -810,8 +1292,6 @@
 
         let posicao = 0;
 
-
-        /* QUANTIDADE DE IMAGENS VISÍVEIS */
 
         function quantidadeVisivel() {
 
@@ -831,8 +1311,6 @@
         }
 
 
-        /* MOVER CARROSSEL */
-
         function moverCarrossel() {
 
             const visiveis =
@@ -843,9 +1321,6 @@
 
             posicao++;
 
-
-            /* QUANDO CHEGAR AO FINAL,
-               VOLTA PARA O COMEÇO */
 
             if (posicao > limite) {
 
@@ -860,8 +1335,6 @@
             const largura =
                 item.offsetWidth;
 
-
-            /* ESPAÇAMENTO ENTRE AS IMAGENS */
 
             let gap = 28;
 
@@ -882,8 +1355,6 @@
         }
 
 
-        /* CARROSSEL AUTOMÁTICO */
-
         setInterval(
 
             function () {
@@ -896,8 +1367,6 @@
 
         );
 
-
-        /* RESPONSIVIDADE */
 
         window.addEventListener(
 
@@ -913,6 +1382,219 @@
             }
 
         );
+
+
+        /* ==================================================
+           ABRIR PERFIL
+           ================================================== */
+
+        function abrirPerfil() {
+
+
+            /* PEGAR DADOS DO LOGIN */
+
+            const nome =
+                localStorage.getItem("usuarioNome");
+
+            const email =
+                localStorage.getItem("usuarioEmail");
+
+            const telefone =
+                localStorage.getItem("usuarioTelefone");
+
+
+            /* MOSTRAR NOME */
+
+            document.getElementById("perfilNome")
+                .textContent =
+                nome || "Usuário";
+
+
+            /* MOSTRAR EMAIL */
+
+            document.getElementById("perfilEmail")
+                .textContent =
+                email || "Não informado";
+
+
+            /* MOSTRAR TELEFONE */
+
+            document.getElementById("perfilTelefone")
+                .textContent =
+                telefone || "Não informado";
+
+
+            /* RECUPERAR FOTO */
+
+            const fotoSalva =
+                localStorage.getItem("usuarioFoto");
+
+
+            if (fotoSalva) {
+
+                document.getElementById("fotoPerfil")
+                    .src = fotoSalva;
+
+            } else {
+
+                document.getElementById("fotoPerfil")
+                    .src = "../imagem/logo.png";
+
+            }
+
+
+            /* ABRIR TELA */
+
+            document
+                .getElementById("telaPerfil")
+                .classList.add("ativa");
+
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+        /* ==================================================
+           FECHAR PERFIL
+           ================================================== */
+
+        function fecharPerfil() {
+
+            document
+                .getElementById("telaPerfil")
+                .classList.remove("ativa");
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+        /* ==================================================
+           ESCOLHER FOTO
+           ================================================== */
+
+        document
+            .getElementById("inputFoto")
+            .addEventListener("change", function () {
+
+
+                const arquivo =
+                    this.files[0];
+
+
+                if (!arquivo) {
+                    return;
+                }
+
+
+                /* VERIFICA SE É UMA IMAGEM */
+
+                if (!arquivo.type.startsWith("image/")) {
+
+                    alert("Escolha uma imagem válida.");
+
+                    return;
+
+                }
+
+
+                const leitor =
+                    new FileReader();
+
+
+                leitor.onload = function (evento) {
+
+
+                    const foto =
+                        evento.target.result;
+
+
+                    /* MOSTRA A FOTO */
+
+                    document
+                        .getElementById("fotoPerfil")
+                        .src = foto;
+
+
+                    /* SALVA A FOTO */
+
+                    localStorage.setItem(
+                        "usuarioFoto",
+                        foto
+                    );
+
+                };
+
+
+                leitor.readAsDataURL(arquivo);
+
+            });
+
+
+        /* ==================================================
+           FECHAR CLICANDO FORA
+           ================================================== */
+
+        document
+            .getElementById("telaPerfil")
+            .addEventListener("click", function (evento) {
+
+                if (evento.target === this) {
+
+                    fecharPerfil();
+
+                }
+
+            });
+
+
+        /* ==================================================
+           FECHAR COM ESC
+           ================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (evento) {
+
+                if (evento.key === "Escape") {
+
+                    fecharPerfil();
+
+                }
+
+            }
+        );
+
+
+        /* ==================================================
+           SAIR DA CONTA
+           ================================================== */
+
+        function sairDaConta() {
+
+
+            localStorage.removeItem("usuarioNome");
+
+            localStorage.removeItem("usuarioEmail");
+
+            localStorage.removeItem("usuarioTelefone");
+
+            localStorage.removeItem("usuarioFoto");
+
+
+            fecharPerfil();
+
+
+            alert("Você saiu da sua conta.");
+
+
+            window.location.href =
+                "login.html";
+
+        }
 
     </script>
 
