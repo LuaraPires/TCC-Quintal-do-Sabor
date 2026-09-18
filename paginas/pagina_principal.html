@@ -1152,207 +1152,157 @@
 
 /* ==================================================
    PRATOS DO DIA
-   DADOS EXATOS DA CARDAPIO.HTML
    ================================================== */
-
-/*
- * 0 = Domingo
- * 1 = Segunda
- * 2 = Terça
- * 3 = Quarta
- * 4 = Quinta
- * 5 = Sexta
- * 6 = Sábado
- */
 
 const pratosDoDia = {
 
-    /* ================= DOMINGO ================= */
+    /* DOMINGO */
 
     0: [
 
         {
             nome: "Costela Bovina com Batatas Rústicas",
-
             imagem: "../imagem/costelabovina.png",
-
             descricao:
                 "Costela bovina assada lentamente, acompanhada de batatas rústicas e temperos especiais da casa.",
-
             preco: "R$ 79,90"
         }
 
     ],
 
 
-    /* ================= SEGUNDA ================= */
+    /* SEGUNDA */
 
     1: [
 
         {
             nome: "Feijoada Artesanal",
-
             imagem: "../imagem/feijoada.png",
-
             descricao:
                 "Feijão preto encorpado com carnes selecionadas, arroz, couve refogada, farofa e laranja.",
-
             preco: "R$ 68,90"
         },
 
         {
             nome: "Frango do Chef",
-
             imagem: "../imagem/Frango.png",
-
             descricao:
                 "Galeto assado na brasa com molho de ervas, batatas rústicas, farofa artesanal e salada.",
-
             preco: "R$ 59,90"
         }
 
     ],
 
 
-    /* ================= TERÇA ================= */
+    /* TERÇA */
 
     2: [
 
         {
             nome: "Filé ao Molho",
-
             imagem: "../imagem/file.png",
-
             descricao:
                 "Filé mignon ao molho madeira com champignons. Acompanha purê cremoso e massa.",
-
             preco: "R$ 74,90"
         },
 
         {
             nome: "Cordeiro ao Vinho Tinto",
-
             imagem: "../imagem/cordeiro.png",
-
             descricao:
                 "Cordeiro braseado servido com mousseline de mandioca e crispy de couve-manteiga.",
-
             preco: "R$ 118,00"
         }
 
     ],
 
 
-    /* ================= QUARTA ================= */
+    /* QUARTA */
 
     3: [
 
         {
             nome: "Frango Recheado",
-
             imagem: "../imagem/frangorecheado.png",
-
             descricao:
                 "Peito de frango recheado com queijo artesanal e ervas finas, acompanhado de polenta cremosa.",
-
             preco: "R$ 82,00"
         },
 
         {
             nome: "Lombo de Ervas e Limão",
-
             imagem: "../imagem/lombo.png",
-
             descricao:
                 "Lombo grelhado com ervas e limão, acompanhado de risoto cremoso e aspargos.",
-
             preco: "R$ 98,00"
         }
 
     ],
 
 
-    /* ================= QUINTA ================= */
+    /* QUINTA */
 
     4: [
 
         {
             nome: "Ancho ao Molho",
-
             imagem: "../imagem/ancho.png",
-
             descricao:
                 "Corte Angus preparado com molho especial, queijos e farofa de pão de queijo.",
-
             preco: "R$ 134,20"
         },
 
         {
             nome: "Nhoque de Costela",
-
             imagem: "../imagem/nhoque.png",
-
             descricao:
                 "Nhoque artesanal de batata-baroa, costela bovina braseada e lascas de queijo.",
-
             preco: "R$ 89,00"
         }
 
     ],
 
 
-    /* ================= SEXTA ================= */
+    /* SEXTA */
 
     5: [
 
         {
             nome: "Lasanha à Bolonhesa",
-
             imagem: "../imagem/lasanha.png",
-
             descricao:
                 "Massa artesanal recheada com molho de carne, queijo derretido e manjericão.",
-
             preco: "R$ 75,00"
         },
 
         {
             nome: "Filé Mignon ao Molho",
-
             imagem: "../imagem/fileminhon.png",
-
             descricao:
                 "Filé bovino ao molho de vinho tinto, servido com batatas, cogumelos e aspargos.",
-
             preco: "R$ 112,00"
         }
 
     ],
 
 
-    /* ================= SÁBADO ================= */
+    /* SÁBADO */
 
     6: [
 
         {
             nome: "Risoto de Costela",
-
             imagem: "../imagem/risoto.png",
-
             descricao:
                 "Risoto cremoso com costela desfiada, ervas frescas e toque crocante.",
-
             preco: "R$ 80,00"
         },
 
         {
             nome: "Cordeiro",
-
             imagem: "../imagem/cordeiro.png",
-
             descricao:
                 "Cordeiro servido com arroz, feijão e legumes frescos.",
-
             preco: "R$ 75,00"
         }
 
@@ -1749,6 +1699,11 @@ document
                         .src =
                         foto;
 
+
+                    /*
+                     * A foto também continua salva
+                     * depois que o usuário sair da conta.
+                     */
 
                     localStorage.setItem(
                         "usuarioFoto",
@@ -2226,36 +2181,50 @@ document.addEventListener(
 
 /* ==================================================
    SAIR DA CONTA
+   ==================================================
+
+   IMPORTANTE:
+
+   Esta função NÃO apaga:
+
+   - nomeUsuario
+   - emailUsuario
+   - telefoneUsuario
+   - usuarioFoto
+   - reservas
+
+   Ela somente encerra a sessão.
    ================================================== */
 
 function sairDaConta() {
+
+    /*
+     * Remove SOMENTE o status de login.
+     */
 
     localStorage.removeItem(
         "usuarioLogado"
     );
 
-    localStorage.removeItem(
-        "nomeUsuario"
-    );
 
-    localStorage.removeItem(
-        "emailUsuario"
-    );
-
-    localStorage.removeItem(
-        "telefoneUsuario"
-    );
-
-    localStorage.removeItem(
-        "usuarioFoto"
-    );
+    /*
+     * NÃO remover os dados abaixo.
+     *
+     * Eles permanecem salvos no navegador:
+     *
+     * nomeUsuario
+     * emailUsuario
+     * telefoneUsuario
+     * usuarioFoto
+     * reservasSaborQuintal
+     */
 
 
     fecharPerfil();
 
 
     alert(
-        "Você saiu da sua conta."
+        "Você saiu da sua conta. Seus dados continuam salvos."
     );
 
 
