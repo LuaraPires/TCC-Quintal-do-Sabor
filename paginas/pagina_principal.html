@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="pt-BR">
 
@@ -19,7 +18,6 @@
 
     <title>Sabor do Quintal</title>
 
-
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet">
@@ -31,10 +29,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-
     <style>
-
-        /* CONFIGURAÇÕES GERAIS */
 
         * {
             margin: 0;
@@ -54,8 +49,7 @@
             flex-direction: column;
         }
 
-
-        /* HEADER */
+        /* ================= HEADER ================= */
 
         header {
             background-color: #f4e7cf;
@@ -88,8 +82,7 @@
             object-fit: cover;
         }
 
-
-        /* MENU */
+        /* ================= MENU ================= */
 
         .navbar-nav {
             display: flex;
@@ -134,15 +127,13 @@
             color: #6b3d22;
         }
 
-
-        /* MAIN */
+        /* ================= MAIN ================= */
 
         main {
             flex: 1;
         }
 
-
-        /* TÍTULO */
+        /* ================= TÍTULO ================= */
 
         .titulo-cardapio {
             text-align: center;
@@ -157,8 +148,7 @@
             overflow: hidden;
         }
 
-
-        /* CARROSSEL */
+        /* ================= CARROSSEL ================= */
 
         .galeria-cardapio {
             margin-bottom: 30px;
@@ -179,9 +169,6 @@
             transition: transform 0.8s ease-in-out;
             will-change: transform;
         }
-
-
-        /* IMAGENS DO CARROSSEL */
 
         .item-galeria {
             flex: 0 0 calc(25% - 21px);
@@ -205,8 +192,7 @@
             transform: scale(1.05);
         }
 
-
-        /* SOBRE */
+        /* ================= SOBRE ================= */
 
         .sobre {
             width: 90%;
@@ -235,15 +221,24 @@
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
         }
 
-
-        /* CARDS DOS PRATOS */
+        /* ================= CARDS PRATOS DO DIA ================= */
 
         .pratos {
             width: 100%;
             padding: 30px 0 50px;
         }
 
+        .titulo-pratos-dia {
+            text-align: center;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
         .pratos .card {
+            width: 100%;
             max-width: 800px;
             margin: auto;
             border: none;
@@ -253,23 +248,81 @@
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
         }
 
-        .pratos .card img {
-            width: 150%;
+        .prato-card {
+            min-height: 250px;
+        }
+
+        .prato-card-imagem {
+            width: 100%;
             height: 250px;
             object-fit: cover;
+            display: block;
+        }
+
+        .prato-card .card-body {
+            padding: 25px;
+            text-align: left;
         }
 
         .card-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 23px;
             font-weight: bold;
+            margin-bottom: 12px;
         }
 
         .card-text {
             font-family: Arial, sans-serif;
-            font-size: 20px;
+            font-size: 17px;
+            line-height: 1.4;
         }
 
+        .preco-prato {
+            font-family: Arial, sans-serif;
+            font-size: 19px;
+            color: #c96d4b;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
 
-        /* FOOTER */
+        .tempo-preparo {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #6b3d22;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .dia-atual {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin-top: -15px;
+            margin-bottom: 25px;
+            color: #6b3d22;
+            font-weight: bold;
+        }
+
+        .botao-prato {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #d96a4a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .botao-prato:hover {
+            background-color: #c95538;
+            color: white;
+        }
+
+        /* ================= FOOTER ================= */
 
         footer {
             width: 100%;
@@ -296,30 +349,19 @@
             text-decoration: underline;
         }
 
-
-        /* ==================================================
-           TELA DO PERFIL
-           ================================================== */
+        /* ================= TELA PERFIL ================= */
 
         .tela-perfil {
-
             position: fixed;
-
             top: 0;
             left: 0;
-
             width: 100%;
             height: 100vh;
-
             background-color: rgba(0, 0, 0, 0.55);
-
             display: none;
-
             align-items: center;
             justify-content: center;
-
             z-index: 9999;
-
             padding: 20px;
         }
 
@@ -327,52 +369,28 @@
             display: flex;
         }
 
-
-        /* CARD DO PERFIL */
-
         .perfil-card {
-
             width: 100%;
             max-width: 480px;
-
             max-height: 90vh;
-
             overflow-y: auto;
-
             background-color: #f4e7cf;
-
             border-radius: 30px;
-
             padding: 35px;
-
             text-align: center;
-
             position: relative;
-
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
-
         }
 
-
-        /* BOTÃO FECHAR */
-
         .perfil-fechar {
-
             position: absolute;
-
             top: 12px;
             right: 18px;
-
             border: none;
-
             background: transparent;
-
             font-size: 32px;
-
             color: #111;
-
             cursor: pointer;
-
             line-height: 1;
         }
 
@@ -380,61 +398,36 @@
             color: #6b3d22;
         }
 
-
-        /* FOTO DO PERFIL */
-
         .foto-perfil-container {
-
             position: relative;
-
             width: 125px;
             height: 125px;
-
             margin: 0 auto 15px;
         }
 
         .foto-perfil {
-
             width: 125px;
             height: 125px;
-
             border-radius: 50%;
-
             object-fit: cover;
-
             border: 5px solid #d3d0ce;
-
             background-color: #d3d0ce;
         }
 
-
-        /* BOTÃO DA CÂMERA */
-
         .botao-foto {
-
             position: absolute;
-
             right: 0;
             bottom: 0;
-
             width: 40px;
             height: 40px;
-
             border-radius: 50%;
-
             border: 3px solid #f4e7cf;
-
             background-color: #6b3d22;
-
             color: white;
-
             display: flex;
-
             align-items: center;
             justify-content: center;
-
             cursor: pointer;
-
             font-size: 18px;
         }
 
@@ -442,57 +435,32 @@
             background-color: #4f2c18;
         }
 
-
-        /* INPUT ESCONDIDO */
-
         #inputFoto {
             display: none;
         }
 
-
-        /* TÍTULO DO PERFIL */
-
         .perfil-titulo {
-
             font-size: 28px;
-
             font-weight: bold;
-
             font-style: italic;
-
             margin-bottom: 20px;
         }
 
-
-        /* DADOS */
-
         .dados-perfil {
-
             background-color: #ead9bd;
-
             border-radius: 18px;
-
             padding: 18px;
-
             margin-bottom: 20px;
-
             text-align: left;
         }
 
         .dado {
-
             display: flex;
-
-            align-items: center;
-
+            align-items: flex-start;
             gap: 10px;
-
             margin-bottom: 12px;
-
             font-family: Arial, sans-serif;
-
             font-size: 15px;
-
             word-break: break-word;
         }
 
@@ -501,69 +469,40 @@
         }
 
         .dado i {
-
             font-size: 20px;
-
             color: #6b3d22;
-
             min-width: 25px;
         }
 
-
-        /* OPÇÕES */
-
         .perfil-opcoes {
-
             display: flex;
-
             flex-direction: column;
-
             gap: 12px;
         }
 
         .perfil-opcao {
-
             width: 100%;
-
             padding: 13px;
-
             border: none;
-
             border-radius: 15px;
-
             background-color: #d8c3a5;
-
             color: #111;
-
             font-family: Arial, sans-serif;
-
             font-size: 16px;
-
             font-weight: bold;
-
             cursor: pointer;
-
             text-decoration: none;
-
             display: block;
-
             transition: 0.2s;
         }
 
         .perfil-opcao:hover {
-
             background-color: #c9ad89;
-
             color: #111;
         }
 
-
-        /* SAIR */
-
         .perfil-sair {
-
             background-color: #df6a4b;
-
             margin-top: 5px;
         }
 
@@ -571,8 +510,100 @@
             background-color: #c95538;
         }
 
+        /* ================= RESERVAS ================= */
 
-        /* TABLET */
+        .tela-reservas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.55);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            padding: 20px;
+        }
+
+        .tela-reservas.ativa {
+            display: flex;
+        }
+
+        .reservas-card {
+            width: 100%;
+            max-width: 650px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background-color: #f4e7cf;
+            border-radius: 30px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .titulo-reservas {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .botao-voltar-reservas {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 15px;
+            background-color: #6b3d22;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .botao-voltar-reservas:hover {
+            background-color: #4f2c18;
+        }
+
+        .reserva-item {
+            background-color: #ead9bd;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .reserva-titulo {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .reserva-dado {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .reserva-dado i {
+            color: #6b3d22;
+            min-width: 20px;
+        }
+
+        .sem-reservas {
+            text-align: center;
+            padding: 25px 10px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        /* ================= TABLET ================= */
 
         @media (max-width: 992px) {
 
@@ -594,8 +625,7 @@
             }
         }
 
-
-        /* CELULAR */
+        /* ================= CELULAR ================= */
 
         @media (max-width: 768px) {
 
@@ -613,22 +643,15 @@
             }
 
             .navbar-nav {
-
                 gap: 10px;
-
                 margin-top: 15px;
-
                 flex-direction: row;
-
                 justify-content: center;
             }
 
             .titulo-cardapio {
                 font-size: 24px;
             }
-
-
-            /* CARROSSEL */
 
             .carousel-wrapper {
                 padding: 0 35px;
@@ -643,75 +666,60 @@
                 height: 190px;
             }
 
-
-            /* SOBRE */
-
             .sobre {
-
                 width: 90%;
-
                 flex-direction: column;
-
                 gap: 25px;
-
                 margin-bottom: 35px;
             }
 
             .texto-sobre p {
-
                 font-size: 18px;
-
                 line-height: 1.1;
             }
 
             .imagem-restaurante {
-
                 width: 100%;
-
                 height: 220px;
             }
 
+            .titulo-pratos-dia {
+                font-size: 24px;
+            }
 
-            /* FOOTER */
+            .prato-card-imagem {
+                height: 220px;
+            }
 
             footer {
-
                 flex-direction: column;
-
                 gap: 5px;
-
                 text-align: center;
-
                 padding: 10px;
             }
 
-
-            /* PERFIL */
-
             .perfil-card {
-
                 width: 95%;
-
                 padding: 30px 20px;
+            }
+
+            .reservas-card {
+                width: 95%;
+                padding: 25px 18px;
             }
         }
 
-
-        /* CELULAR PEQUENO */
+        /* ================= CELULAR PEQUENO ================= */
 
         @media (max-width: 500px) {
 
             .titulo-cardapio {
-
                 font-size: 22px;
-
                 margin-bottom: 15px;
             }
 
             .item-galeria {
-
                 flex: 0 0 100%;
-
                 height: 230px;
             }
 
@@ -723,6 +731,10 @@
                 font-size: 17px;
             }
 
+            .prato-card-imagem {
+                height: 230px;
+            }
+
         }
 
     </style>
@@ -732,794 +744,1011 @@
 
 <body>
 
-    <div class="site">
+<div class="site">
 
+    <!-- ================= HEADER ================= -->
 
-        <!-- ==================================================
-             HEADER
-             ================================================== -->
+    <header>
 
-        <header>
+        <nav class="navbar navbar-expand-lg">
 
-            <nav class="navbar navbar-expand-lg">
+            <div class="container">
 
-                <div class="container">
+                <a class="navbar-brand d-flex align-items-center"
+                    href="pagina_principal.html">
 
+                    <img src="../imagem/logo.png"
+                        class="rounded-circle logo me-2"
+                        alt="Logo Sabor do Quintal">
 
-                    <!-- LOGO -->
-
-                    <a class="navbar-brand d-flex align-items-center"
-                        href="pagina_principal.html">
-
-                        <img src="../imagem/logo.png"
-                            class="rounded-circle logo me-2"
-                            alt="Logo Sabor do Quintal">
-
-                        Sabor do Quintal
-
-                    </a>
-
-
-                    <!-- BOTÃO MOBILE -->
-
-                    <button class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#menu">
-
-                        <span class="navbar-toggler-icon"></span>
-
-                    </button>
-
-
-                    <!-- MENU -->
-
-                    <div class="collapse navbar-collapse justify-content-end"
-                        id="menu">
-
-                        <ul class="navbar-nav">
-
-
-                            <!-- CARDÁPIO -->
-
-                            <li class="nav-item">
-
-                                <a href="cardapio.html">
-
-                                    <i class="bi bi-journal-text"></i>
-
-                                    <span>Cardápio</span>
-
-                                </a>
-
-                            </li>
-
-
-                            <!-- RESERVA -->
-
-                            <li class="nav-item">
-
-                                <a href="reserva.html">
-
-                                    <i class="bi bi-calendar3"></i>
-
-                                    <span>Reserva</span>
-
-                                </a>
-
-                            </li>
-
-
-                            <!-- LOCALIZAÇÃO -->
-
-                            <li class="nav-item">
-
-                                <a href="localizacao.html">
-
-                                    <i class="bi bi-geo-alt"></i>
-
-                                    <span>Localização</span>
-
-                                </a>
-
-                            </li>
-
-
-                            <!-- PERFIL -->
-
-                            <li class="nav-item">
-
-                                <a href="#"
-                                    onclick="abrirPerfil(); return false;">
-
-                                    <i class="bi bi-person-circle"></i>
-
-                                    <span>Perfil</span>
-
-                                </a>
-
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </nav>
-
-        </header>
-
-
-        <!-- ==================================================
-             MAIN
-             ================================================== -->
-
-        <main>
-
-
-            <!-- TÍTULO -->
-
-            <h2 class="titulo-cardapio">
-
-                confira o cardápio completo
-
-            </h2>
-
-
-            <!-- CARROSSEL -->
-
-            <section class="galeria-cardapio">
-
-                <div class="carousel-wrapper">
-
-                    <div class="galeria" id="galeria">
-
-
-                        <div class="item-galeria">
-
-                            <img src="../imagem/fileminhon.png"
-                                alt="Prato de carne">
-
-                        </div>
-
-
-                        <div class="item-galeria">
-
-                            <img src="../imagem/file.png"
-                                alt="Prato de frango">
-
-                        </div>
-
-
-                        <div class="item-galeria">
-
-                            <img src="../imagem/lombo.png"
-                                alt="Prato de lombo">
-
-                        </div>
-
-
-                        <div class="item-galeria">
-
-                            <img src="../imagem/costelabovina.png"
-                                alt="Costela bovina">
-
-                        </div>
-
-
-                        <div class="item-galeria">
-
-                            <img src="../imagem/lasanha.png"
-                                alt="Lasanha">
-
-                        </div>
-
-
-                        <div class="item-galeria">
-
-                            <img src="../imagem/ancho.png"
-                                alt="Prato especial">
-
-                        </div>
-
-
-                        <div class="item-galeria">
-
-                            <img src="../imagem/Frango.png"
-                                alt="Frango especial">
-
-                        </div>
-
-
-                        <div class="item-galeria">
-
-                            <img src="../imagem/feijoada.png"
-                                alt="Feijoada">
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- SOBRE -->
-
-            <section class="sobre">
-
-                <div class="texto-sobre">
-
-                    <p>
-
-                        Desde 1984, o Quintal dos Sabores abre suas
-                        portas para quem busca mais do que uma
-                        refeição: busca um retorno às origens.
-                        Localizado em um refúgio onde o tempo insiste
-                        em caminhar devagar, somos um restaurante
-                        autenticamente rústico, construído com o
-                        calor da madeira de demolição, o frescor das
-                        paredes de pedra e a alma do fogo de chão.
-
-                    </p>
-
-                </div>
-
-
-                <img src="../imagem/nhoque.png"
-                    class="imagem-restaurante"
-                    alt="Interior do restaurante Sabor do Quintal">
-
-            </section>
-
-
-            <!-- PRATOS -->
-
-            <section class="pratos">
-
-                <div class="container text-center">
-
-                    <div class="row g-4">
-
-
-                        <!-- COSTELA -->
-
-                        <div class="col-md-6">
-
-                            <div class="card mb-3">
-
-                                <div class="row g-0">
-
-                                    <div class="col-md-4">
-
-                                        <img src="../imagem/costelabovina.png"
-                                            class="img-fluid rounded-start"
-                                            alt="Costela bovina">
-
-                                    </div>
-
-
-                                    <div class="col-md-8">
-
-                                        <div class="card-body">
-
-                                            <h5 class="card-title">
-
-                                                Costela Bovina
-
-                                            </h5>
-
-
-                                            <p class="card-text">
-
-                                                Um prato muito típico
-                                                do nosso restaurante.
-
-                                            </p>
-
-
-                                            <p class="card-text">
-
-                                                <small class="text-body-secondary">
-
-                                                    Preparo em 30min
-
-                                                </small>
-
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- LASANHA -->
-
-                        <div class="col-md-6">
-
-                            <div class="card mb-3">
-
-                                <div class="row g-0">
-
-                                    <div class="col-md-4">
-
-                                        <img src="../imagem/lasanha.png"
-                                            class="img-fluid rounded-start"
-                                            alt="Lasanha">
-
-                                    </div>
-
-
-                                    <div class="col-md-8">
-
-                                        <div class="card-body">
-
-                                            <h5 class="card-title">
-
-                                                Lasanha
-
-                                            </h5>
-
-
-                                            <p class="card-text">
-
-                                                Um prato delicioso,
-                                                com um sabor maravilhoso
-                                                de tomate.
-
-                                            </p>
-
-
-                                            <p class="card-text">
-
-                                                <small class="text-body-secondary">
-
-                                                    Preparo em 25min
-
-                                                </small>
-
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-        </main>
-
-
-        <!-- ==================================================
-             FOOTER
-             ================================================== -->
-
-        <footer>
-
-            <p>
-                📞 (11) 93275-8484
-            </p>
-
-            <p>
-                © 2026 Sabor do Quintal -
-                Todos os direitos reservados
-            </p>
-
-            <a href="mailto:sabordoquintal@email.com">
-
-                ✉ sabordoquintal@email.com
-
-            </a>
-
-        </footer>
-
-    </div>
-
-
-    <!-- ==================================================
-         TELA DE PERFIL
-         ================================================== -->
-
-    <div class="tela-perfil" id="telaPerfil">
-
-        <div class="perfil-card">
-
-
-            <!-- FECHAR -->
-
-            <button class="perfil-fechar"
-                onclick="fecharPerfil()"
-                aria-label="Fechar perfil">
-
-                &times;
-
-            </button>
-
-
-            <!-- FOTO -->
-
-            <div class="foto-perfil-container">
-
-                <img id="fotoPerfil"
-                    src="../imagem/logo.png"
-                    class="foto-perfil"
-                    alt="Foto de perfil">
-
-                <!-- BOTÃO PARA ESCOLHER FOTO -->
-
-                <label for="inputFoto"
-                    class="botao-foto"
-                    title="Alterar foto">
-
-                    <i class="bi bi-camera-fill"></i>
-
-                </label>
-
-                <input type="file"
-                    id="inputFoto"
-                    accept="image/*">
-
-            </div>
-
-
-            <!-- NOME -->
-
-            <h2 class="perfil-titulo"
-                id="perfilNome">
-
-                Usuário
-
-            </h2>
-
-
-            <!-- DADOS -->
-
-            <div class="dados-perfil">
-
-
-                <div class="dado">
-
-                    <i class="bi bi-envelope-fill"></i>
-
-                    <span>
-
-                        <strong>E-mail:</strong>
-
-                        <span id="perfilEmail">
-                            Não informado
-                        </span>
-
-                    </span>
-
-                </div>
-
-
-                <div class="dado">
-
-                    <i class="bi bi-telephone-fill"></i>
-
-                    <span>
-
-                        <strong>Telefone:</strong>
-
-                        <span id="perfilTelefone">
-                            Não informado
-                        </span>
-
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-            <!-- OPÇÕES -->
-
-            <div class="perfil-opcoes">
-
-
-                <a href="reserva.html"
-                    class="perfil-opcao">
-
-                    <i class="bi bi-calendar-check"></i>
-
-                    Minhas reservas
+                    Sabor do Quintal
 
                 </a>
 
 
-                <a href="cardapio.html"
-                    class="perfil-opcao">
+                <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu">
 
-                    <i class="bi bi-journal-text"></i>
-
-                    Cardápio
-
-                </a>
-
-
-                <button class="perfil-opcao perfil-sair"
-                    onclick="sairDaConta()">
-
-                    <i class="bi bi-box-arrow-right"></i>
-
-                    Sair da conta
+                    <span class="navbar-toggler-icon"></span>
 
                 </button>
 
+
+                <div class="collapse navbar-collapse justify-content-end"
+                    id="menu">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+
+                            <a href="cardapio.html">
+
+                                <i class="bi bi-journal-text"></i>
+
+                                <span>Cardápio</span>
+
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a href="reserva.html">
+
+                                <i class="bi bi-calendar3"></i>
+
+                                <span>Reserva</span>
+
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a href="localizacao.html">
+
+                                <i class="bi bi-geo-alt"></i>
+
+                                <span>Localização</span>
+
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a href="#"
+                                onclick="abrirPerfil(); return false;">
+
+                                <i class="bi bi-person-circle"></i>
+
+                                <span>Perfil</span>
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <h2 class="titulo-cardapio">
+
+            confira o cardápio completo
+
+        </h2>
+
+
+        <!-- ================= CARROSSEL ================= -->
+
+        <section class="galeria-cardapio">
+
+            <div class="carousel-wrapper">
+
+                <div class="galeria" id="galeria">
+
+                    <div class="item-galeria">
+                        <img src="../imagem/fileminhon.png"
+                            alt="Filé mignon">
+                    </div>
+
+                    <div class="item-galeria">
+                        <img src="../imagem/file.png"
+                            alt="Filé ao molho">
+                    </div>
+
+                    <div class="item-galeria">
+                        <img src="../imagem/lombo.png"
+                            alt="Lombo">
+                    </div>
+
+                    <div class="item-galeria">
+                        <img src="../imagem/costelabovina.png"
+                            alt="Costela bovina">
+                    </div>
+
+                    <div class="item-galeria">
+                        <img src="../imagem/lasanha.png"
+                            alt="Lasanha">
+                    </div>
+
+                    <div class="item-galeria">
+                        <img src="../imagem/ancho.png"
+                            alt="Ancho">
+                    </div>
+
+                    <div class="item-galeria">
+                        <img src="../imagem/Frango.png"
+                            alt="Frango especial">
+                    </div>
+
+                    <div class="item-galeria">
+                        <img src="../imagem/feijoada.png"
+                            alt="Feijoada">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SOBRE ================= -->
+
+        <section class="sobre">
+
+            <div class="texto-sobre">
+
+                <p>
+
+                    Desde 1984, o Sabor do Quintal abre suas
+                    portas para quem busca mais do que uma
+                    refeição: busca um retorno às origens.
+                    Localizado em um refúgio onde o tempo insiste
+                    em caminhar devagar, somos um restaurante
+                    autenticamente rústico, construído com o
+                    calor da madeira de demolição, o frescor das
+                    paredes de pedra e a alma do fogo de chão.
+
+                </p>
+
+            </div>
+
+
+            <img src="../imagem/nhoque.png"
+                class="imagem-restaurante"
+                alt="Interior do restaurante Sabor do Quintal">
+
+        </section>
+
+
+        <!-- ================= PRATOS DO DIA ================= -->
+
+        <section class="pratos">
+
+            <div class="container">
+
+                <h2 class="titulo-pratos-dia">
+                    Pratos do dia
+                </h2>
+
+                <p class="dia-atual"
+                    id="diaAtual">
+                </p>
+
+
+                <div class="row g-4"
+                    id="listaPratosDia">
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            📞 (11) 93275-8484
+        </p>
+
+        <p>
+            © 2026 Sabor do Quintal -
+            Todos os direitos reservados
+        </p>
+
+        <a href="mailto:sabordoquintal@email.com">
+            ✉ sabordoquintal@email.com
+        </a>
+
+    </footer>
+
+</div>
+
+
+<!-- ==================================================
+     TELA DO PERFIL
+     ================================================== -->
+
+<div class="tela-perfil" id="telaPerfil">
+
+    <div class="perfil-card">
+
+        <button class="perfil-fechar"
+            onclick="fecharPerfil()">
+
+            &times;
+
+        </button>
+
+
+        <div class="foto-perfil-container">
+
+            <img id="fotoPerfil"
+                src="../imagem/logo.png"
+                class="foto-perfil"
+                alt="Foto de perfil">
+
+
+            <label for="inputFoto"
+                class="botao-foto"
+                title="Alterar foto">
+
+                <i class="bi bi-camera-fill"></i>
+
+            </label>
+
+
+            <input type="file"
+                id="inputFoto"
+                accept="image/*">
+
+        </div>
+
+
+        <h2 class="perfil-titulo"
+            id="perfilNome">
+
+            Usuário
+
+        </h2>
+
+
+        <div class="dados-perfil">
+
+            <div class="dado">
+
+                <i class="bi bi-person-fill"></i>
+
+                <span>
+                    <strong>Nome:</strong>
+                    <span id="perfilNomeDado">
+                        Não informado
+                    </span>
+                </span>
+
+            </div>
+
+
+            <div class="dado">
+
+                <i class="bi bi-envelope-fill"></i>
+
+                <span>
+                    <strong>E-mail:</strong>
+                    <span id="perfilEmail">
+                        Não informado
+                    </span>
+                </span>
+
+            </div>
+
+
+            <div class="dado">
+
+                <i class="bi bi-telephone-fill"></i>
+
+                <span>
+                    <strong>Telefone:</strong>
+                    <span id="perfilTelefone">
+                        Não informado
+                    </span>
+                </span>
 
             </div>
 
         </div>
 
+
+        <div class="perfil-opcoes">
+
+            <button class="perfil-opcao"
+                onclick="abrirReservas()">
+
+                <i class="bi bi-calendar-check"></i>
+
+                Minhas reservas
+
+            </button>
+
+
+            <a href="cardapio.html"
+                class="perfil-opcao">
+
+                <i class="bi bi-journal-text"></i>
+
+                Cardápio
+
+            </a>
+
+
+            <button class="perfil-opcao perfil-sair"
+                onclick="sairDaConta()">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                Sair da conta
+
+            </button>
+
+        </div>
+
     </div>
 
-
-    <!-- ==================================================
-         JAVASCRIPT
-         ================================================== -->
-
-    <script>
+</div>
 
 
-        /* ==================================================
-           CARROSSEL
-           ================================================== */
+<!-- ==================================================
+     TELA DE RESERVAS
+     ================================================== -->
 
-        const galeria =
-            document.getElementById("galeria");
+<div class="tela-reservas" id="telaReservas">
 
-        const itens =
-            document.querySelectorAll(".item-galeria");
+    <div class="reservas-card">
 
-        let posicao = 0;
+        <h2 class="titulo-reservas">
+            Minhas reservas
+        </h2>
+
+        <div id="listaReservas"></div>
 
 
-        function quantidadeVisivel() {
+        <button class="botao-voltar-reservas"
+            onclick="fecharReservas()">
 
-            if (window.innerWidth <= 500) {
-                return 1;
-            }
+            <i class="bi bi-arrow-left"></i>
 
-            if (window.innerWidth <= 768) {
-                return 2;
-            }
+            Voltar para o perfil
 
-            if (window.innerWidth <= 992) {
-                return 3;
-            }
+        </button>
 
-            return 4;
+    </div>
+
+</div>
+
+
+<script>
+
+/* ==================================================
+   PRATOS DO DIA
+   DADOS EXATOS DA CARDAPIO.HTML
+   ================================================== */
+
+/*
+ * 0 = Domingo
+ * 1 = Segunda
+ * 2 = Terça
+ * 3 = Quarta
+ * 4 = Quinta
+ * 5 = Sexta
+ * 6 = Sábado
+ */
+
+const pratosDoDia = {
+
+    /* ================= DOMINGO ================= */
+
+    0: [
+
+        {
+            nome: "Costela Bovina com Batatas Rústicas",
+
+            imagem: "../imagem/costelabovina.png",
+
+            descricao:
+                "Costela bovina assada lentamente, acompanhada de batatas rústicas e temperos especiais da casa.",
+
+            preco: "R$ 79,90"
         }
 
-
-        function moverCarrossel() {
-
-            const visiveis =
-                quantidadeVisivel();
-
-            const limite =
-                itens.length - visiveis;
-
-            posicao++;
+    ],
 
 
-            if (posicao > limite) {
+    /* ================= SEGUNDA ================= */
 
-                posicao = 0;
+    1: [
 
-            }
+        {
+            nome: "Feijoada Artesanal",
 
+            imagem: "../imagem/feijoada.png",
 
-            const item =
-                itens[0];
+            descricao:
+                "Feijão preto encorpado com carnes selecionadas, arroz, couve refogada, farofa e laranja.",
 
-            const largura =
-                item.offsetWidth;
+            preco: "R$ 68,90"
+        },
 
+        {
+            nome: "Frango do Chef",
 
-            let gap = 28;
+            imagem: "../imagem/Frango.png",
 
-            if (window.innerWidth <= 768) {
+            descricao:
+                "Galeto assado na brasa com molho de ervas, batatas rústicas, farofa artesanal e salada.",
 
-                gap = 15;
-
-            }
-
-
-            const deslocamento =
-                posicao * (largura + gap);
-
-
-            galeria.style.transform =
-                `translateX(-${deslocamento}px)`;
-
+            preco: "R$ 59,90"
         }
 
-
-        setInterval(
-
-            function () {
-
-                moverCarrossel();
-
-            },
-
-            3000
-
-        );
+    ],
 
 
-        window.addEventListener(
+    /* ================= TERÇA ================= */
 
-            "resize",
+    2: [
 
-            function () {
+        {
+            nome: "Filé ao Molho",
 
-                posicao = 0;
+            imagem: "../imagem/file.png",
 
-                galeria.style.transform =
-                    "translateX(0)";
+            descricao:
+                "Filé mignon ao molho madeira com champignons. Acompanha purê cremoso e massa.",
 
-            }
+            preco: "R$ 74,90"
+        },
 
-        );
+        {
+            nome: "Cordeiro ao Vinho Tinto",
 
+            imagem: "../imagem/cordeiro.png",
 
-        /* ==================================================
-           ABRIR PERFIL
-           ================================================== */
+            descricao:
+                "Cordeiro braseado servido com mousseline de mandioca e crispy de couve-manteiga.",
 
-        function abrirPerfil() {
+            preco: "R$ 118,00"
+        }
 
-
-            /* PEGAR DADOS DO LOGIN */
-
-            const nome =
-                localStorage.getItem("usuarioNome");
-
-            const email =
-                localStorage.getItem("usuarioEmail");
-
-            const telefone =
-                localStorage.getItem("usuarioTelefone");
+    ],
 
 
-            /* MOSTRAR NOME */
+    /* ================= QUARTA ================= */
 
-            document.getElementById("perfilNome")
-                .textContent =
-                nome || "Usuário";
+    3: [
+
+        {
+            nome: "Frango Recheado",
+
+            imagem: "../imagem/frangorecheado.png",
+
+            descricao:
+                "Peito de frango recheado com queijo artesanal e ervas finas, acompanhado de polenta cremosa.",
+
+            preco: "R$ 82,00"
+        },
+
+        {
+            nome: "Lombo de Ervas e Limão",
+
+            imagem: "../imagem/lombo.png",
+
+            descricao:
+                "Lombo grelhado com ervas e limão, acompanhado de risoto cremoso e aspargos.",
+
+            preco: "R$ 98,00"
+        }
+
+    ],
 
 
-            /* MOSTRAR EMAIL */
+    /* ================= QUINTA ================= */
 
-            document.getElementById("perfilEmail")
-                .textContent =
-                email || "Não informado";
+    4: [
+
+        {
+            nome: "Ancho ao Molho",
+
+            imagem: "../imagem/ancho.png",
+
+            descricao:
+                "Corte Angus preparado com molho especial, queijos e farofa de pão de queijo.",
+
+            preco: "R$ 134,20"
+        },
+
+        {
+            nome: "Nhoque de Costela",
+
+            imagem: "../imagem/nhoque.png",
+
+            descricao:
+                "Nhoque artesanal de batata-baroa, costela bovina braseada e lascas de queijo.",
+
+            preco: "R$ 89,00"
+        }
+
+    ],
 
 
-            /* MOSTRAR TELEFONE */
+    /* ================= SEXTA ================= */
 
-            document.getElementById("perfilTelefone")
-                .textContent =
-                telefone || "Não informado";
+    5: [
+
+        {
+            nome: "Lasanha à Bolonhesa",
+
+            imagem: "../imagem/lasanha.png",
+
+            descricao:
+                "Massa artesanal recheada com molho de carne, queijo derretido e manjericão.",
+
+            preco: "R$ 75,00"
+        },
+
+        {
+            nome: "Filé Mignon ao Molho",
+
+            imagem: "../imagem/fileminhon.png",
+
+            descricao:
+                "Filé bovino ao molho de vinho tinto, servido com batatas, cogumelos e aspargos.",
+
+            preco: "R$ 112,00"
+        }
+
+    ],
 
 
-            /* RECUPERAR FOTO */
+    /* ================= SÁBADO ================= */
 
-            const fotoSalva =
-                localStorage.getItem("usuarioFoto");
+    6: [
+
+        {
+            nome: "Risoto de Costela",
+
+            imagem: "../imagem/risoto.png",
+
+            descricao:
+                "Risoto cremoso com costela desfiada, ervas frescas e toque crocante.",
+
+            preco: "R$ 80,00"
+        },
+
+        {
+            nome: "Cordeiro",
+
+            imagem: "../imagem/cordeiro.png",
+
+            descricao:
+                "Cordeiro servido com arroz, feijão e legumes frescos.",
+
+            preco: "R$ 75,00"
+        }
+
+    ]
+
+};
 
 
-            if (fotoSalva) {
+/* ==================================================
+   NOMES DOS DIAS
+   ================================================== */
 
-                document.getElementById("fotoPerfil")
-                    .src = fotoSalva;
+const nomesDias = [
+
+    "Domingo",
+    "Segunda-feira",
+    "Terça-feira",
+    "Quarta-feira",
+    "Quinta-feira",
+    "Sexta-feira",
+    "Sábado"
+
+];
+
+
+/* ==================================================
+   MOSTRAR PRATOS DO DIA
+   ================================================== */
+
+function mostrarPratosDoDia() {
+
+    const hoje = new Date();
+
+    const numeroDia = hoje.getDay();
+
+    const nomeDia = nomesDias[numeroDia];
+
+
+    const lista =
+        document.getElementById("listaPratosDia");
+
+
+    const diaAtual =
+        document.getElementById("diaAtual");
+
+
+    diaAtual.textContent =
+        "Hoje é " + nomeDia;
+
+
+    lista.innerHTML = "";
+
+
+    const pratos =
+        pratosDoDia[numeroDia] || [];
+
+
+    pratos.forEach(
+        function(prato) {
+
+            const coluna =
+                document.createElement("div");
+
+
+            if (pratos.length === 1) {
+
+                coluna.className =
+                    "col-12";
 
             } else {
 
-                document.getElementById("fotoPerfil")
-                    .src = "../imagem/logo.png";
+                coluna.className =
+                    "col-md-6";
 
             }
 
 
-            /* ABRIR TELA */
+            coluna.innerHTML = `
 
-            document
-                .getElementById("telaPerfil")
-                .classList.add("ativa");
+                <div class="card prato-card mb-3">
+
+                    <div class="row g-0 align-items-stretch">
+
+                        <div class="col-md-4">
+
+                            <img
+                                src="${prato.imagem}"
+                                class="prato-card-imagem"
+                                alt="${prato.nome}">
+
+                        </div>
 
 
-            document.body.style.overflow =
-                "hidden";
+                        <div class="col-md-8">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">
+                                    ${prato.nome}
+                                </h5>
+
+
+                                <p class="card-text">
+                                    ${prato.descricao}
+                                </p>
+
+
+                                <p class="preco-prato">
+                                    ${prato.preco}
+                                </p>
+
+
+                                <a
+                                    href="pedido.html"
+                                    class="botao-prato">
+
+                                    <i class="bi bi-cart-plus"></i>
+
+                                    Pedir agora
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            lista.appendChild(coluna);
 
         }
+    );
+
+}
 
 
-        /* ==================================================
-           FECHAR PERFIL
-           ================================================== */
+/* ==================================================
+   CARROSSEL
+   ================================================== */
 
-        function fecharPerfil() {
+const galeria =
+    document.getElementById("galeria");
 
-            document
-                .getElementById("telaPerfil")
-                .classList.remove("ativa");
+const itens =
+    document.querySelectorAll(".item-galeria");
 
-            document.body.style.overflow =
-                "";
-
-        }
+let posicao = 0;
 
 
-        /* ==================================================
-           ESCOLHER FOTO
-           ================================================== */
+function quantidadeVisivel() {
 
-        document
-            .getElementById("inputFoto")
-            .addEventListener("change", function () {
+    if (window.innerWidth <= 500) {
+        return 1;
+    }
 
+    if (window.innerWidth <= 768) {
+        return 2;
+    }
 
-                const arquivo =
-                    this.files[0];
+    if (window.innerWidth <= 992) {
+        return 3;
+    }
 
+    return 4;
 
-                if (!arquivo) {
-                    return;
-                }
-
-
-                /* VERIFICA SE É UMA IMAGEM */
-
-                if (!arquivo.type.startsWith("image/")) {
-
-                    alert("Escolha uma imagem válida.");
-
-                    return;
-
-                }
+}
 
 
-                const leitor =
-                    new FileReader();
+function moverCarrossel() {
+
+    const visiveis =
+        quantidadeVisivel();
+
+    const limite =
+        itens.length - visiveis;
 
 
-                leitor.onload = function (evento) {
+    posicao++;
 
+
+    if (posicao > limite) {
+
+        posicao = 0;
+
+    }
+
+
+    const item = itens[0];
+
+    const largura =
+        item.offsetWidth;
+
+
+    let gap = 28;
+
+
+    if (window.innerWidth <= 768) {
+
+        gap = 15;
+
+    }
+
+
+    const deslocamento =
+        posicao * (largura + gap);
+
+
+    galeria.style.transform =
+        `translateX(-${deslocamento}px)`;
+
+}
+
+
+setInterval(
+    moverCarrossel,
+    3000
+);
+
+
+window.addEventListener(
+    "resize",
+    function() {
+
+        posicao = 0;
+
+        galeria.style.transform =
+            "translateX(0)";
+
+    }
+);
+
+
+/* ==================================================
+   PEGAR DADOS DO LOGIN
+   ================================================== */
+
+function pegarDadosLogin() {
+
+    const nome =
+        localStorage.getItem("nomeUsuario");
+
+    const email =
+        localStorage.getItem("emailUsuario");
+
+    const telefone =
+        localStorage.getItem("telefoneUsuario");
+
+
+    document
+        .getElementById("perfilNome")
+        .textContent =
+        nome || "Usuário";
+
+
+    document
+        .getElementById("perfilNomeDado")
+        .textContent =
+        nome || "Não informado";
+
+
+    document
+        .getElementById("perfilEmail")
+        .textContent =
+        email || "Não informado";
+
+
+    document
+        .getElementById("perfilTelefone")
+        .textContent =
+        telefone || "Não informado";
+
+
+    const fotoSalva =
+        localStorage.getItem("usuarioFoto");
+
+
+    document
+        .getElementById("fotoPerfil")
+        .src =
+        fotoSalva || "../imagem/logo.png";
+
+}
+
+
+/* ==================================================
+   ABRIR PERFIL
+   ================================================== */
+
+function abrirPerfil() {
+
+    const usuarioLogado =
+        localStorage.getItem("usuarioLogado");
+
+
+    if (usuarioLogado !== "true") {
+
+        alert(
+            "Faça login para acessar o perfil."
+        );
+
+
+        window.location.href =
+            "login.html";
+
+
+        return;
+
+    }
+
+
+    pegarDadosLogin();
+
+
+    document
+        .getElementById("telaPerfil")
+        .classList.add("ativa");
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+/* ==================================================
+   FECHAR PERFIL
+   ================================================== */
+
+function fecharPerfil() {
+
+    document
+        .getElementById("telaPerfil")
+        .classList.remove("ativa");
+
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* ==================================================
+   FOTO DO PERFIL
+   ================================================== */
+
+document
+    .getElementById("inputFoto")
+    .addEventListener(
+        "change",
+        function() {
+
+            const arquivo =
+                this.files[0];
+
+
+            if (!arquivo) {
+
+                return;
+
+            }
+
+
+            if (
+                !arquivo.type.startsWith("image/")
+            ) {
+
+                alert(
+                    "Escolha uma imagem válida."
+                );
+
+                return;
+
+            }
+
+
+            const leitor =
+                new FileReader();
+
+
+            leitor.onload =
+                function(evento) {
 
                     const foto =
                         evento.target.result;
 
 
-                    /* MOSTRA A FOTO */
-
                     document
                         .getElementById("fotoPerfil")
-                        .src = foto;
+                        .src =
+                        foto;
 
-
-                    /* SALVA A FOTO */
 
                     localStorage.setItem(
                         "usuarioFoto",
@@ -1529,74 +1758,950 @@
                 };
 
 
-                leitor.readAsDataURL(arquivo);
+            leitor.readAsDataURL(arquivo);
 
-            });
+        }
+    );
 
 
-        /* ==================================================
-           FECHAR CLICANDO FORA
-           ================================================== */
+/* ==================================================
+   ABRIR MINHAS RESERVAS
+   ================================================== */
 
-        document
-            .getElementById("telaPerfil")
-            .addEventListener("click", function (evento) {
+function abrirReservas() {
 
-                if (evento.target === this) {
+    document
+        .getElementById("telaPerfil")
+        .classList.remove("ativa");
 
-                    fecharPerfil();
+
+    let reservas = [];
+
+
+    let reservasSalvas =
+        localStorage.getItem(
+            "reservasSaborQuintal"
+        );
+
+
+    if (!reservasSalvas) {
+
+        reservasSalvas =
+            localStorage.getItem(
+                "reservaSaborQuintal"
+            );
+
+    }
+
+
+    if (!reservasSalvas) {
+
+        reservasSalvas =
+            localStorage.getItem(
+                "reservas"
+            );
+
+    }
+
+
+    if (reservasSalvas) {
+
+        try {
+
+            const dados =
+                JSON.parse(reservasSalvas);
+
+
+            if (Array.isArray(dados)) {
+
+                reservas = dados;
+
+            } else if (dados) {
+
+                reservas = [dados];
+
+            }
+
+        } catch (erro) {
+
+            console.error(
+                "Erro ao carregar reservas:",
+                erro
+            );
+
+            reservas = [];
+
+        }
+
+    }
+
+
+    const nomeCliente =
+        (
+            localStorage.getItem(
+                "nomeUsuario"
+            ) || ""
+        ).trim().toLowerCase();
+
+
+    const emailCliente =
+        (
+            localStorage.getItem(
+                "emailUsuario"
+            ) || ""
+        ).trim().toLowerCase();
+
+
+    const telefoneCliente =
+        (
+            localStorage.getItem(
+                "telefoneUsuario"
+            ) || ""
+        ).replace(/\D/g, "");
+
+
+    const minhasReservas =
+        reservas.filter(
+            function(reserva) {
+
+                const nomeReserva =
+                    (
+                        reserva.nomeUsuario ||
+                        reserva.nomeCliente ||
+                        reserva.nome ||
+                        reserva.cliente ||
+                        ""
+                    ).trim().toLowerCase();
+
+
+                const emailReserva =
+                    (
+                        reserva.emailUsuario ||
+                        reserva.email ||
+                        reserva.usuarioEmail ||
+                        ""
+                    ).trim().toLowerCase();
+
+
+                const telefoneReserva =
+                    (
+                        reserva.telefone ||
+                        reserva.telefoneUsuario ||
+                        reserva.usuarioTelefone ||
+                        ""
+                    ).replace(/\D/g, "");
+
+
+                if (
+                    emailCliente &&
+                    emailReserva
+                ) {
+
+                    return (
+                        emailReserva ===
+                        emailCliente
+                    );
 
                 }
 
-            });
 
+                if (
+                    telefoneCliente &&
+                    telefoneReserva
+                ) {
 
-        /* ==================================================
-           FECHAR COM ESC
-           ================================================== */
-
-        document.addEventListener(
-            "keydown",
-            function (evento) {
-
-                if (evento.key === "Escape") {
-
-                    fecharPerfil();
+                    return (
+                        telefoneReserva ===
+                        telefoneCliente
+                    );
 
                 }
+
+
+                if (
+                    nomeCliente &&
+                    nomeReserva
+                ) {
+
+                    return (
+                        nomeReserva ===
+                        nomeCliente
+                    );
+
+                }
+
+
+                return false;
 
             }
         );
 
 
-        /* ==================================================
-           SAIR DA CONTA
-           ================================================== */
-
-        function sairDaConta() {
+    mostrarReservas(
+        minhasReservas
+    );
 
 
-            localStorage.removeItem("usuarioNome");
+    document
+        .getElementById("telaReservas")
+        .classList.add("ativa");
 
-            localStorage.removeItem("usuarioEmail");
-
-            localStorage.removeItem("usuarioTelefone");
-
-            localStorage.removeItem("usuarioFoto");
+}
 
 
-            fecharPerfil();
+/* ==================================================
+   MOSTRAR RESERVAS
+   ================================================== */
+
+function mostrarReservas(reservas) {
+
+    const lista =
+        document.getElementById(
+            "listaReservas"
+        );
 
 
-            alert("Você saiu da sua conta.");
+    lista.innerHTML = "";
 
 
-            window.location.href =
-                "login.html";
+    if (reservas.length === 0) {
+
+        lista.innerHTML = `
+
+            <div class="sem-reservas">
+
+                <i class="bi bi-calendar-x"
+                    style="font-size:40px;color:#6b3d22;">
+                </i>
+
+                <p style="margin-top:15px;">
+
+                    Você ainda não possui
+                    nenhuma reserva.
+
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    reservas.forEach(
+        function(reserva, indice) {
+
+            const data =
+                reserva.data ||
+                reserva.dia ||
+                reserva.dataReserva ||
+                "Não informado";
+
+
+            const horario =
+                reserva.horario ||
+                reserva.hora ||
+                "Não informado";
+
+
+            const pessoas =
+                reserva.pessoas ||
+                reserva.quantidadePessoas ||
+                reserva.quantidade ||
+                "Não informado";
+
+
+            const ambiente =
+                reserva.ambiente ||
+                reserva.local ||
+                "Não informado";
+
+
+            const mesa =
+                reserva.mesa ||
+                reserva.numeroMesa ||
+                "Não informado";
+
+
+            const nome =
+                reserva.nomeUsuario ||
+                reserva.nomeCliente ||
+                reserva.nome ||
+                reserva.cliente ||
+                "Não informado";
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "reserva-item";
+
+
+            item.innerHTML = `
+
+                <div class="reserva-titulo">
+
+                    Reserva ${indice + 1}
+
+                </div>
+
+
+                <div class="reserva-dado">
+
+                    <i class="bi bi-person-fill"></i>
+
+                    <strong>Cliente:</strong>
+
+                    <span>${nome}</span>
+
+                </div>
+
+
+                <div class="reserva-dado">
+
+                    <i class="bi bi-calendar3"></i>
+
+                    <strong>Data:</strong>
+
+                    <span>${data}</span>
+
+                </div>
+
+
+                <div class="reserva-dado">
+
+                    <i class="bi bi-clock"></i>
+
+                    <strong>Horário:</strong>
+
+                    <span>${horario}</span>
+
+                </div>
+
+
+                <div class="reserva-dado">
+
+                    <i class="bi bi-people-fill"></i>
+
+                    <strong>Pessoas:</strong>
+
+                    <span>${pessoas}</span>
+
+                </div>
+
+
+                <div class="reserva-dado">
+
+                    <i class="bi bi-geo-alt-fill"></i>
+
+                    <strong>Ambiente:</strong>
+
+                    <span>${ambiente}</span>
+
+                </div>
+
+
+                <div class="reserva-dado">
+
+                    <i class="bi bi-grid-3x3-gap-fill"></i>
+
+                    <strong>Mesa:</strong>
+
+                    <span>${mesa}</span>
+
+                </div>
+
+            `;
+
+
+            lista.appendChild(item);
+
+        }
+    );
+
+}
+
+
+/* ==================================================
+   FECHAR RESERVAS
+   ================================================== */
+
+function fecharReservas() {
+
+    document
+        .getElementById("telaReservas")
+        .classList.remove("ativa");
+
+
+    document
+        .getElementById("telaPerfil")
+        .classList.add("ativa");
+
+
+    pegarDadosLogin();
+
+}
+
+
+/* ==================================================
+   CLICAR FORA DO PERFIL
+   ================================================== */
+
+document
+    .getElementById("telaPerfil")
+    .addEventListener(
+        "click",
+        function(evento) {
+
+            if (
+                evento.target === this
+            ) {
+
+                fecharPerfil();
+
+            }
+
+        }
+    );
+
+
+/* ==================================================
+   CLICAR FORA DAS RESERVAS
+   ================================================== */
+
+document
+    .getElementById("telaReservas")
+    .addEventListener(
+        "click",
+        function(evento) {
+
+            if (
+                evento.target === this
+            ) {
+
+                fecharReservas();
+
+            }
+
+        }
+    );
+
+
+/* ==================================================
+   TECLA ESC
+   ================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(evento) {
+
+        if (
+            evento.key === "Escape"
+        ) {
+
+            document
+                .getElementById("telaPerfil")
+                .classList.remove("ativa");
+
+
+            document
+                .getElementById("telaReservas")
+                .classList.remove("ativa");
+
+
+            document.body.style.overflow =
+                "";
 
         }
 
-    </script>
+    }
+);
+
+
+/* ==================================================
+   SAIR DA CONTA
+   ================================================== */
+
+function sairDaConta() {
+
+    localStorage.removeItem(
+        "usuarioLogado"
+    );
+
+    localStorage.removeItem(
+        "nomeUsuario"
+    );
+
+    localStorage.removeItem(
+        "emailUsuario"
+    );
+
+    localStorage.removeItem(
+        "telefoneUsuario"
+    );
+
+    localStorage.removeItem(
+        "usuarioFoto"
+    );
+
+
+    fecharPerfil();
+
+
+    alert(
+        "Você saiu da sua conta."
+    );
+
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+/* ==================================================
+   CARREGAR TODAS AS RESERVAS
+   ================================================== */
+
+function carregarTodasReservas() {
+
+    let reservas = [];
+
+
+    const chaves = [
+        "reservasSaborQuintal",
+        "reservaSaborQuintal",
+        "reservas"
+    ];
+
+
+    for (
+        let i = 0;
+        i < chaves.length;
+        i++
+    ) {
+
+        const dadosSalvos =
+            localStorage.getItem(
+                chaves[i]
+            );
+
+
+        if (!dadosSalvos) {
+
+            continue;
+
+        }
+
+
+        try {
+
+            const dados =
+                JSON.parse(
+                    dadosSalvos
+                );
+
+
+            if (Array.isArray(dados)) {
+
+                reservas = dados;
+
+            } else if (dados) {
+
+                reservas = [dados];
+
+            }
+
+
+            if (
+                reservas.length > 0
+            ) {
+
+                break;
+
+            }
+
+        } catch (erro) {
+
+            console.error(
+                "Erro ao carregar reservas:",
+                erro
+            );
+
+        }
+
+    }
+
+
+    return reservas;
+
+}
+
+
+/* ==================================================
+   VERIFICAR AVISOS DE RESERVA
+   ================================================== */
+
+function verificarAvisosReserva() {
+
+    const usuarioLogado =
+        localStorage.getItem(
+            "usuarioLogado"
+        );
+
+
+    if (
+        usuarioLogado !== "true"
+    ) {
+
+        return;
+
+    }
+
+
+    const emailCliente =
+        (
+            localStorage.getItem(
+                "emailUsuario"
+            ) || ""
+        ).trim().toLowerCase();
+
+
+    const telefoneCliente =
+        (
+            localStorage.getItem(
+                "telefoneUsuario"
+            ) || ""
+        ).replace(/\D/g, "");
+
+
+    const nomeCliente =
+        (
+            localStorage.getItem(
+                "nomeUsuario"
+            ) || ""
+        ).trim().toLowerCase();
+
+
+    const reservas =
+        carregarTodasReservas();
+
+
+    const agora =
+        new Date().getTime();
+
+
+    const cincoDias =
+        5 *
+        24 *
+        60 *
+        60 *
+        1000;
+
+
+    reservas.forEach(
+        function(reserva) {
+
+            const emailReserva =
+                (
+                    reserva.emailUsuario ||
+                    reserva.email ||
+                    reserva.usuarioEmail ||
+                    ""
+                ).trim().toLowerCase();
+
+
+            const telefoneReserva =
+                (
+                    reserva.telefone ||
+                    reserva.telefoneUsuario ||
+                    reserva.usuarioTelefone ||
+                    ""
+                ).replace(/\D/g, "");
+
+
+            const nomeReserva =
+                (
+                    reserva.nomeUsuario ||
+                    reserva.nomeCliente ||
+                    reserva.nome ||
+                    reserva.cliente ||
+                    ""
+                ).trim().toLowerCase();
+
+
+            let pertenceAoCliente =
+                false;
+
+
+            if (
+                emailCliente &&
+                emailReserva &&
+                emailCliente === emailReserva
+            ) {
+
+                pertenceAoCliente = true;
+
+            }
+
+            else if (
+                telefoneCliente &&
+                telefoneReserva &&
+                telefoneCliente === telefoneReserva
+            ) {
+
+                pertenceAoCliente = true;
+
+            }
+
+            else if (
+                nomeCliente &&
+                nomeReserva &&
+                nomeCliente === nomeReserva
+            ) {
+
+                pertenceAoCliente = true;
+
+            }
+
+
+            if (
+                !pertenceAoCliente
+            ) {
+
+                return;
+
+            }
+
+
+            const dataReserva =
+                reserva.dataReserva ||
+                reserva.data ||
+                reserva.dia;
+
+
+            const horarioReserva =
+                reserva.horario ||
+                reserva.hora ||
+                "00:00";
+
+
+            if (!dataReserva) {
+
+                return;
+
+            }
+
+
+            let dataCompleta;
+
+
+            if (
+                typeof dataReserva === "number"
+            ) {
+
+                dataCompleta =
+                    dataReserva;
+
+            }
+
+            else {
+
+                dataCompleta =
+                    new Date(
+                        dataReserva +
+                        "T" +
+                        horarioReserva +
+                        ":00"
+                    ).getTime();
+
+            }
+
+
+            if (
+                isNaN(dataCompleta)
+            ) {
+
+                return;
+
+            }
+
+
+            const inicioAviso =
+                dataCompleta -
+                cincoDias;
+
+
+            const identificador =
+                reserva.id ||
+                dataCompleta +
+                "_" +
+                (
+                    reserva.mesa ||
+                    reserva.numeroMesa ||
+                    "mesa"
+                );
+
+
+            const chaveAviso =
+                "avisoReservaEnviado_" +
+                identificador;
+
+
+            if (
+                agora >= inicioAviso &&
+                agora < dataCompleta &&
+                !localStorage.getItem(
+                    chaveAviso
+                )
+            ) {
+
+                const dataFormatada =
+                    new Date(
+                        dataCompleta
+                    ).toLocaleDateString(
+                        "pt-BR"
+                    );
+
+
+                const ambiente =
+                    reserva.ambiente ||
+                    reserva.local ||
+                    "não informado";
+
+
+                const mesa =
+                    reserva.mesa ||
+                    reserva.numeroMesa ||
+                    "não informada";
+
+
+                const pessoas =
+                    reserva.pessoas ||
+                    reserva.quantidadePessoas ||
+                    reserva.quantidade ||
+                    "não informado";
+
+
+                const mensagem =
+
+                    "Sua reserva no Sabor do Quintal está próxima!\n\n" +
+
+                    "Data: " +
+                    dataFormatada +
+                    "\n" +
+
+                    "Horário: " +
+                    horarioReserva +
+                    "\n" +
+
+                    "Pessoas: " +
+                    pessoas +
+                    "\n" +
+
+                    "Ambiente: " +
+                    ambiente +
+                    "\n" +
+
+                    "Mesa: " +
+                    mesa;
+
+
+                localStorage.setItem(
+                    chaveAviso,
+                    "true"
+                );
+
+
+                alert(
+                    mensagem
+                );
+
+
+                if (
+                    "Notification" in window &&
+                    Notification.permission === "granted"
+                ) {
+
+                    new Notification(
+                        "Sabor do Quintal",
+                        {
+                            body:
+                                "Sua reserva está próxima: " +
+                                dataFormatada +
+                                " às " +
+                                horarioReserva +
+                                ".",
+
+                            icon:
+                                "../imagem/logo.png"
+                        }
+                    );
+
+                }
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ==================================================
+   PERMISSÃO PARA NOTIFICAÇÕES
+   ================================================== */
+
+function pedirPermissaoNotificacao() {
+
+    if (
+        "Notification" in window &&
+        Notification.permission === "default"
+    ) {
+
+        Notification.requestPermission();
+
+    }
+
+}
+
+
+/* ==================================================
+   CARREGAR PÁGINA
+   ================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        mostrarPratosDoDia();
+
+        pegarDadosLogin();
+
+        pedirPermissaoNotificacao();
+
+        verificarAvisosReserva();
+
+    }
+);
+
+
+/*
+ * Verifica novamente a cada 1 minuto.
+ */
+
+setInterval(
+    verificarAvisosReserva,
+    60 * 1000
+);
+
+</script>
 
 </body>
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -2193,6 +2192,58 @@
             };
 
 
+            /*
+             * SALVAR A RESERVA SEM APAGAR AS ANTERIORES.
+             * A página principal poderá ler esta lista
+             * em "Minhas reservas".
+             */
+            let reservasSalvas = [];
+
+            try {
+
+                const dadosSalvos =
+                    localStorage.getItem(
+                        "reservasSaborQuintal"
+                    );
+
+                if (dadosSalvos) {
+
+                    const dados =
+                        JSON.parse(dadosSalvos);
+
+                    if (Array.isArray(dados)) {
+                        reservasSalvas = dados;
+                    } else if (dados) {
+                        reservasSalvas = [dados];
+                    }
+
+                }
+
+            } catch (erro) {
+
+                console.error(
+                    "Erro ao carregar reservas:",
+                    erro
+                );
+
+                reservasSalvas = [];
+
+            }
+
+
+            reservasSalvas.push(reserva);
+
+
+            localStorage.setItem(
+                "reservasSaborQuintal",
+                JSON.stringify(reservasSalvas)
+            );
+
+
+            /*
+             * Mantém a chave antiga atualizada para
+             * compatibilidade com versões anteriores.
+             */
             localStorage.setItem(
                 "reservaSaborQuintal",
                 JSON.stringify(reserva)
@@ -2247,6 +2298,18 @@
                 block: "center"
 
             });
+
+
+            /*
+             * Depois de salvar, volta para a página principal.
+             * Os dados continuam salvos no localStorage.
+             */
+            setTimeout(function () {
+
+                window.location.href =
+                    "pagina_principal.html";
+
+            }, 1200);
 
         }
 
