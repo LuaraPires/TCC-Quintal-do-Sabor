@@ -72,6 +72,28 @@
         }
 
 
+        /* LINK DA LOGO */
+
+        .logo-link {
+
+            display: flex;
+
+            align-items: center;
+
+            text-decoration: none;
+
+            border-radius: 50%;
+
+            transition: 0.2s;
+        }
+
+
+        .logo-link:hover {
+
+            transform: scale(1.05);
+        }
+
+
         .logo {
 
             width: 80px;
@@ -81,6 +103,8 @@
             border-radius: 50%;
 
             object-fit: cover;
+
+            display: block;
         }
 
 
@@ -533,11 +557,21 @@
 
     <header>
 
-        <img
-            src="../imagem/logo.png"
-            alt="Logo Sabor do Quintal"
-            class="logo"
+        <!-- LOGO CLICÁVEL -->
+
+        <a
+            href="pagina_principal.html"
+            class="logo-link"
+            title="Voltar para a página principal"
         >
+
+            <img
+                src="../imagem/logo.png"
+                alt="Logo Sabor do Quintal"
+                class="logo"
+            >
+
+        </a>
 
 
         <h1 class="titulo">
@@ -936,4 +970,3 @@
 </body>
 
 </html>
-

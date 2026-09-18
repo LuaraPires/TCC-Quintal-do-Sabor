@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -101,7 +102,7 @@
         }
 
 
-        .logo {
+        .logo-link {
             position: absolute;
 
             left: 40px;
@@ -110,9 +111,21 @@
             width: 70px;
             height: 70px;
 
+            display: block;
+
+            z-index: 10;
+        }
+
+
+        .logo {
+            width: 70px;
+            height: 70px;
+
             object-fit: contain;
 
             border-radius: 50%;
+
+            cursor: pointer;
         }
 
 
@@ -765,7 +778,7 @@
             }
 
 
-            .logo {
+            .logo-link {
                 left: 15px;
 
                 width: 55px;
@@ -773,6 +786,13 @@
                 height: 55px;
 
                 top: 10px;
+            }
+
+
+            .logo {
+                width: 55px;
+
+                height: 55px;
             }
 
 
@@ -881,10 +901,18 @@
 
     <header>
 
-        <img
-            src="../imagem/logo.png"
-            alt="Logo Sabor do Quintal"
-            class="logo">
+        <!-- LOGO CLICÁVEL -->
+        <a
+            href="pagina_principal.html"
+            class="logo-link"
+            title="Voltar para a página principal">
+
+            <img
+                src="../imagem/logo.png"
+                alt="Logo Sabor do Quintal"
+                class="logo">
+
+        </a>
 
 
         <h1 class="titulo">
@@ -1410,14 +1438,9 @@
             </div>
 
 
-            <!-- ==============================
-                 DADOS DO CLIENTE
-            ============================== -->
+            <!-- DADOS DO CLIENTE -->
 
             <div class="formulario">
-
-
-                <!-- NOME PUXADO DO LOGIN -->
 
                 <input
                     type="text"
@@ -1435,8 +1458,6 @@
 
                 </div>
 
-
-                <!-- TELEFONE PUXADO DO LOGIN -->
 
                 <input
                     type="tel"
@@ -1457,8 +1478,6 @@
                 </div>
 
 
-                <!-- RESUMO -->
-
                 <div
                     class="resumo"
                     id="resumo">
@@ -1467,8 +1486,6 @@
 
                 </div>
 
-
-                <!-- FINALIZAR -->
 
                 <button
                     type="button"
@@ -1484,9 +1501,7 @@
         </section>
 
 
-        <!-- ==============================
-             MENSAGEM DE SUCESSO
-        ============================== -->
+        <!-- MENSAGEM DE SUCESSO -->
 
         <div
             id="mensagem"
@@ -1505,9 +1520,7 @@
     </main>
 
 
-    <!-- ==============================
-         FOOTER
-    ============================== -->
+    <!-- FOOTER -->
 
     <footer>
 
@@ -1668,11 +1681,9 @@
             "input",
             function () {
 
-                // Remove letras e qualquer outro caractere
                 this.value =
                     this.value.replace(/\D/g, "");
 
-                // Limita o telefone a 11 números
                 this.value =
                     this.value.substring(0, 11);
 
@@ -1958,8 +1969,6 @@
                 pegarDadosLogin();
 
 
-            /* VERIFICAR LOGIN */
-
             if (
                 !usuarioAtual.logado ||
                 !usuarioAtual.nome
@@ -1977,25 +1986,17 @@
             }
 
 
-            /* PEGAR NOME ALTERADO */
-
             const nomeCliente =
                 nome.value.trim();
 
-
-            /* PEGAR TELEFONE */
 
             const telefoneCliente =
                 telefone.value.replace(/\D/g, "");
 
 
-            /* GARANTIR QUE O CAMPO TENHA SOMENTE NÚMEROS */
-
             telefone.value =
                 telefoneCliente;
 
-
-            /* VALIDAÇÕES */
 
             if (!nomeCliente) {
 
@@ -2104,10 +2105,6 @@
             }
 
 
-            /* =================================================
-               IDENTIFICADOR DA CONTA
-            ================================================= */
-
             let identificadorUsuario = "";
 
 
@@ -2130,18 +2127,12 @@
             }
 
 
-            /* DATA FORMATADA */
-
             const dataFormatada =
                 campoData.value
                     .split("-")
                     .reverse()
                     .join("/");
 
-
-            /* =================================================
-               SALVAR RESERVA
-            ================================================= */
 
             const reserva = {
 
@@ -2202,19 +2193,11 @@
             };
 
 
-            /* =================================================
-               SALVAR NO LOCALSTORAGE
-            ================================================= */
-
             localStorage.setItem(
                 "reservaSaborQuintal",
                 JSON.stringify(reserva)
             );
 
-
-            /* =================================================
-               MOSTRAR CONFIRMAÇÃO
-            ================================================= */
 
             document.getElementById(
                 "textoConfirmacao"

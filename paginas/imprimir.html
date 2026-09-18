@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" type="image/png" href="../faviconn.png">
-     <meta name="author" content="Misael fonseca">
+
+    <meta name="author" content="Misael fonseca">
 
     <title>
         Nota - Sabor do Quintal
@@ -67,7 +69,11 @@
         }
 
 
-        .logo {
+        /* =========================
+           LOGO CLICÁVEL
+        ========================= */
+
+        .logo-link {
 
             position: absolute;
 
@@ -77,7 +83,31 @@
 
             height: 65px;
 
+            display: block;
+
+            border-radius: 50%;
+
+            transition: 0.2s;
+        }
+
+
+        .logo-link:hover {
+
+            transform: scale(1.08);
+
+            cursor: pointer;
+        }
+
+
+        .logo {
+
+            width: 65px;
+
+            height: 65px;
+
             object-fit: contain;
+
+            display: block;
         }
 
 
@@ -415,6 +445,74 @@
 
         }
 
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                height: 80px;
+            }
+
+
+            header h1 {
+
+                font-size: 23px;
+            }
+
+
+            .logo-link {
+
+                left: 15px;
+
+                width: 55px;
+
+                height: 55px;
+            }
+
+
+            .logo {
+
+                width: 55px;
+
+                height: 55px;
+            }
+
+
+            main {
+
+                padding: 20px 15px;
+            }
+
+
+            .nota {
+
+                width: 100%;
+
+                max-width: 430px;
+
+                padding: 25px 20px;
+            }
+
+
+            .botoes {
+
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+
+            .botoes button {
+
+                width: 210px;
+            }
+
+        }
+
     </style>
 
 </head>
@@ -429,15 +527,30 @@
 
     <header>
 
-        <img
-            src="../faviconn.png"class="logo"alt="Logo Sabor do Quintal"
+
+        <!-- LOGO CLICÁVEL -->
+
+        <a
+            href="pagina_principal.html"
+            class="logo-link"
+            title="Voltar para a página principal"
         >
+
+            <img
+                src="../faviconn.png"
+                class="logo"
+                alt="Logo Sabor do Quintal"
+            >
+
+        </a>
+
 
         <h1>
             Sabor do Quintal
         </h1>
 
     </header>
+
 
 
     <!-- =========================
